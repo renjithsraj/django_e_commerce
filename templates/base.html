@@ -1,0 +1,443 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Byapar | Multi-Purpose E-commerce Template</title>
+		<meta name="description" content="Multi-Purpose E-commerce Template">
+		<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="{% static "images/favicon.png" %}" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="{% static "images/apple-touch-icon.png" %}" />
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static "images/apple-touch-icon-72x72.png" %}" />
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static "images/apple-touch-icon-114x114.png" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "third-party/sidr/css/jquery.sidr.dark.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "third-party/slick/css/slick.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "third-party/slick/css/slick-theme.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "third-party/wow/css/animate.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/jquery-ui.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "third-party/magnific-popup-master/css/magnific-popup.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "third-party/accordionjs/css/accordion.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "icons/icons.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "css/responsive.css" %}">
+		<link rel="stylesheet" id="color" href="{% static "css/default.css" %}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        {% block extracss %}
+        {% endblock extracss %}
+
+	</head>
+
+    <body class="home header-v1">
+
+        <div id="page" class="site">
+			<a href="login.html#" id="mobile-trigger"><i class="fa fa-list" aria-hidden="true"></i></a>
+			<div id ="mob-menu">
+				<ul>
+					<li class="current-menu-item menu-item-has-children"><a href="login.html#">Home</a>
+						<ul class="sub-menu">
+							<li><a href="home-v1.html">Home v1</a></li>
+							<li><a href="home-v2.html">Home v2</a></li>
+							<li><a href="home-v3.html">Home v3</a></li>
+							<li><a href="home-v4.html">Home v4</a></li>
+							<li><a href="home-v5.html">Home v5</a></li>
+							<li><a href="home-v6.html">Home v6</a></li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children"><a href="login.html#">Categorys</a>
+						<ul class="sub-menu">
+							<li class="current-menu-item menu-item-has-children"><a href="login.html#">Dresses</a>
+								<ul class="sub-menu">
+                                  <li class=""> <a href="login.html#">Casual dresses</a> </li>
+                                  <li> <a href="login.html#">Evening</a> </li>
+                                  <li> <a href="login.html#">Party</a> </li>
+                                  <li> <a href="login.html#">Printed</a> </li>
+							      <li> <a href="login.html#">Winter </a> </li>
+						      </ul>
+					 		 </li>
+							<li class="current-menu-item menu-item-has-children"><a href="login.html#">Tops category</a>
+								<ul class="sub-menu">
+								      <li class=""> <a href="login.html#">Blouses</a> </li>
+								      <li> <a href="login.html#">Evening tops</a> </li>
+								      <li> <a href="login.html#">Work</a> </li>
+								      <li> <a href="login.html#">Winter</a> </li>
+								      <li> <a href="login.html#">Summer</a> </li>
+								 </ul>
+					 		 </li>
+							<li class="current-menu-item menu-item-has-children"><a href="login.html#">Lingerie</a>
+								<ul class="sub-menu">
+                         			  <li> <a href="login.html#">Bras</a> </li>
+                                      <li> <a href="login.html#">Knickers</a> </li>
+                                      <li> <a href="login.html#">Nightwear</a> </li>
+                                      <li> <a href="login.html#">Summerwear</a> </li>
+                                      <li> <a href="login.html#">Men Fashion </a> </li>
+								 </ul>
+							 </li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children"><a href="login.html#">Shop Pages</a>
+						<ul class="sub-menu">
+							<li><a href="shop-grid.html">product Grid</a></li>
+							<li><a href="shop-full.html">product Full</a></li>
+							<li><a href="shop-left-sidebar.html"> Sidebar left</a></li>
+							<li><a href="shop-right-sidebar.html"> Sidebar Right</a></li>
+							<li><a href="shop-three-column.html"> Three Column</a></li>
+						</ul>
+					</li>
+						<li class="menu-item-has-children"><a href="login.html#" >Pages</a>
+						<ul class="sub-menu">
+							<li><a href="single-product.html">Single Product</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="register.html">Register</a></li>
+							<li><a href="wishlist.html">wishlist Page</a></li>
+							<li><a href="checkout.html">Checkout Page</a></li>
+							<li><a href="cart.html">Cart Page</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li><a href="404-error.html">404 Error</a></li>
+							<li><a href="typography.html">Typographys</a>
+							</ul>
+						</li>
+					<li class="menu-item-has-children"><a href="login.html#" >Blog</a>
+						<ul class="sub-menu">
+							<li><a href="blog-grid.html">Blog Grid</a></li>
+							<li><a href="left-sidebar.html">left Sidebar</a></li>
+							<li><a href="right-sidebar.html">Right Sidebar</a></li>
+							<li><a href="single-blog.html">Single Blog</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div> <!-- #mob-menu -->
+			<div id="tophead">
+				<div class="container">
+					<div class="top-head-right pull-right">
+				       <a href="login.html#" class="header-link" title="Help"><i class="fas fa-phone"></i><span class="header-text">Help</span></a>
+				       <a href="login.html" class="header-link" title="More"><i class="fas fa-th-large"></i><span class="header-text">More</span></a>
+				       <div class="header-link my-account">
+					       <a href="login.html#"   title="My Account">
+					       	<i class="fa fa-user"></i><span class="header-text">Account</span>
+					       </a>
+							<div class="user-account-popup">
+								 <div class="login-account">
+								    <div class="user-acc-header">
+								       <img src="images/blog-single/author1.png" alt="">
+								       <h3>Login</h3>
+								    </div>
+								    <div class="content-body">
+								       <form>
+								          <input type="email" placeholder="Username OR Email address">
+								          <input type="password" placeholder="Password">
+								          <input type="submit" class="custom-button button-small" value="Login">
+								       </form>
+								    </div>
+								    <div class="user-acc-footer">
+								       <p>New user? <a id="register-account-link" href="login.html#">Register</a></p>
+								    </div>
+								 </div> <!-- .login-account -->
+								 <div class="register-account">
+								    <div class="user-acc-header">
+								       <h3>Register</h3>
+								    </div>
+								    <div class="content-body">
+								       <form>
+								          <input type="text" placeholder="Name">
+								          <input type="text" placeholder="Mobile number">
+								          <input type="email" placeholder="Email address">
+								          <input type="password" placeholder="Password">
+								          <input type="submit" class="btn btn-custom2" value="Register">
+								       </form>
+								    </div>
+								    <div class="user-acc-footer">
+								       <p>Already have an account? <a id="login-account-link" href="javascript:;">Login</a></p>
+								    </div>
+								 </div><!-- .register-account -->
+							</div><!-- .user-account-popup -->
+				       </div><!-- .header-link my-account -->
+					</div><!-- .top-head-right -->
+				</div> <!-- .container -->
+			</div> <!-- #tophead -->
+			<header id="masthead" class="site-header sticky-enabled">
+				<div class="container">
+					<div class="site-branding pull-left">
+						<div id="site-identity">
+							<h1 class="site-title"><a href="home-v1.html"  rel="home"><img alt="logo" class="site-logo" src="images/logo.png">Byapar</a></h1>
+						</div><!-- #site-identity -->
+					</div><!-- .site-branding -->
+					<a href="contact.html" Class="custom-button custom-secondary-button pull-right quick-link-button button-small"> Quick Contact </a>
+					<div id="header-right" class="pull-right">
+						<div class="hearder-min-cart">
+							<ul>
+								<li class="cart-button mini-cart-wrap">
+									<a href="login.html#"><i class=" icon-basket"></i><span>2</span>	</a>
+									<ul class="cart-list">
+                                    <li>
+                                        <div class="cart-img">
+                                            <a href="login.html#l"><img alt="product" src="images/shop/product-1.jpg"></a>
+                                        </div>
+                                        <div class="cart-info">
+                                            <h4><a href="https://anilbasnet.com/demo/byapar/product-details.html">simple product</a></h4>
+                                            <span class="cart-qty">Qty: 1</span>
+                                            <span>$60.00</span>
+                                        </div>
+                                        <div class="del-icon">
+                                            <i class="fa fa-times"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cart-img">
+                                            <a href="https://anilbasnet.com/demo/byapar/product-details.html"><img src="images/shop/product-2.jpg" alt="Product"></a>
+                                        </div>
+                                        <div class="cart-info">
+                                            <h4><a href="https://anilbasnet.com/demo/byapar/product-details.html">virtual product</a></h4>
+                                            <span class="cart-qty">Qty: 2</span>
+                                            <span>$100.00</span>
+                                        </div>
+                                        <div class="del-icon">
+                                            <i class="fa fa-times"></i>
+                                        </div>
+                                    </li>
+                                    <li class="mini-cart-price">
+                                        <span class="subtotal">subtotal : </span>
+                                        <span class="subtotal-price ml-auto">$110.00</span>
+                                    </li>
+                                    <li>
+                                        <div class="mini-cart-button">
+                                            <a class="custom-button button-small pull-left" href="login.html#">View Cart</a>
+                                            <a class="custom-button custom-secondary-button button-small pull-right" href="login.html#">checkout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+								</li>
+			       				<li class="cart-button">
+				       				<a href="wishlist.html"  title="wishlist"><i class=" icon-heart"></i><span>0</span>	</a>
+			       				</li>
+							</ul>
+						</div><!-- #quick-link-buttons -->
+					</div>
+					<nav class="main-navigation pull-right">
+						<ul>
+							<li class="current-menu-item menu-item-has-children"><a href="login.html#">Home</a>
+								<ul class="sub-menu">
+									<li><a href="home-v1.html">Home v1</a></li>
+									<li><a href="home-v2.html">Home v2</a></li>
+									<li><a href="home-v3.html">Home v3</a></li>
+									<li><a href="home-v4.html">Home v4</a></li>
+									<li><a href="home-v5.html">Home v5</a></li>
+									<li><a href="home-v6.html">Home v6</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children has-mega-menu"><a href="login.html#">Categorys</a>
+								<div class="flat-mega-memu">
+									<div class="mega-menu-box col-grid-3">
+									      <div class="menu-container">
+											<h3 class="megamenu-title">Dresses</h3>
+											<ul class="mega-menu-sub">
+	                                          <li class=""> <a href="login.html#">Casual dresses</a> </li>
+	                                          <li> <a href="login.html#">Evening</a> </li>
+	                                          <li> <a href="login.html#">Party</a> </li>
+	                                          <li> <a href="login.html#">Printed</a> </li>
+										      <li> <a href="login.html#">Winter </a> </li>
+									      </ul>
+								      </div><!-- .menu-container -->
+									</div>
+									<div class="mega-menu-box col-grid-3">
+										<div class="menu-container">
+											<h3 class="megamenu-title">Tops category</h3>
+											<ul class="mega-menu-sub">
+										      <li class=""> <a href="login.html#">Blouses</a> </li>
+										      <li> <a href="login.html#">Evening tops</a> </li>
+										      <li> <a href="login.html#">Work</a> </li>
+										      <li> <a href="login.html#">Winter</a> </li>
+										      <li> <a href="login.html#">Summer</a> </li>
+										      </ul>
+									      </div><!-- .menu-container -->
+									</div>
+									<div class="mega-menu-box col-grid-3">
+										<div class="menu-container">
+										<span class="ribbon-rotated right-align onsale">Sale</span>
+											<h3 class="megamenu-title">Lingerie</h3>
+											<ul class="mega-menu-sub">
+	                                          <li> <a href="login.html#">Bras</a> </li>
+	                                          <li> <a href="login.html#">Knickers</a> </li>
+	                                          <li> <a href="login.html#">Nightwear</a> </li>
+	                                          <li> <a href="login.html#">Summerwear</a> </li>
+	                                          <li> <a href="login.html#">Men Fashion </a> </li>
+										      </ul>
+									      </div><!-- .menu-container -->
+									</div>
+									<div class="mega-menu-box col-grid-3">
+										<a href="login.html#"><img alt="product-banner" src="images/shop/megamenu-product.jpg"></a>
+									</div>
+								</div>
+							</li>
+							<li class="menu-item-has-children"><a href="login.html#">Shop Pages</a>
+								<ul class="sub-menu">
+									<li><a href="shop-grid.html">product Grid</a></li>
+									<li><a href="shop-full.html">product Full</a></li>
+									<li><a href="shop-left-sidebar.html"> Sidebar left</a></li>
+									<li><a href="shop-right-sidebar.html"> Sidebar Right</a></li>
+									<li><a href="shop-three-column.html"> Three Column</a></li>
+								</ul>
+							</li>
+								<li class="menu-item-has-children"><a href="login.html#" >Pages</a>
+								<ul class="sub-menu">
+									<li><a href="single-product.html">Single Product</a></li>
+									<li><a href="login.html">Login</a></li>
+									<li><a href="register.html">Register</a></li>
+									<li><a href="wishlist.html">wishlist Page</a></li>
+									<li><a href="checkout.html">Checkout Page</a></li>
+									<li><a href="cart.html">Cart Page</a></li>
+									<li><a href="faq.html">FAQ</a></li>
+									<li><a href="404-error.html">404 Error</a></li>
+									<li><a href="typography.html">Typographys</a>
+									</ul>
+								</li>
+							<li class="menu-item-has-children"><a href="login.html#" >Blog</a>
+								<ul class="sub-menu">
+									<li><a href="blog-grid.html">Blog Grid</a></li>
+									<li><a href="left-sidebar.html">left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="single-blog.html">Single Blog</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav> <!-- .site-navigation -->
+				</div> <!-- .container -->
+			</header> <!-- .site-header -->
+            <div id="content" class="site-content default-full-width">
+              <div class="container">
+                <div class="inner-wrapper">
+                  <div id="primary" class="content-area">
+                    <main id="main" class="site-main">
+						<div class="section-my-account">
+							 <div class="login-account">
+							    <div class="user-acc-header">
+							       <img src="images/blog-single/author1.png" alt="">
+							       <h3>Login</h3>
+							    </div>
+							    <div class="content-body">
+							       <form>
+							          <p><label>User name</label><input type="email" placeholder="Username OR Email address"></p>
+							          <p><label>Password</label><input type="password" placeholder="Password"></p>
+							          <p><input type="submit" class="custom-button button-small" value="Login"></p>
+							       </form>
+							    </div>
+							    <div class="user-acc-footer">
+							       <p>New user? <a class="register-account-link" href="login.html#">Register</a></p>
+							    </div>
+							 </div> <!-- .section-my-account -->
+						</div><!-- .section-my-account -->
+                    </main> <!-- #main -->
+                  </div> <!-- #primary -->
+                </div> <!-- #inner-wrapper -->
+              </div><!-- .container -->
+            </div> <!-- #content-->
+			<div class="footer-container">
+				<div id="footer-widgets">
+					<div class="container">
+						<div class="inner-wrapper">
+							<aside  class="col-grid-3 footer-widget-area">
+								<h3 class="widget-title">ABOUT US</h3>
+								<div class="widget-quick-contact">
+		                              <p><i class="fas fa-phone" aria-hidden="true"></i> (800) 123 45 67 </p>
+		                              <p><i class="fas fa-envelope" aria-hidden="true"></i> info@anilbasnet.com </p>
+		                              <p><i class="far fa-map"></i> 121 King Street, Australia </p>
+	                         	 </div>
+								<div class="social-links brand-color circle">
+									<ul>
+										<li><a href="http://facebook.com" target="_blank"></a></li>
+										<li><a href="http://youtube.com" target="_blank"></a></li>
+										<li><a href="http://twitter.com" target="_blank"></a></li>
+										<li><a href="http://linkedin.com" target="_blank">></a></li>
+									</ul>
+								</div> <!-- .social-links -->
+							</aside> <!-- .footer-widget-area -->
+							<aside  class="col-grid-3 footer-widget-area">
+								<h3 class="widget-title">MY ACCOUNT</h3>
+									<ul>
+		                                <li><a href="login.html#">My Account</a></li>
+		                                <li><a href="login.html#">Shopping cart</a></li>
+		                                <li><a href="login.html#l">Wishlist</a></li>
+		                                <li><a href="login.html#">Checkout</a></li>
+		                                <li><a href="login.html#">Contact</a></li>
+		                            </ul>
+							</aside> <!-- .footer-widget-area -->
+							<aside  class="col-grid-3 footer-widget-area">
+								<h3 class="widget-title">INFORMATION</h3>
+								<ul>
+                                 <li><a href="login.html#">About us</a></li>
+                                 <li><a href="login.html#">Order History</a></li>
+                                 <li><a href="login.html#">Returns</a></li>
+                                 <li><a href="login.html#">Custom Service</a></li>
+                                 <li><a href="login.html#">Terms &amp; Condition</a></li>
+                              </ul>
+							</aside> <!-- .footer-widget-area -->
+							<aside  class="col-grid-3 footer-widget-area">
+								<h3 class="widget-title">QUICK LINKS</h3>
+								<ul>
+	                                <li><a href="login.html#">about us</a></li>
+	                                <li><a href="login.html#">Delivery infomation</a></li>
+	                                <li><a href="login.html#">Terms &amp; Conditions</a></li>
+	                                <li><a href="login.html#">FAQ'S</a></li>
+	                                <li><a href="login.html#">Services</a></li>
+	                            </ul>
+							</aside> <!-- .footer-widget-area -->
+						</div><!-- .inner-wrapper -->
+					</div>  <!-- .container -->
+				</div> <!-- #footer-widgets -->
+				<footer id="colophon" class="site-footer">
+					<div class="colophon-bottom">
+						<div class="container">
+							<div class="inner-wrapper">
+							<div class="col-grid-4 copyright text-alignleft">
+								<p> Copyright © 2018 <a href="../../index.html">Byapar</a>. All rights reserved. </p>
+							</div>
+							<div class="col-grid-4 copyright">
+								<p><span>We Accept: </span> <img src="images/payment-getway.png" alt="payment"> </p>
+							</div>
+							<div class="col-grid-4 site-info text-alignright ">
+								<p>Byapar by <a  rel="" href="https://anilbasnet.com/demo/byapar/anilbasnet.com" target="_blank">Anil Basnet</a> </p>
+							</div> <!-- .site-info -->
+							</div><!-- .inner-wrapper -->
+						</div> <!-- .container -->
+					</div> <!-- .colophon-bottom -->
+				</footer> <!-- footer ends here -->
+			</div><!-- footer-container -->
+		</div> <!--#page-->
+		<div id="btn-scrollup">
+			<a  title="Go Top"  class="scrollup button-circle" href="login.html#"><i class="fas fa-angle-up"></i></a>
+		</div>
+
+        {% block maincontent %}
+        {% endblock maincontent %}
+
+		
+
+
+
+        <script  src=" {% static "third-party/jquery/jquery-3.2.1.min.js" %}"></script>
+        <script  src=" {% static "third-party/jquery/jquery-migrate-3.0.0.min.js"%}"></script>
+        <!--Include all compiled plugins (below), or include individual files as needed-->
+        <script  src=" {% static "third-party/sidr/js/jquery.sidr.js"%}"></script>
+        <script  src=" {% static "third-party/cycle2/jquery.cycle2.js"%}"></script>
+        <script  src=" {% static "third-party/slick/js/slick.min.js"%}"></script>
+        <script  src=" {% static "third-party/wow/js/wow.min.js"%}"></script>
+        <script src=" {% static "js/jquery-ui.min.js"%}"></script>
+        <script  src=" {% static "third-party/magnific-popup-master/js/jquery.magnific-popup.js"%}"></script>
+        <script  src=" {% static "third-party/accordionjs/js/accordion.min.js"%}"></script>
+        <script  src=" {% static "js/contact.js"%}"></script>
+        <script  src=" {% static "js/custom.js"%}"></script>
+        <script  src=" {% static "js/color-switcher.js"%}"></script>
+        {% block extrajs %}
+        {% endblock extrajs %}
+
+	</body>
+</html>
