@@ -1,2 +1,46 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block maincontent %}
+
+    <div class="container">
+        <div class="inner-wrapper">
+            <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                <div class="section-my-account">
+                        <div class="login-account">
+                        <div class="user-acc-header">
+                            <img src=" {% static "images/blog-single/author1.png"%}" alt="Login">
+                            <h3>Login</h3>
+                        </div>
+                        <div class="content-body">
+                            {% include "support_html/error_message.html" %}
+                            <form method="post" id="login-form">
+                                {% csrf_token %}
+                                <p>
+                                    <label>User name</label>
+                                    <input type="text" placeholder="Username OR Email address" name="username">
+                                </p>
+                                <p>
+                                    <label>Password</label>
+                                    <input type="password" placeholder="Password" name="password">
+                                </p>
+                                <p>
+                                    <input type="submit" class="custom-button button-small" value="Login">
+                                </p>
+                            </form>
+                        </div>
+                        <div class="user-acc-footer">
+                            <p>New user? <a class="register-account-link" href="login.html#">Register</a></p>
+                        </div>
+                        </div> <!-- .section-my-account -->
+                </div><!-- .section-my-account -->
+            </main> <!-- #main -->
+            </div> <!-- #primary -->
+        </div> <!-- #inner-wrapper -->
+    </div><!-- .container -->
+
+{% endblock maincontent %}
 

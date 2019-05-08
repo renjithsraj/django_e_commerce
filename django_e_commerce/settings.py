@@ -83,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'home.context_processors.add_variable_to_context',
             ],
         },
     },
@@ -138,7 +139,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 #Forms#
 
@@ -149,3 +150,14 @@ EMAIL_HOST_USER = 'info@inzane.in'
 EMAIL_HOST_PASSWORD = 'c1UbkmjZBDkbGhoriCCMxA'
 EMAIL_PORT = 587
 
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+STATIC_ROOT = "staticstorage"
+
+# STATIC_ROOT = [os.path.join(BASE_DIR, "staticstorage")]
+
+LOGIN_REDIRECT_URL = '/'
