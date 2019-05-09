@@ -49,22 +49,7 @@ class Section(MPTTModel):
 
     def __unicode__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            # create a slug that's unique to siblings
-            name = unidecode(self.name)
-            unique_slugify(self, name)
-
-            # now create a URL based on parent's url + slug
-            if self.parent:
-                self.url = '%s/%s' % (self.parent.url, self.slug)
-            else:
-                self.url = self.slug
-
-        super(Section, self).save(*args, **kwargs)
-
-
+        
 # Product
 class Products(models.Model):
 
