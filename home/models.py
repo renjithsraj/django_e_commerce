@@ -12,10 +12,10 @@ class SiteConfig(models.Model):
     owner_name = models.CharField(_("Owner Name"), max_length=50)
     site_desc = models.CharField(max_length=200, null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
-    logo = ProcessedImageField(upload_to='images/category',
+    logo = ProcessedImageField(upload_to='images/site',
                                          format='JPEG',
                                          options={'quality': 60}, null=True, blank=True, verbose_name="Logo(height:25px,width:33px)")
-    fav_icon = ProcessedImageField(upload_to='images/category',
+    fav_icon = ProcessedImageField(upload_to='images/site',
                                          format='JPEG',
                                          options={'quality': 60}, null=True, blank=True, verbose_name="Favicon(height:16px,width:19px)")
     phone_number = models.CharField(max_length=25, null=True, blank=True)
@@ -36,8 +36,8 @@ class SiteConfig(models.Model):
         return super(SiteConfig, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = _("SiteCOnfig")
-        verbose_name_plural = _("SiteCOnfigs")
+        verbose_name = _("SiteConfig")
+        verbose_name_plural = _("SiteConfigs")
 
     def __str__(self):
         return self.site_name
@@ -48,9 +48,9 @@ class SiteConfig(models.Model):
         return  self.logo.url
     
     def get_favicon(self):
-        if not self.faviicon:
+        if not self.fav_icon:
             return "/static/site_config/favicon.png"
-        return self.faviicon.url
+        return self.fav_icon.url
 
 
 

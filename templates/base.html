@@ -65,11 +65,56 @@
 				</ul>
 			</div> 
 			<!-- #mob-menu -->
+			<div id="tophead">
+				<div class="container">
+						<div class="top-head-left">
+							<div class="top-head-col multi-language pull-left">
+								<a class="multi-language-current" href="#">
+									<img alt="language" src="{% static "images/language/en.png" %}">English</a>
+								<ul class="multi-language-sub">
+								</ul>
+							</div> <!-- .multi-language -->
+							<div class="top-head-col multi-currency pull-left">
+								<ul>
+								<li> <a class="multi-language-current" href="#"> $ USD</a>
+									<ul class="multi-currency-sub">
+										<li><a href="#">&#8377; INR</a>
+									</ul>
+								</li>
+								</ul>
+							</div> <!-- .multi-currency -->
+							<div class="top-head-col quick-contact quick-contact-2 pull-left">
+								<ul>
+									<li class="quick-call"><i class="fas fa-phone-volume"></i> <a href="#"></a>{{phone_number}} </li>
+								</ul> <!-- top-head-col -->
+							</div>
+						</div><!-- .top-head-left -->
+						<div class="top-head-right pull-right">
+					       <a href="home-v1.html#" class="header-link" title="Help"><i class="fas fa-phone"></i><span class="header-text">Help</span></a>
+					       <a href="home-v1.html" class="header-link" title="More"><i class="fas fa-th-large"></i><span class="header-text">More</span></a>
+					       <div class="header-link my-account my-login-popup">
+						   		{% if user.is_authenticated %}
+									<a title="View Profile" >
+						       			<i class="fas fa-user"></i><span class="header-link" style="margin-right: 12px;">{{user.get_full_name}}</span>
+						       		</a>
+
+						       		<a title="Logout"  href="{% url 'logout' %}">
+						       			<i class="fas fa-sign-out-alt"></i><span class="header-link">Logout</span>
+						       		</a>
+								{% else %}
+									<a title="Login" class="login-popup-btn">
+						       			<i class="fas fa-sign-out-alt"></i><span class="header-text">Login</span>
+						       		</a>
+								{% endif %}
+						    </div><!-- .header-link -->
+						</div><!-- .top-head-right -->
+					</div> <!-- .container -->
+			</div>
 			<header id="masthead" class="site-header sticky-enabled">
 				<div class="container">
 					<div class="site-branding pull-left">
 						<div id="site-identity">
-							<h1 class="site-title"><a href=""  rel="home"><img alt="logo" class="site-logo" src="{{site_logo}}">{{website_name}}</a></h1>
+							<h1 class="site-title"><a href=""  rel="home"><img alt="logo" class="site-logo" src="{{site_logo}}" style="width: 53px;">{{website_name}}</a></h1>
 						</div><!-- #site-identity -->
 					</div><!-- .site-branding -->
 					<a href="contact.html" Class="custom-button custom-secondary-button pull-right quick-link-button button-small"> Quick Contact </a>
@@ -226,6 +271,112 @@
 				</footer> <!-- footer ends here -->
 			</div><!-- footer-container -->
 		</div> <!--#page-->
+		<div class="login-popup white-popup-block mfp-hide" id="login-popup">
+        	<div class="inner-wrapper">
+        		<div class="col-grid-6">
+        			<div class="login-account">
+        				<div class="user-acc-header">
+        					<img src="images/blog-single/author1.png" alt="">
+        					<h3>Login</h3>
+        				</div>
+        				<div class="content-body">
+        					<form>
+        						<input type="email" placeholder="Username OR Email address">
+        						<input type="password" placeholder="Password">
+        						<input type="submit" class="custom-button button-small" value="Login">
+        					</form>
+        				</div>
+        			</div> <!-- .login-account -->
+        			<div class="share-on-us text-aligncenter clear-fix social-links circle brand-color">
+		        	<h3>Login With :</h3>
+			            <ul>
+			              <li><a target="_blank" href="http://facebook.com">Facebook</a></li>
+			              <li><a target="_blank" href="http://twitter.com">Twitter</a></li>
+			              <li><a target="_blank" href="http://linkedin.com">Linkedln</a></li>
+			              <li><a target="_blank" href="http://youtube.com">Linkedln</a></li>
+			            </ul>
+			        </div>
+        		</div><!-- .col-grid-6 -->
+        		<div class="col-grid-6">
+        			<div class="register-account">
+        				<div class="user-acc-header">
+        					<h3>Register</h3>
+        				</div>
+        				<div class="content-body">
+        					<form>
+        						<input type="text" placeholder="Name">
+        						<input type="text" placeholder="Mobile number">
+        						<input type="email" placeholder="Email address">
+        						<input type="password" placeholder="Password">
+        						<input type="submit" class="btn btn-custom2" value="Register">
+        					</form>
+        				</div>
+        			</div><!-- .register-account -->
+        			<div class="share-on-us text-aligncenter clear-fix social-links circle brand-color">
+		        	<h3>Register With :</h3>
+			            <ul>
+			              <li><a target="_blank" href="http://facebook.com">Facebook</a></li>
+			              <li><a target="_blank" href="http://twitter.com">Twitter</a></li>
+			              <li><a target="_blank" href="http://linkedin.com">Linkedln</a></li>
+			              <li><a target="_blank" href="http://youtube.com">Linkedln</a></li>
+			            </ul>
+			        </div>
+        		</div><!-- .col-grid-6 -->
+        	</div><!-- .inner-wrapper -->
+        </div><!-- .user-account-popup -->
+		<div class="login-popup white-popup-block mfp-hide" id="login-popup">
+        	<div class="inner-wrapper">
+        		<div class="col-grid-6">
+        			<div class="login-account">
+        				<div class="user-acc-header">
+        					<img src="images/blog-single/author1.png" alt="">
+        					<h3>Login</h3>
+        				</div>
+        				<div class="content-body">
+        					<form>
+        						<input type="email" placeholder="Username OR Email address">
+        						<input type="password" placeholder="Password">
+        						<input type="submit" class="custom-button button-small" value="Login">
+        					</form>
+        				</div>
+        			</div> <!-- .login-account -->
+        			<div class="share-on-us text-aligncenter clear-fix social-links circle brand-color">
+		        	<h3>Login With :</h3>
+			            <ul>
+			              <li><a target="_blank" href="http://facebook.com">Facebook</a></li>
+			              <li><a target="_blank" href="http://twitter.com">Twitter</a></li>
+			              <li><a target="_blank" href="http://linkedin.com">Linkedln</a></li>
+			              <li><a target="_blank" href="http://youtube.com">Linkedln</a></li>
+			            </ul>
+			        </div>
+        		</div><!-- .col-grid-6 -->
+        		<div class="col-grid-6">
+        			<div class="register-account">
+        				<div class="user-acc-header">
+        					<h3>Register</h3>
+        				</div>
+        				<div class="content-body">
+        					<form>
+        						<input type="text" placeholder="Name">
+        						<input type="text" placeholder="Mobile number">
+        						<input type="email" placeholder="Email address">
+        						<input type="password" placeholder="Password">
+        						<input type="submit" class="btn btn-custom2" value="Register">
+        					</form>
+        				</div>
+        			</div><!-- .register-account -->
+        			<div class="share-on-us text-aligncenter clear-fix social-links circle brand-color">
+		        	<h3>Register With :</h3>
+			            <ul>
+			              <li><a target="_blank" href="http://facebook.com">Facebook</a></li>
+			              <li><a target="_blank" href="http://twitter.com">Twitter</a></li>
+			              <li><a target="_blank" href="http://linkedin.com">Linkedln</a></li>
+			              <li><a target="_blank" href="http://youtube.com">Linkedln</a></li>
+			            </ul>
+			        </div>
+        		</div><!-- .col-grid-6 -->
+        	</div><!-- .inner-wrapper -->
+        </div><!-- .user-account-popup -->
 		<div id="btn-scrollup">
 			<a  title="Go Top"  class="scrollup button-circle" href="login.html#"><i class="fas fa-angle-up"></i></a>
 		</div>
