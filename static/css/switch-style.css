@@ -1,0 +1,202 @@
+.style-switch {
+    opacity: 1;
+    position: fixed;
+    z-index: 9999;
+    top: 85px;   
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    -webkit-backface-visibility: hidden;
+}
+
+.style-switch .fa{
+    font-size: 20px;
+}
+
+.style-switch.left {
+    left: -152px;
+}
+
+.style-switch.right {
+    right: -152px;
+}
+
+.style-switch .switched-options {
+    position: relative;
+    width: 152px;
+    text-align: left;
+    padding: 12px;
+}
+
+.style-switch .config-title {
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+
+
+.style-switch ul .p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 10px;
+}
+
+.style-switch ul li:hover {
+    cursor: pointer;
+}
+
+.style-switch ul li a {
+    font-size: 14px;
+    color: #808080;
+    letter-spacing: 0.1px;
+}
+
+.style-switch ul li a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.style-switch ul li a.buy-this-theme {
+    display: inline-block;
+    margin-top: 5px;
+    color: #111;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.style-switch ul.styles {
+    margin-top: 15px;
+}
+
+.style-switch ul.styles li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.style-switch ul.styles li.no-margin {
+    margin-right: 0px;
+}
+
+.style-switch ul.styles li .color {
+    display: block;
+    width: 35px;
+    height: 30px;
+    border-radius: 1px;
+}
+.style-switch ul.styles li .color:hover{
+    opacity: .9;
+}
+.style-switch ul.styles li .amber {
+    background: #FFC107;
+}
+
+.style-switch ul.styles li .blue-grey {
+    background: #607D8B;
+}
+
+.style-switch ul.styles li .blue{
+    background: #2196F3;
+}
+
+.style-switch ul.styles li .cyan {
+    background: #00BCD4;
+}
+
+.style-switch ul.styles li .deep-orange {
+    background: #FF5722;
+}
+
+.style-switch ul.styles li .deep-purle {
+    background: #673AB7;
+}
+
+.style-switch ul.styles li .green {
+    background: #4CAF50;
+}
+
+.style-switch ul.styles li .indigo {
+    background: #3F51B5;
+}
+
+.style-switch ul.styles li .light-blue {
+    background: #03A9F4;
+}
+
+.style-switch ul.styles li .light-green {
+    background: #8BC34A;
+}
+
+.style-switch ul.styles li .lime {
+    background: #CDDC39;
+}
+
+.style-switch ul.styles li .orange {
+    background: #FF9800;
+}
+
+.style-switch ul.styles li .palette {
+    background: #795548;
+}
+
+.style-switch ul.styles li .pink {
+    background: #E91E63;
+}
+
+.style-switch ul.styles li .purple {
+    background: #9C27B0;
+}
+
+.style-switch ul.styles li .red {
+    background: #F44336;
+}
+
+.style-switch ul.styles li .teal {
+    background: #009688;
+}
+
+.style-switch ul.styles li .black {
+    background: #333333;
+}
+
+
+.style-switch .switch-button {
+    opacity: 1 !important;
+   /* background: #f5f5f5;*/
+    padding: 10px;
+    font-size: 24px;
+    padding-bottom: 8px;
+    /*color: #272727;*/
+    position: absolute;
+    overflow: hidden;
+    top: 30px;
+    right: -40px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.style-switch.right .switch-button {
+    left: -40px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.style-switch .switch-button:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.style-switch p {
+    color: #000;
+}
+
+.switch-btn{
+    margin-top: 10px;
+    font-weight: 600;
+}
+.switch-btn li a:hover{
+  color: #000000;
+}

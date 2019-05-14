@@ -1,1921 +1,893 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} Home{% endblock title %}
-{% block maincontent %}
-<div class="container">
-<div class="inner-wrapper">
-   <div id="primary" class="content-area">
-      <main id="main" class="site-main" >
-         <aside class="section minimal-padding no-padding-btm">
-            <div class="container">
-               <div class="inner-wrapper">
-                  <div class="col-grid-3 main-cat-list pull-left">
-                     <div class="widget-category-menu widget-category">
-                        <h3>Product Categories</h3>
-                        <ul>
-                           <li class="active"><a href="home-v2.html#">Outerwear</a></li>
-                           <li><a href="home-v2.html#">Shorts</a></li>
-                           <li class="has-child">
-                              <a href="home-v2.html#">Winter</a>
-                              <ul class="sub-menu">
-                                 <li><a href="home-v2.html#">Jackets</a></li>
-                                 <li><a href="home-v2.html#">Sweaters</a></li>
-                                 <li class="has-child">
-                                    <a href="home-v2.html#">Accessories</a>
-                                    <ul class="sub-menu">
-                                       <li><a href="home-v2.html#">Jackets</a></li>
-                                       <li><a href="home-v2.html#">Sweaters</a></li>
-                                       <li><a href="home-v2.html#">Dresses</a></li>
-                                       <li><a href="home-v2.html#">Denim</a></li>
-                                    </ul>
-                                 </li>
-                                 <li><a href="home-v2.html#">Denim</a></li>
-                                 <li><a href="home-v2.html#">Skirts</a></li>
-                                 <li><a href="home-v2.html#">Sweaters</a></li>
-                                 <li><a href="home-v2.html#">Accessories</a></li>
-                              </ul>
-                           </li>
-                           <li><a href="home-v2.html#">Jackets</a></li>
-                           <li><a href="home-v2.html#">Sweaters</a></li>
-                           <li><a href="home-v2.html#">Dresses</a></li>
-                           <li><a href="home-v2.html#">Denim</a></li>
-                           <li><a href="home-v2.html#">Skirts</a></li>
-                           <li><a href="home-v2.html#">Sweaters</a></li>
-                           <li><a href="home-v2.html#">Accessories</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-grid-9 section-featured-slider pull-right">
-                     <div id="main-slider"  class="cycle-slideshow  featrued-slider" data-cycle-fx="fadeout"  data-cycle-speed="1000"  data-cycle-pause-on-hover="true"  data-cycle-loader="true"  data-cycle-log="false"  data-cycle-swipe="true" data-cycle-auto-height="container"  data-cycle-timeout="3000"  data-cycle-slides="article" data-pager-template='<span class="pager-box"></span>'>
-                        <!-- prev/next links -->
-                        <div class="cycle-prev"><i class="fas fa-angle-left" aria-hidden="true"></i></div>
-                        <div class="cycle-next"><i class="fas fa-angle-right" aria-hidden="true"></i></div>
-                        <!-- pager -->
-                        <div class="cycle-pager"> </div>
-                        <article class="first">
-                           <div class="caption">
-                              <div class="cycle-caption small-text text-alignleft">
-                                 <p>NEWARRIALS</p>
-                                 <h3><a href="home-v2.html#" >UP TO 50% OFF</a></h3>
-                                 <h4>End of Season Sale</h4>
-                                 <div class="slider-buttons">
-                                    <a class="custom-button" href="home-v2.html#">Shop Now</a>
-                                 </div>
-                                 <!-- .slider-buttons -->
-                              </div>
-                              <!-- .cycle-caption -->
-                           </div>
-                           <!-- .caption -->
-                           <a href= "home-v2.html#"  >
-                           <img src="{%static "images/slider/slide-7.jpg" %}" alt="Slider" />
-                           </a>
-                        </article>
-                        <!-- article -->
-                        <article>
-                           <div class="caption">
-                              <div class="cycle-caption small-text text-alignleft">
-                                 <p>SUMMER SALE </p>
-                                 <h3><a href="home-v2.html#" >UP TO 50% OFF</a></h3>
-                                 <h4>NOW STARTING AT $99.00	</h4>
-                                 <div class="slider-buttons">
-                                    <a class="custom-button" href="home-v2.html#">Shop Now</a>
-                                 </div>
-                                 <!-- .slider-buttons -->
-                              </div>
-                              <!-- .cycle-caption -->
-                           </div>
-                           <!-- .caption -->
-                           <a href="home-v2.html#">
-                           <img src="{%static "images/slider/slide-8.jpg" %}" alt="Slider" />
-                           </a>
-                        </article>
-                        <!-- article -->
-                        <article>
-                           <div class="caption">
-                              <div class="cycle-caption small-text text-alignleft">
-                                 <p>For Women</p>
-                                 <h3><a href="home-v2.html#">Get 50% off</a></h3>
-                                 <h4>Winter Collections</h4>
-                                 <div class="slider-buttons">
-                                    <a class="custom-button" href="home-v2.html#">Shop Now</a>
-                                 </div>
-                                 <!-- .slider-buttons -->
-                              </div>
-                              <!-- .cycle-caption -->
-                           </div>
-                           <!-- .caption -->
-                           <a href="home-v2.html#">
-                           <img src="{%static "images/slider/slide-9.jpg" %}" alt="Slider" />
-                           </a>
-                        </article>
-                        <!-- article -->
-                     </div>
-                     <!-- #main-slider -->
-                  </div>
-                  <!-- .section-featured-slider -->
-               </div>
-            </div>
-         </aside>
-         <!-- .section-featured-slider -->
-         <aside class="section section-pormo">
-            <div class="container">
-               <div class="inner-wrapper">
-                  <div class="pormo-item col-grid-6">
-                     <div class="pormo-inner-wrapper zoom-effect-hover-container">
-                        <div class="pormo-thumb zoom-effect">
-                           <a href="home-v2.html#"><img alt="Prmo" src="{%static "images/shop/pormo-1.jpg" %}"></a>
-                           <div class="pormo-info text-alignright">
-                              <span>BACKPACK</span>
-                              <h3><a href="home-v2.html#"> Summer Sale<br> 50% 0FF</a></h3>
-                              <div class="pormo-buttons">
-                                 <a class="custom-button button-small" href="home-v2.html#">Shop Now</a>
-                              </div>
-                              <!-- .pormo-buttons -->
-                           </div>
-                        </div>
-                        <!-- .pormo-thumb -->
-                     </div>
-                     <!-- .pormo-inner-wrapper -->
-                  </div>
-                  <!-- .pormo-item -->
-                  <div class="pormo-item col-grid-6">
-                     <div class="pormo-inner-wrapper zoom-effect-hover-container">
-                        <div class="pormo-thumb zoom-effect">
-                           <a href="home-v2.html#"><img alt="Prmo" src="{%static "images/shop/pormo-2.jpg" %}"></a>
-                           <div class="pormo-info text-alignright">
-                              <span>NEWARRIALS</span>
-                              <h3><a href="home-v2.html#">Summer<br> Collection  2019</a></h3>
-                              <div class="pormo-buttons">
-                                 <a class="custom-button button-small" href="home-v2.html#">Shop Now</a>
-                              </div>
-                              <!-- .pormo-buttons -->
-                           </div>
-                        </div>
-                        <!-- .pormo-thumb -->
-                     </div>
-                     <!-- .pormo-inner-wrapper -->
-                  </div>
-                  <!-- .pormo-item -->
-               </div>
-               <!-- .inner-wrapper -->
-            </div>
-            <!-- .container -->
-         </aside>
-         <aside  class="section no-padding">
-            <div class="section-product-categorys">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">Popular Category</h2>
-                  </div>
-                  <div class="inner-wrapper">
-                     <div class="product-categorys-inner-wrapper iteam-col-4 section-carousel-enabled byapr-carousel" data-slick="{&quot;slidesToShow&quot;:4,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="category" src="{%static "images/shop/cat1.jpg" %}"></a>
-                              </div>
-                              <!-- .product-thumb -->
-                              <!-- .product-cats -->
-                              <h3 class="category-title"><a href="home-v2.html#" title="title">Women's Winter <span class="count"> 14</span> </a></h3>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="category" src="{%static "images/shop/cat2.jpg" %}"></a>
-                              </div>
-                              <!-- .product-thumb -->
-                              <!-- .product-cats -->
-                              <h3 class="category-title"><a href="home-v2.html#" title="title">Summer Fashion <span class="count"> 12 </span></a></h3>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="category" src="{%static "images/shop/cat3.jpg" %}"></a>
-                              </div>
-                              <!-- .product-thumb -->
-                              <!-- .product-cats -->
-                              <h3 class="category-title"><a href="home-v2.html#" title="title">Men's Fashion <span class="count"> 20</span></a></h3>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="category" src="{%static "images/shop/cat4.jpg" %}"></a>
-                              </div>
-                              <!-- .product-thumb -->
-                              <!-- .product-cats -->
-                              <h3 class="category-title"><a href="home-v2.html#" title="title">Men's Jeans <span class="count"> 14</span></a></h3>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="category" src="{%static "images/shop/cat5.jpg" %}"></a>
-                              </div>
-                              <!-- .product-thumb -->
-                              <!-- .product-cats -->
-                              <h3 class="category-title"><a href="home-v2.html#" title="title">Women's <span class="count"> 14</span></a></h3>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="category" src="{%static "images/shop/cat6.jpg" %}"></a>
-                              </div>
-                              <!-- .product-thumb -->
-                              <!-- .product-cats -->
-                              <h3 class="category-title"><a href="home-v2.html#" title="title">Bags <span class="count"> 14</span></a></h3>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                     </div>
-                     <!-- .product-categorys-inner-wrapper -->
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-product-categorys -->
-         </aside>
-         <!-- .section -->
-         <aside  class="section">
-            <div class="section-products">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">Featured Product</h2>
-                  </div>
-                  <div class="inner-wrapper">
-                     <div class="products-inner-wrapper">
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{% static "images/shop/product-1.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated onsale">-16%</span>
-                                 <!-- .product-ratings -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cold Shoulder Wrap Top</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <del class="dis-price">$65.99</del>
-                                    <span class="fix-price">$45.99</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-2.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Plaid Flounce Skirt</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$600</span>
-                                 </div>
-                                 <!-- .product-action-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-3.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Pocket Flare Dress</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <del class="dis-price">$500</del>
-                                    <span class="fix-price">$450</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-4.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated hot-item ">NEW</span>
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Asymmetric Ruffle Skirt</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$500</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="more-wrapper clear-fix">
-                           <a href="home-v2.html#" class="custom-button">Explore More</a>
-                        </div>
-                     </div>
-                     <!-- .products-inner-wrapper -->
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-products -->
-         </aside>
-         <!-- .section -->
-         <aside class="section cta-background background-img attachment-fixed overlay-enabled">
-            <div class="section-call-to-action">
-               <div class="container">
-                  <div class="inner-wrapper">
-                     <div class="call-to-action-content col-grid-12 text-aligncenter">
-                        <div class="call-to-action-description ">
-                           <p>Limited Time Offer!</p>
-                           <h2 class="big-size">TOM FORD COLLECTION</h2>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <br />ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
-                        </div>
-                        <!-- .call-to-action-description -->
-                        <div class="call-to-action-buttons">
-                           <a href="home-v2.html#" class="custom-button  button-medium">Our Services</a>
-                        </div>
-                        <!-- .call-to-action-buttons -->
-                     </div>
-                     <!-- .call-to-action-content -->
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .call-to-action" -->
-         </aside>
-         <!-- .section -->
-         <aside  class="section">
-            <div class="section-products">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">New Products</h2>
-                  </div>
-                  <div class="inner-wrapper">
-                     <div class="products-inner-wrapper iteam-col-4 section-carousel-enabled byapr-carousel" data-slick="{&quot;slidesToShow&quot;:4,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-5.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated onsale">-16%</span>
-                                 <!-- .product-ratings -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cold Shoulder Faux</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <del class="dis-price">$65.99</del>
-                                    <span class="fix-price">$45.99</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-6.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Mixed Stripe Skirt</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$600</span>
-                                 </div>
-                                 <!-- .product-action-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-7.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cocktail Dress</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <del class="dis-price">$500</del>
-                                    <span class="fix-price">$450</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-8.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated hot-item ">NEW</span>
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Stripe Tie</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$500</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-9.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated hot-item ">NEW</span>
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Floral Midi Skirt</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$500</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                     </div>
-                     <!-- .products-inner-wrapper -->
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-products -->
-         </aside>
-         <!-- .section -->
-         <aside  class="section">
-            <div class="section-products">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">Our Products</h2>
-                  </div>
-                  <div class="products-tab-container">
-                     <ul class="product-tab-list">
-                        <li class="tab active" data-carousel="product-tabs-2-best"><a href="home-v2.html#product-tabs-2-best" class="active">Best Seller</a></li>
-                        <li class="tab " data-carousel="product-tabs-2-new"><a href="home-v2.html#product-tabs-2-new">New Products</a></li>
-                        <li class="tab " data-carousel="product-tabs-2-featured"><a href="home-v2.html#product-tabs-2-featured">Featured</a></li>
-                     </ul>
-                     <div class="inner-wrapper">
-                        <div id="product-tabs-2-best">
-                           <div class="products-inner-wrapper section-carousel-enabled" data-slick="{&quot;slidesToShow&quot;:4,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-5.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated onsale">-16%</span>
-                                       <!-- .product-ratings -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cold Shoulder Faux One</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <del class="dis-price">$65.99</del>
-                                          <span class="fix-price">$45.99</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-6.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Mixed Stripe Skirt</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$600</span>
-                                       </div>
-                                       <!-- .product-action-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-7.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cocktail Dress</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <del class="dis-price">$500</del>
-                                          <span class="fix-price">$450</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-8.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated hot-item ">NEW</span>
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Stripe Tie</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$500</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-9.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated hot-item ">NEW</span>
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Floral Midi Skirt</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$500</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                           </div>
-                           <!-- .products-inner-wrapper -->
-                        </div>
-                        <div id="product-tabs-2-new">
-                           <div class="products-inner-wrapper  section-carousel-enabled" data-slick="{&quot;slidesToShow&quot;:4,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-6.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated onsale">-16%</span>
-                                       <!-- .product-ratings -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cold Shoulder Faux</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <del class="dis-price">$65.99</del>
-                                          <span class="fix-price">$45.99</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-7.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Mixed Stripe Skirt</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$600</span>
-                                       </div>
-                                       <!-- .product-action-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-8.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cocktail Dress</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <del class="dis-price">$500</del>
-                                          <span class="fix-price">$450</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-9.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated hot-item ">NEW</span>
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Stripe Tie</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$500</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-10.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated hot-item ">NEW</span>
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Floral Midi Skirt</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$500</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                           </div>
-                           <!-- .products-inner-wrapper -->
-                        </div>
-                        <div id="product-tabs-2-featured">
-                           <div class="products-inner-wrapper section-carousel-enabled" data-slick="{&quot;slidesToShow&quot;:4,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-11.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated onsale">-16%</span>
-                                       <!-- .product-ratings -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cold Shoulder Faux</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <del class="dis-price">$65.99</del>
-                                          <span class="fix-price">$45.99</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-12.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Mixed Stripe Skirt</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$600</span>
-                                       </div>
-                                       <!-- .product-action-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-13.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Cocktail Dress</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <del class="dis-price">$500</del>
-                                          <span class="fix-price">$450</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-14.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated hot-item ">NEW</span>
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Stripe Tie</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$500</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                              <div class="product-item col-grid-3">
-                                 <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                                    <div class="product-thumb zoom-effect">
-                                       <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-15.jpg" %}"></a>
-                                       <div class="pruduct-buttons">
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                          <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                          <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                       </div>
-                                       <!-- .product-buttons -->
-                                       <div class="quick-view">
-                                          <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                       </div>
-                                       <!-- .quick-view -->
-                                       <span class="ribbon-rotated hot-item ">NEW</span>
-                                    </div>
-                                    <!-- .product-thumb -->
-                                    <div class="product-item-details">
-                                       <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Floral Midi Skirt</a></h3>
-                                       <div class="product-ratings">
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star active"></span>
-                                          <span class="star"></span>
-                                          <span class="star"></span>
-                                       </div>
-                                       <div class="product-price-container">
-                                          <span class="fix-price">$500</span>
-                                       </div>
-                                       <!-- .product-price-container -->
-                                    </div>
-                                 </div>
-                                 <!-- .product-item-wrapper -->
-                              </div>
-                              <!-- .product-item -->
-                           </div>
-                           <!-- .products-inner-wrapper -->
-                        </div>
-                     </div>
-                     <!-- .inner-wrapper -->
-                  </div>
-                  <!-- .products-tab-container -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-products -->
-         </aside>
-         <!-- .section -->
-         <aside class="section dark-background">
-            <div class="section-associate-logo">
-               <div class="container">
-                  <div class="associate-logo-section associate-logo-col-5">
-                     <div class="iteam-col-5 section-carousel-enabled byapr-carousel" data-slick="{&quot;slidesToShow&quot;:5,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}"">
-                        <div class="associate-logo-item">
-                           <a href="home-v2.html#"><img alt="Associate Logo" src="{%static "images/client-logo/client-new-lite-1.png" %}"></a>
-                        </div>
-                        <!-- .plan-item  -->
-                        <div class="associate-logo-item">
-                           <a href="home-v2.html#"><img alt="Associate Logo" src="{%static "images/client-logo/client-new-lite-2.png" %}"></a>
-                        </div>
-                        <!-- .plan-item  -->
-                        <div class="associate-logo-item">
-                           <a href="home-v2.html#"><img alt="Associate Logo" src="{%static "images/client-logo/client-new-lite-3.png" %}"></a>
-                        </div>
-                        <!-- .plan-item  -->
-                        <div class="associate-logo-item">
-                           <a href="home-v2.html#"><img alt="Associate Logo" src="{%static "images/client-logo/client-new-lite-4.png" %}"></a>
-                        </div>
-                        <!-- .plan-item  -->
-                        <div class="associate-logo-item">
-                           <a href="home-v2.html#"><img alt="Associate Logo" src="{%static "images/client-logo/client-new-lite-5.png" %}"></a>
-                        </div>
-                        <!-- .plan-item  -->
-                        <div class="associate-logo-item">
-                           <a href="home-v2.html#"><img alt="Associate Logo" src="{%static "images/client-logo/client-new-lite-6.png" %}"></a>
-                        </div>
-                        <!-- .plan-item  -->
-                     </div>
-                  </div>
-                  <!-- .plan-section -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-associate-logo -->
-         </aside>
-         <!-- .section -->
-         <aside  class="section">
-            <div class="section-products">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">Popular Product</h2>
-                  </div>
-                  <div class="inner-wrapper">
-                     <div class="products-inner-wrapper">
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-10.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated onsale">-16%</span>
-                                 <!-- .product-ratings -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Straight-fit cotton jeans</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <del class="dis-price">$65.99</del>
-                                    <span class="fix-price">$45.99</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-11.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title"> Racquet City Shorts</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$600</span>
-                                 </div>
-                                 <!-- .product-action-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-12.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Palm Leaf Drapey Shorts</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <del class="dis-price">$500</del>
-                                    <span class="fix-price">$450</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                        <div class="product-item col-grid-3">
-                           <div class="product-item-wrapper zoom-effect-hover-container box-shadow-block">
-                              <div class="product-thumb zoom-effect">
-                                 <a class="thumbnail" href="home-v2.html#"><img alt="product" src="{%static "images/shop/product-14.jpg" %}"></a>
-                                 <div class="pruduct-buttons">
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                                    <span class="tooltiptext tooltip-right">Add To Cart</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Wishlist</span></a>
-                                    <a href="home-v2.html#" class="product-button tooltip"><i class="fa fa-retweet"></i><span class="tooltiptext tooltip-right">Compair</span></a>
-                                 </div>
-                                 <!-- .product-buttons -->
-                                 <div class="quick-view">
-                                    <a href="home-v2.html#quick-view-content-wrappr" class="custom-button button-small quick-view-link"><i class="far fa-eye"></i>Quick View</a>
-                                 </div>
-                                 <!-- .quick-view -->
-                                 <span class="ribbon-rotated hot-item ">NEW</span>
-                              </div>
-                              <!-- .product-thumb -->
-                              <div class="product-item-details">
-                                 <h3 class="product-title"><a href="https://anilbasnet.com/demo/byapar/product.html" title="title">Applique Graphic Tee</a></h3>
-                                 <div class="product-ratings">
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                 </div>
-                                 <div class="product-price-container">
-                                    <span class="fix-price">$500</span>
-                                 </div>
-                                 <!-- .product-price-container -->
-                              </div>
-                           </div>
-                           <!-- .product-item-wrapper -->
-                        </div>
-                        <!-- .product-item -->
-                     </div>
-                     <!-- .products-inner-wrapper -->
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-products -->
-         </aside>
-         <!-- .section -->
-         <aside class="section lite-background">
-            <div class="section-testimonial">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">Customer Review</h2>
-                  </div>
-                  <!-- .section-title-wrap -->
-                  <div class="testimonial-carousel-wrapper iteam-col-1  section-carousel-enabled arrow-bg-disabled byapr-carousel" data-slick="{&quot;slidesToShow&quot;:1,&quot;dots&quot;:false,&quot;prevArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-prev\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-left\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;nextArrow&quot;:&quot;<span data-role=\&quot;none\&quot; class=\&quot;slick-next\&quot; tabindex=\&quot;0\&quot;><i class=\&quot;fa fa-angle-right\&quot; aria-hidden=\&quot;true\&quot;><\/i><\/span>&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                     <div class="testimonial-item col-grid-6">
-                        <div class="testimonial-wrapper">
-                           <div class="testimonial-thumb">
-                              <a href="home-v2.html#"><img alt="" src="{%static "images/testimonials/testimonial1.jpg" %}"></a>
-                           </div>
-                           <!-- .testimonial-thumb -->
-                           <div class="testimonial-summary">
-                              <p>Praesent volutpat ut nisl in hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Etiam porttitor, lacus in luctus molestie</p>
-                           </div>
-                           <!-- .testimonial-summary -->
-                           <div class="clien-info-wrap">
-                              <div class="clinet-info">
-                                 <h4 class="testimonial-title"><a href="home-v2.html#">Mr. Brenda Roosevelt</a></h4>
-                                 <p class="testimonial-position">(CEO & Founder)</p>
-                              </div>
-                              <!-- .clinet-info -->
-                              <div class="testimonial-rating">
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                              </div>
-                              <!-- .testimonial-rating -->
-                           </div>
-                           <!-- .clien-info-wrap -->
-                        </div>
-                        <!-- .testimonial-wrapper -->
-                     </div>
-                     <!-- .testimonial-item  -->
-                     <div class="testimonial-item col-grid-6">
-                        <div class="testimonial-wrapper">
-                           <div class="testimonial-thumb">
-                              <a href="home-v2.html#"><img alt="" src="{%static "images/testimonials/testimonial2.jpg" %}"> </a>
-                           </div>
-                           <!-- .testimonial-thumb -->
-                           <div class="testimonial-summary">
-                              <p>Praesent volutpat ut nisl in hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Etiam porttitor, lacus in luctus molestie</p>
-                           </div>
-                           <!-- .testimonial-summary -->
-                           <div class="clien-info-wrap">
-                              <div class="clinet-info">
-                                 <h4 class="testimonial-title"><a href="home-v2.html#">Mr. Brenda Roosevelt</a></h4>
-                                 <p class="testimonial-position">(CEO & Founder)</p>
-                              </div>
-                              <!-- .clinet-info -->
-                              <div class="testimonial-rating">
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                              </div>
-                              <!-- .testimonial-rating -->
-                           </div>
-                           <!-- .clien-info-wrap -->
-                        </div>
-                        <!-- .testimonial-wrapper -->
-                     </div>
-                     <!-- .testimonial-item  -->
-                  </div>
-                  <!-- .testimonial-carousel-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .section-testimonial -->
-         </aside>
-         <!-- .section -->
-         <aside class="section">
-            <div class="section-latest-posts">
-               <div class="container">
-                  <div class="latest-posts-section">
-                     <div class="section-title-wrap">
-                        <h2 class="section-title">Recent News</h2>
-                     </div>
-                     <!-- .section-title-wrap -->
-                     <div class="inner-wrapper">
-                        <div class="col-grid-4 latest-posts-item">
-                           <div class="latest-posts-wrapper box-shadow-block">
-                              <div class="latest-posts-thumb  thumb-overlay">
-                                 <a href="home-v2.html#" ><img alt="Recent Post" src="{%static "images/latest-posts/latest-post-1.jpg" %}"></a>
-                                 <div class="overlay-box">
-                                    <a href="home-v2.html#"><i class="icon-attachment"></i></a>
-                                 </div>
-                                 <div class="latest-news-meta">
-                                    <div class="latest-news-date">
-                                       <span class="news-meta-date">08</span>
-                                       <span class="news-meta-months">Aug</span>
-                                    </div>
-                                 </div>
-                                 <!-- .latest-news-meta -->
-                              </div>
-                              <!-- latest-posts-thumb  -->
-                              <div class="latest-posts-text-content-wrapper">
-                                 <div class="latest-posts-text-content">
-                                    <h3 class="latest-posts-title">
-                                       <a href="home-v2.html#">Kids To Barefoot</a>
-                                    </h3>
-                                    <p>Praesent volutpat ut nisl in hendrerit primis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere </p>
-                                    <div class="entry-meta latest-posts-meta">
-                                       <span class="byline"><span class="author vcard"><a href="home-v2.html#">Admin</a></span></span>
-                                       <span class="comments-link"><a href="home-v2.html#">30</a></span>
-                                       <span class="cat-links"><a href="home-v2.html#" rel="category tag">Fashion</a></span>
-                                    </div>
-                                 </div>
-                                 <!-- .latest-posts-text-content -->
-                              </div>
-                              <!-- .latest-posts-text-content-wrapper -->
-                           </div>
-                           <!-- .latest-posts-wrapper -->
-                        </div>
-                        <!-- .latest-posts-item  -->
-                        <div class="col-grid-4  latest-posts-item">
-                           <div class="latest-posts-wrapper box-shadow-block">
-                              <div class="latest-posts-thumb  thumb-overlay">
-                                 <a href="home-v2.html#" ><img alt="Recent Post" src="{%static "images/latest-posts/latest-post-2.jpg" %}"></a>
-                                 <div class="overlay-box">
-                                    <a href="home-v2.html#"><i class="icon-attachment"></i></a>
-                                 </div>
-                                 <div class="latest-news-meta">
-                                    <div class="latest-news-date">
-                                       <span class="news-meta-date">08</span>
-                                       <span class="news-meta-months">Aug</span>
-                                    </div>
-                                 </div>
-                                 <!-- .latest-news-meta -->
-                              </div>
-                              <div class="latest-posts-text-content-wrapper">
-                                 <div class="latest-posts-text-content">
-                                    <h3 class="latest-posts-title">
-                                       <a href="home-v2.html#">To Feel By Caleb</a>
-                                    </h3>
-                                    <p>Praesent volutpat ut nisl in hendrerit primis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere </p>
-                                    <div class="entry-meta latest-posts-meta">
-                                       <span class="byline"><span class="author vcard"><a href="home-v2.html#">Admin</a></span></span>
-                                       <span class="comments-link"><a href="home-v2.html#">30</a></span>
-                                       <span class="cat-links"><a href="home-v2.html#" rel="category tag">Fashion</a></span>
-                                    </div>
-                                 </div>
-                                 <!-- .latest-posts-text-content -->
-                              </div>
-                           </div>
-                           <!-- .latest-posts-wrapper -->
-                        </div>
-                        <!-- .latest-posts-item  -->
-                        <div class="col-grid-4 latest-posts-item">
-                           <div class="latest-posts-wrapper box-shadow-block">
-                              <div class="latest-posts-thumb  thumb-overlay">
-                                 <a href="home-v2.html#" ><img alt="Recent Post" src="{%static "images/latest-posts/latest-post-3.jpg" %}"></a>
-                                 <div class="overlay-box">
-                                    <a href="home-v2.html#"><i class="icon-attachment"></i></a>
-                                 </div>
-                                 <div class="latest-news-meta">
-                                    <div class="latest-news-date">
-                                       <span class="news-meta-date">08</span>
-                                       <span class="news-meta-months">Aug</span>
-                                    </div>
-                                 </div>
-                                 <!-- .latest-news-meta -->
-                              </div>
-                              <div class="latest-posts-text-content-wrapper">
-                                 <div class="latest-posts-text-content">
-                                    <h3 class="latest-posts-title">
-                                       <a href="home-v2.html#">Reconnect With Nature </a>
-                                    </h3>
-                                    <p>Praesent volutpat ut nisl in hendrerit primis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere</p>
-                                    <div class="entry-meta latest-posts-meta">
-                                       <span class="byline"><span class="author vcard"><a href="home-v2.html#">Admin</a></span></span>
-                                       <span class="comments-link"><a href="home-v2.html#">30</a></span>
-                                       <span class="cat-links"><a href="home-v2.html#" rel="category tag">Fashion</a></span>
-                                    </div>
-                                 </div>
-                                 <!-- .latest-posts-text-content -->
-                              </div>
-                              <!-- .latest-posts-text-content-wrapper -->
-                           </div>
-                           <!-- .latest-posts-wrapper -->
-                        </div>
-                        <!-- .latest-posts-item  -->
-                     </div>
-                     <!-- .inner-wrapper -->
-                  </div>
-                  <!-- .container -->
-               </div>
-               <!-- .latest-posts-section -->
-            </div>
-            <!-- .section-latest-posts -->
-         </aside>
-         <!-- .section -->
-         <aside class="section no-padding">
-            <div class="ads-banner">
-               <div class="container">
-                  <div class="inner-wrapper">
-                     <div class="col-grid-8 zoom-effect-hover-container">
-                        <div class="zoom-effect">
-                           <a href="home-v2.html#"><img alt="Banner" src="{%static "images/shop/ad-banner3.jpg" %}"></a>
-                        </div>
-                     </div>
-                     <div class="col-grid-4 zoom-effect-hover-container">
-                        <div class="zoom-effect">
-                           <a href="home-v2.html#"><img alt="Banner" src="{%static "images/shop/ad-banner4.jpg" %}"></a>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .ads-banner -->
-         </aside>
-         <!-- .section -->
-         <aside class="section">
-            <div class="container">
-               <div class="inner-wrapper">
-                  <div class="col-grid-4">
-                     <div class="recent-product-list">
-                        <div class="section-title-wrap text-alignleft">
-                           <h2 class="section-title">Featured</h2>
-                        </div>
-                        <div class="products-list">
-                           <a href="home-v2.html#" class="product-thumb" title="Product Name"> <img alt="product" src="{%static "images/shop/product-1.jpg" %}"  class="product-image"> </a>
-                           <h5 class="product-title"><a href="home-v2.html#" title="Product">Cold Shoulder Wrap Top</a></h5>
-                           <div class="product-ratings">
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star"></span>
-                              <span class="star"></span>
-                           </div>
-                           <div class="product-price-container">
-                              <span class="fix-price">$45.99</span>
-                           </div>
-                           <div class="pruduct-buttons">
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                              <span class="tooltiptext tooltip-bottom">Add To Cart</span></a>
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-bottom">Wishlist</span></a>
-                              <a href="home-v2.html#quick-view-content-wrappr" class="product-button quick-view-link tooltip"><i class="far fa-eye"></i><span class="tooltiptext tooltip-bottom">Quick View</span></a>
-                           </div>
-                        </div>
-                        <!-- .products-list -->
-                        <div class="products-list">
-                           <a href="home-v2.html#" class="product-thumb" title="Product Name"> <img alt="product" src="{%static "images/shop/product-2.jpg" %}"  class="product-image"> </a>
-                           <h5 class="product-title"><a href="home-v2.html#" title="Product">Plaid Flounce Skirt</a></h5>
-                           <div class="product-ratings">
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star"></span>
-                              <span class="star"></span>
-                           </div>
-                           <div class="product-price-container">
-                              <span class="fix-price">$45.99</span>
-                           </div>
-                           <div class="pruduct-buttons">
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                              <span class="tooltiptext tooltip-bottom">Add To Cart</span></a>
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-bottom">Wishlist</span></a>
-                              <a href="home-v2.html#quick-view-content-wrappr" class="product-button quick-view-link tooltip"><i class="far fa-eye"></i><span class="tooltiptext tooltip-bottom">Quick View</span></a>
-                           </div>
-                        </div>
-                        <!-- .products-list -->
-                     </div>
-                     <!-- .widget -->
-                  </div>
-                  <div class="col-grid-4">
-                     <div class=" recent-product-list">
-                        <div class="section-title-wrap text-alignleft">
-                           <h2 class="section-title">Popular</h2>
-                        </div>
-                        <div class="products-list">
-                           <a href="home-v2.html#" class="product-thumb" title="Product Name"> <img alt="product" src="{%static "images/shop/product-3.jpg" %}"  class="product-image"> </a>
-                           <h5 class="product-title"><a href="home-v2.html#" title="Product">Pocket Flare Dress</a></h5>
-                           <div class="product-ratings">
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star"></span>
-                              <span class="star"></span>
-                           </div>
-                           <div class="product-price-container">
-                              <span class="fix-price">$45.99</span>
-                           </div>
-                           <div class="pruduct-buttons">
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                              <span class="tooltiptext tooltip-bottom">Add To Cart</span></a>
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-bottom">Wishlist</span></a>
-                              <a href="home-v2.html#quick-view-content-wrappr" class="product-button quick-view-link tooltip"><i class="far fa-eye"></i><span class="tooltiptext tooltip-bottom">Quick View</span></a>
-                           </div>
-                        </div>
-                        <!-- .products-list -->
-                        <div class="products-list">
-                           <a href="home-v2.html#" class="product-thumb" title="Product Name"> <img alt="product" src="{%static "images/shop/product-4.jpg" %}"  class="product-image"> </a>
-                           <h5 class="product-title"><a href="home-v2.html#" title="Product">Asymmetric Ruffle Skirt</a></h5>
-                           <div class="product-ratings">
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star"></span>
-                              <span class="star"></span>
-                           </div>
-                           <div class="product-price-container">
-                              <span class="fix-price">$45.99</span>
-                           </div>
-                           <div class="pruduct-buttons">
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                              <span class="tooltiptext tooltip-bottom">Add To Cart</span></a>
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-bottom">Wishlist</span></a>
-                              <a href="home-v2.html#quick-view-content-wrappr" class="product-button quick-view-link tooltip"><i class="far fa-eye"></i><span class="tooltiptext tooltip-bottom">Quick View</span></a>
-                           </div>
-                        </div>
-                        <!-- .products-list -->
-                     </div>
-                     <!-- .widget -->
-                  </div>
-                  <div class="col-grid-4">
-                     <div class="recent-product-list">
-                        <div class="section-title-wrap text-alignleft">
-                           <h2 class="section-title">On Sale</h2>
-                        </div>
-                        <div class="products-list">
-                           <a href="home-v2.html#" class="product-thumb" title="Product Name"> <img alt="product" src="{%static "images/shop/product-5.jpg" %}"  class="product-image"> <span class="ribbon-rotated onsale">-16%</span></a>
-                           <h5 class="product-title"><a href="home-v2.html#" title="Product">Cold Shoulder Faux</a></h5>
-                           <div class="product-ratings">
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star"></span>
-                              <span class="star"></span>
-                           </div>
-                           <div class="product-price-container">
-                              <del class="dis-price">$65.99</del>
-                              <span class="fix-price">$45.99</span>
-                           </div>
-                           <div class="pruduct-buttons">
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                              <span class="tooltiptext tooltip-bottom">Add To Cart</span></a>
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-bottom">Wishlist</span></a>
-                              <a href="home-v2.html#quick-view-content-wrappr" class="product-button quick-view-link tooltip"><i class="far fa-eye"></i><span class="tooltiptext tooltip-bottom">Quick View</span></a>
-                           </div>
-                        </div>
-                        <!-- .products-list -->
-                        <div class="products-list">
-                           <a href="home-v2.html#" class="product-thumb" title="Product Name"> <img alt="product" src="{%static "images/shop/product-6.jpg" %}"  class="product-image"> <span class="ribbon-rotated onsale">-16%</span></a>
-                           <h5 class="product-title"><a href="home-v2.html#" title="Product">Mixed Stripe Skirt</a></h5>
-                           <div class="product-ratings">
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star active"></span>
-                              <span class="star"></span>
-                              <span class="star"></span>
-                           </div>
-                           <div class="product-price-container">
-                              <del class="dis-price">$65.99</del>
-                              <span class="fix-price">$45.99</span>
-                           </div>
-                           <div class="pruduct-buttons">
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="fas fa-cart-plus"></i>
-                              <span class="tooltiptext tooltip-bottom">Add To Cart</span></a>
-                              <a href="home-v2.html#" class="product-button tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-bottom">Wishlist</span></a>
-                              <a href="home-v2.html#quick-view-content-wrappr" class="product-button quick-view-link tooltip"><i class="far fa-eye"></i><span class="tooltiptext tooltip-bottom">Quick View</span></a>
-                           </div>
-                        </div>
-                        <!-- .products-list -->
-                     </div>
-                     <!-- .widget -->
-                  </div>
-               </div>
-               <!-- .inner-wrapper -->
-            </div>
-            <!-- .container -->
-         </aside>
-         <!-- .section -->
-         <article class="section no-padding-top">
-            <div class="instagram-section">
-               <div class="container">
-                  <div class="section-title-wrap">
-                     <h2 class="section-title">Follow Us </h2>
-                  </div>
-                  <div class="instagram-inner-wrapper">
-                     <div class="section-carousel-enabled byapr-carousel" data-slick="{&quot;slidesToShow&quot;:5,&quot;dots&quot;:false,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1024,&quot;settings&quot;:{&quot;slidesToShow&quot;:5}},{&quot;breakpoint&quot;:800,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:659,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:479,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]}">
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-1.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-2.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-3.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-4.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-5.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-6.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                        <div class="insta-item">
-                           <a href="home-v2.html#"><img alt="post" src="{%static "images/instagram/post-7.jpg" %}"></a>
-                           <div class="instagram-hvr-content"><span class="tottallikes"><i class="fa fa-heart"></i>0</span><span class="totalcomments"><i class="fa fa-comments"></i>0</span></div>
-                        </div>
-                        <!-- .insta-item -->
-                     </div>
-                     <div class="instagram-caption">
-                        <div class="instagram-cap-wrapper">
-                           <a href="home-v2.html#" class="custom-button custom-white">Follow Us</a>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- .instagram-inner-wrapper -->
-               </div>
-               <!-- .container -->
-            </div>
-            <!-- .instagram-section -->
-         </article>
-         <!-- .instagram-section -->
-         <aside class="section lite-background">
-            <div class="container">
-               <div class="section-features">
-                  <div class="inner-wrapper">
-                     <div class="features-blocks">
-                        <div class="features-item col-grid-4">
-                           <div class="features-item-inner">
-                              <div class="features-icon"><i class="fa fa-ship"></i></div>
-                              <!-- .features-icon -->
-                              <div class="features-content-wrap">
-                                 <h4 class="features-item-title">Free return</h4>
-                                 <p>30 days money back guarantee!</p>
-                              </div>
-                              <!-- .features-content-wrap -->
-                           </div>
-                           <!-- .features-item-inner -->
-                        </div>
-                        <!-- .features-item -->
-                        <div class="features-item col-grid-4">
-                           <div class="features-item-inner">
-                              <div class="features-icon"><i class="fa fa-gift"></i></div>
-                              <!-- .features-icon -->
-                              <div class="features-content-wrap">
-                                 <h4 class="features-item-title">FREE SHIPPING</h4>
-                                 <p>Free shipping on all order</p>
-                              </div>
-                              <!-- .features-content-wrap -->
-                           </div>
-                           <!-- .features-item-inner -->
-                        </div>
-                        <!-- .features-item -->
-                        <div class="features-item col-grid-4">
-                           <div class="features-item-inner">
-                              <div class="features-icon"><i class="fa fa-heart"></i></div>
-                              <!-- .features-icon -->
-                              <div class="features-content-wrap">
-                                 <h4 class="features-item-title">SUPPORT 24/7</h4>
-                                 <p>We support online 24 hours a day</p>
-                              </div>
-                              <!-- .features-content-wrap -->
-                           </div>
-                           <!-- .features-item-inner -->
-                        </div>
-                        <!-- .features-item -->
-                     </div>
-                     <!-- .features-blocks -->
-                  </div>
-                  <!-- .inner-wrapper -->
-               </div>
-               <!-- .features-widget -->
-            </div>
-         </aside>
-      </main>
-      <!-- #main -->
+
+{% block category_home %}
+   <div class="col-lg-3 col-md-3 col-sm-4">
+      <h2 class="category-menu-title close-on-tab"><a href="index.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
+      <div class="logo-area">
+        <a href="index.html"><img class="img-responsive" src="img/logo.png" alt="logo"></a>
+      </div>
    </div>
-   <!-- #primary -->
+
+{% endblock category_home %}
+   
+{% block maincontent %}
+
+
+
+<!-- Slider Area Start Here -->
+<div class="slider-area">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="category-menu-area close-on-tab" id="category-menu-area">
+               <ul>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-dress-1"></i>Women<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop1.html">Women Sub Title 1</a></li>
+                        <li><a href="shop1.html">Women Sub Title 2</a></li>
+                        <li><a href="shop1.html">Women Sub Title 3</a></li>
+                        <li><a href="shop1.html">Women Sub Title 4</a></li>
+                        <li><a href="shop1.html">Women Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-polo"></i>Men<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop2.html">Men Sub Title 1</a></li>
+                        <li><a href="shop2.html">Men Sub Title 2</a></li>
+                        <li><a href="shop2.html">Men Sub Title 3</a></li>
+                        <li><a href="shop2.html">Men Sub Title 4</a></li>
+                        <li><a href="shop2.html">Men Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-plug"></i>Electornics<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop3.html">Electornics Sub Title 1</a></li>
+                        <li><a href="shop3.html">Electornics Sub Title 2</a></li>
+                        <li><a href="shop3.html">Electornics Sub Title 3</a></li>
+                        <li><a href="shop3.html">Electornics Sub Title 4</a></li>
+                        <li><a href="shop3.html">Electornics Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-necklace"></i>Jewellery<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop4.html">Jewellery Sub Title 1</a></li>
+                        <li><a href="shop4.html">Jewellery Sub Title 2</a></li>
+                        <li><a href="shop4.html">Jewellery Sub Title 3</a></li>
+                        <li><a href="shop4.html">Jewellery Sub Title 4</a></li>
+                        <li><a href="shop4.html">Jewellery Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-screen"></i>Computer<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop5.html">Computer Sub Title 1</a></li>
+                        <li><a href="shop5.html">Computer Sub Title 2</a></li>
+                        <li><a href="shop5.html">Computer Sub Title 3</a></li>
+                        <li><a href="shop5.html">Computer Sub Title 4</a></li>
+                        <li><a href="shop5.html">Computer Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-headphones"></i>Head Phone<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop6.html">Head Phone Sub Title 1</a></li>
+                        <li><a href="shop6.html">Head Phone Sub Title 2</a></li>
+                        <li><a href="shop6.html">Head Phone Sub Title 3</a></li>
+                        <li><a href="shop6.html">Head Phone Sub Title 4</a></li>
+                        <li><a href="shop6.html">Head Phone Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-transport"></i>Toys<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop1.html">Toys Sub Title 1</a></li>
+                        <li><a href="shop1.html">Toys Sub Title 2</a></li>
+                        <li><a href="shop1.html">Toys Sub Title 3</a></li>
+                        <li><a href="shop1.html">Toys Sub Title 4</a></li>
+                        <li><a href="shop1.html">Toys Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-fashion"></i>Shoes<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop1.html">Shoes Sub Title 1</a></li>
+                        <li><a href="shop1.html">Shoes Sub Title 2</a></li>
+                        <li><a href="shop1.html">Shoes Sub Title 3</a></li>
+                        <li><a href="shop1.html">Shoes Sub Title 4</a></li>
+                        <li><a href="shop1.html">Shoes Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-dress"></i>Kid’s Wear<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop1.html">Kid’s Wear Sub Title 1</a></li>
+                        <li><a href="shop1.html">Kid’s Wear Sub Title 2</a></li>
+                        <li><a href="shop1.html">Kid’s Wear Sub Title 3</a></li>
+                        <li><a href="shop1.html">Kid’s Wear Sub Title 4</a></li>
+                        <li><a href="shop1.html">Kid’s Wear Sub Title 5</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="index.html#"><i class="flaticon-technology"></i>Mobile<span><i class="flaticon-next"></i></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="shop1.html">Mobile Sub Title 1</a></li>
+                        <li><a href="shop1.html">Mobile Sub Title 2</a></li>
+                        <li><a href="shop1.html">Mobile Sub Title 3</a></li>
+                        <li><a href="shop1.html">Mobile Sub Title 4</a></li>
+                        <li><a href="shop1.html">Mobile Sub Title 5</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="main-slider1">
+               <div class="bend niceties preview-2">
+                  <div id="ensign-nivoslider-2" class="slides">
+                     <img src="img/slider-1/slider-2.jpg" alt="" title="#slider-direction-1" />
+                     <img src="img/slider-1/slider-2.jpg" alt="" title="#slider-direction-2" />
+                  </div>
+                  <!-- direction 1 -->
+                  <div id="slider-direction-1" class="slider-direction">
+                     <div class="slider-content t-lfl s-tb slider-1">
+                        <div class="title-container s-tb-c">
+                           <h2>Collection</h2>
+                           <h2 class="title1">2016</h2>
+                           <h3 class="title3">Summer Dress</h3>
+                           <p>Simply dummy text of the printing and typesetting industrstandard dummy since.</p>
+                           <a href="index.html#" class="btn-shop-now-fill-slider">View Collections</a>
+                        </div>
+                     </div>
+                     <!-- layer 1 -->
+                     <div class="layer-1-1">
+                        <img src="img/slider-1/layer-1.png" alt="" />
+                     </div>
+                  </div>
+                  <!-- direction 2 -->
+                  <div id="slider-direction-2" class="t-cn slider-direction">
+                     <!-- layer 1 -->
+                     <div class="layer-1">
+                        <img src="img/slider-1/layer2-4.png" alt="" />
+                     </div>
+                     <!-- layer 2 -->
+                     <div class="layer-2">
+                        <img src="img/slider-1/layer2-5.png" alt="" />
+                     </div>
+                     <!-- layer 3 -->
+                     <div class="layer-3">
+                        <img src="img/slider-1/layer2-6.png" alt="" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
-<!-- .inner-wrapper -->
+<!-- Slider Area End Here -->
+<!-- Services1 Area Start Here -->
+<div class="services1-area">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="services-area-box">
+               <div class="media">
+                  <a class="pull-left" href="index.html#">
+                  <img src="img/services/home1-services1.png" alt="services" class="img-responsive">
+                  </a>
+                  <div class="media-body">
+                     <span>360 Gear</span>
+                     <h3><a href="index.html#">Brand Name</a></h3>
+                     <p>Camera</p>
+                     <a href="index.html#" class="btn-shop-now">Shop Now<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="services-area-box">
+               <div class="media">
+                  <a class="pull-left" href="index.html#">
+                  <img src="img/services/home1-services2.png" alt="services" class="img-responsive">
+                  </a>
+                  <div class="media-body">
+                     <span>Casual Shoes</span>
+                     <h3><a href="index.html#">Brand Name</a></h3>
+                     <p>Top-Brand</p>
+                     <a href="index.html#" class="btn-shop-now">Shop Now<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="services-area-box">
+               <div class="media">
+                  <a class="pull-left" href="index.html#">
+                  <img src="img/services/home1-services3.png" alt="services" class="img-responsive">
+                  </a>
+                  <div class="media-body">
+                     <span>100% Leather</span>
+                     <h3><a href="index.html#">Brand Name</a></h3>
+                     <p>Mountain</p>
+                     <a href="index.html#" class="btn-shop-now">Shop Now<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Services1 Area End Here -->
+<!-- Product Area Start Here -->
+<div class="product-area">
+   <div class="container" id="home-isotope">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="isotop-classes-tab myisotop1">
+               <a href="index.html#" data-filter=".on-sale" class="current">On Sale</a>
+               <a href="index.html#" data-filter=".featured">Featured</a>
+               <a href="index.html#" data-filter=".popular">Popular</a>
+            </div>
+         </div>
+      </div>
+      <div class="row featuredContainer">
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <a href="index.html#"><img src="img/product/1.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span><span>$40.00</span>$25.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 featured on-sale">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <div class="hot-sale">
+                     <span>Sale</span>
+                  </div>
+                  <a href="index.html#"><img src="img/product/2.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span>$70.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale featured popular">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <a href="index.html#"><img src="img/product/3.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span><span>$75.00</span>$59.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 popular on-sale featured">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <div class="hot-sale">
+                     <span>Hot</span>
+                  </div>
+                  <a href="index.html#"><img src="img/product/4.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span><span>$79.00</span>$66.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 popular on-sale">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <div class="hot-sale">
+                     <span>Sale</span>
+                  </div>
+                  <a href="index.html#"><img src="img/product/5.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span><span>$90.00</span>$79.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale featured">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <div class="hot-sale">
+                     <span>Sale</span>
+                  </div>
+                  <a href="index.html#"><img src="img/product/6.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span>$46.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale popular">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <a href="index.html#"><img src="img/product/7.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span>$35.00</span>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale featured">
+            <div class="product-box1">
+               <ul class="product-social">
+                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+               </ul>
+               <div class="product-img-holder">
+                  <div class="hot-sale">
+                     <span>New</span>
+                  </div>
+                  <a href="index.html#"><img src="img/product/8.jpg" alt="product"></a>
+               </div>
+               <div class="product-content-holder">
+                  <h3><a href="index.html#">Product Title Here</a></h3>
+                  <span>$58.00</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Product Area End Here -->
+<!-- Offer Area 1 Start Here -->
+<div class="offer-area1 hidden-after-desk">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="brand-area-box-l">
+               <span>Winter Collections</span>
+               <h1>50% Off</h1>
+               <p>Sale Going On</p>
+               <a href="index.html#" class="btn-shop-now-fill">Shop Now</a>
+            </div>
+         </div>
+         <div class="countdown"></div>
+         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="brand-area-box-r">
+               <a href="index.html#"><img src="img/offer.png" alt="offer"></a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Offer Area 1 End Here -->
+<!-- Best Seller Area Start Here -->
+<div class="best-seller-area padding-top-0-after-desk">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="title-carousel">Best Seller</h2>
+         </div>
+      </div>
+      <div class="metro-carousel" data-loop="true" data-items="3" data-margin="15" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
+         <div class="best-seller-box">
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/1.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span><span>$65.00</span>$59.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/2.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$82.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/3.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$97.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="best-seller-box">
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/4.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$68.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/5.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span><span>$53.00</span>$39.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/6.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span><span>$89.00</span>$79.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="best-seller-box">
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/7.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$19.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/8.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span><span>$50.00</span>$30.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/9.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$63.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="best-seller-box">
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/1.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$50.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/2.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span><span>$41.00</span>$31.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/3.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$84.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="best-seller-box">
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/4.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$33.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/5.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$48.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="media">
+               <a href="index.html#" class="pull-left">
+               <img alt="best-seller" src="img/best-seller/6.jpg" class="img-responsive">
+               </a>
+               <div class="media-body">
+                  <div class="best-seller-box-content">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span><span>$79.00</span>$40.00</span>
+                  </div>
+                  <ul class="best-seller-box-cart">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Best Seller Area End Here -->
+<!-- Advantage Area Start Here -->
+<div class="advantage1-area">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="advantage-area-box">
+               <div class="media">
+                  <a class="pull-left" href="index.html#">
+                  <i class="flaticon-truck"></i>
+                  </a>
+                  <div class="media-body">
+                     <h3>FREE SHIPPING</h3>
+                     <p>On All Orders</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="advantage-area-box">
+               <div class="media">
+                  <a class="pull-left" href="index.html#">
+                  <i class="flaticon-headphones"></i>
+                  </a>
+                  <div class="media-body">
+                     <h3>24/7 SERVICE</h3>
+                     <p>Get Help When You Need</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="advantage-area-box">
+               <div class="media">
+                  <a class="pull-left" href="index.html#">
+                  <i class="flaticon-reload"></i>
+                  </a>
+                  <div class="media-body">
+                     <h3>100% MONEY BACK</h3>
+                     <p>Within 30 Day Guarantee</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Advantage Area End Here -->
+<!-- Blog Area Start Here -->
+<div class="blog1-area">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="title-carousel">Latest Blog</h2>
+         </div>
+      </div>
+      <div class="metro-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
+         <div class="blog-box">
+            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <div class="blog-img-holder">
+               <div class="post-date">
+                  <span>25 June</span>
+               </div>
+               <a href="index.html#"><img src="img/blog/1.jpg" alt="blog"></a>
+            </div>
+            <div class="blog-content-holder">
+               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
+               <ul class="solid-underline">
+                  <li><span>by</span> Admin</li>
+                  <li>Comments (03)</li>
+               </ul>
+               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
+            </div>
+         </div>
+         <div class="blog-box">
+            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <div class="blog-img-holder">
+               <div class="post-date">
+                  <span>25 June</span>
+               </div>
+               <a href="index.html#"><img src="img/blog/2.jpg" alt="blog"></a>
+            </div>
+            <div class="blog-content-holder">
+               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
+               <ul class="solid-underline">
+                  <li><span>by</span> Admin</li>
+                  <li>Comments (08)</li>
+               </ul>
+               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
+            </div>
+         </div>
+         <div class="blog-box">
+            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <div class="blog-img-holder">
+               <div class="post-date">
+                  <span>25 June</span>
+               </div>
+               <a href="index.html#"><img src="img/blog/3.jpg" alt="blog"></a>
+            </div>
+            <div class="blog-content-holder">
+               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
+               <ul class="solid-underline">
+                  <li><span>by</span> Admin</li>
+                  <li>Comments (10)</li>
+               </ul>
+               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
+            </div>
+         </div>
+         <div class="blog-box">
+            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <div class="blog-img-holder">
+               <div class="post-date">
+                  <span>25 June</span>
+               </div>
+               <a href="index.html#"><img src="img/blog/1.jpg" alt="blog"></a>
+            </div>
+            <div class="blog-content-holder">
+               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
+               <ul class="solid-underline">
+                  <li><span>by</span> Admin</li>
+                  <li>Comments (09)</li>
+               </ul>
+               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
+            </div>
+         </div>
+         <div class="blog-box">
+            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <div class="blog-img-holder">
+               <div class="post-date">
+                  <span>25 June</span>
+               </div>
+               <a href="index.html#"><img src="img/blog/2.jpg" alt="blog"></a>
+            </div>
+            <div class="blog-content-holder">
+               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
+               <ul class="solid-underline">
+                  <li><span>by</span> Admin</li>
+                  <li>Comments (05)</li>
+               </ul>
+               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
+            </div>
+         </div>
+         <div class="blog-box">
+            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <div class="blog-img-holder">
+               <div class="post-date">
+                  <span>25 June</span>
+               </div>
+               <a href="index.html#"><img src="img/blog/3.jpg" alt="blog"></a>
+            </div>
+            <div class="blog-content-holder">
+               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
+               <ul class="solid-underline">
+                  <li><span>by</span> Admin</li>
+                  <li>Comments (03)</li>
+               </ul>
+               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Blog Area End Here -->
+<!-- Solid Divider Area Start Here -->
+<div class="container">
+   <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         <div class="solid-divider"></div>
+      </div>
+   </div>
+</div>
+<!-- Solid Divider Area End Here -->
+<!-- Brand Area Start Here -->
+<div class="brand-area">
+   <div class="container">
+      <div class="metro-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/1.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/2.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/3.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/4.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/5.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/6.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/1.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/2.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/3.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/4.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/5.jpg" alt="brand"></a>
+         </div>
+         <div class="brand-area-box">
+            <a href="index.html#"><img src="img/brand/6.jpg" alt="brand"></a>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Brand Area End Here -->
+<!-- Footer Area Start Here -->
+
 {% endblock maincontent %}
+
+{% block extrajs %}
+
+{% endblock extrajs %}
