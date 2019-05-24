@@ -135,20 +135,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# This configuration for sending business mails to users from LocalHost
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-
-
-#Forms#
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.mandrillapp.com'
-EMAIL_HOST_USER = 'info@inzane.in'
-EMAIL_HOST_PASSWORD = 'c1UbkmjZBDkbGhoriCCMxA'
-EMAIL_PORT = 587
+# Production Ready enable belwo
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'localhost'
+# EMAIL_HOST = ''
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT = 587
 
 
 STATIC_URL = '/static/'

@@ -1,4 +1,3 @@
-
 from django.db import models
 from uuid import uuid4, UUID
 import uuid
@@ -24,7 +23,7 @@ class GatewayCommission(models.Model):
     name = models.CharField(verbose_name=u'Name', max_length=50)
     percentage = models.FloatField(verbose_name='Percentage')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -36,7 +35,7 @@ class Tax(models.Model):
     year = models.IntegerField(null=True, blank=True)
     is_active = models.BooleanField(default=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.get_tax_type_display()
 
 
@@ -51,7 +50,7 @@ class ShippingAddress(models.Model):
         Country, null=True, blank=True, related_name='cart', on_delete=models.CASCADE)
     mobile = models.BigIntegerField(null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.buyer.first_name
 
 
@@ -65,7 +64,7 @@ class ShippAddress(models.Model):
     country = models.CharField(max_length=100, null=True, blank=True, )
     mobile = models.BigIntegerField(null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.buyer.first_name
 
 
@@ -80,7 +79,7 @@ class CartItem(models.Model):
         self.total = self.quantity * self.product.gross_pay()[0]
         super(CartItem, self).save()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.product
 
 
@@ -89,7 +88,7 @@ class Cart(models.Model):
     items = models.ManyToManyField(CartItem)
     added_on = models.DateField(auto_now=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.buyer.first_name
 
 
@@ -103,7 +102,7 @@ class OrderItem(models.Model):
     weight = models.FloatField(null=True, blank=True)
     quantity = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.buyer.first_name + " - " + self.product_title
 
     def product_image(self):
@@ -165,7 +164,7 @@ class MyOrder(models.Model):
         else:
             return False
 
-    def __unicode__(self):
+    def __str__(self):
         return self.buyer.first_name + ':' + self.txnid
 
 class Invoice(models.Model):
@@ -179,7 +178,7 @@ class Invoice(models.Model):
     shipping_cost = models.FloatField(default=0.0, null=True, blank=True)
     tax_included = models.BooleanField(default=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.order.txnid + " - " + self.order.buyer.first_name
 
 
@@ -224,5 +223,5 @@ class Dispatched(models.Model):
 
         super(Dispatched, self).save()
 
-    def __unicode__(self):
+    def __str__(self):
         return str(self.id)

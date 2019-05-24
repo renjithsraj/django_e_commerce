@@ -47,7 +47,7 @@ class Section(MPTTModel):
         level_attr = 'mptt_level'
         order_insertion_by = ['name']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
         
 # Product
@@ -129,7 +129,7 @@ class Products(models.Model):
                                       format='JPEG',
                                       options={'quality': 60})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def order_image(self):
@@ -204,7 +204,7 @@ class ImageGallery(models.Model):
                                      format='JPEG',
                                      options={'quality': 60})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.product.name + " - " + self.name
 
     def short_image(self):
@@ -256,7 +256,7 @@ class Resources(models.Model):
         else:
             return self.image_thumbnail.url
 
-    def __unicode__(self):
+    def __str__(self):
         return self.heading
 
     def short_image(self):
@@ -283,7 +283,7 @@ class ResourceGallery(models.Model):
                                      format='JPEG',
                                      options={'quality': 60})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.resources.heading + " - " + self.name
 
     def image_display(self):

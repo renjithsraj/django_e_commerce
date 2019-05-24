@@ -11,7 +11,7 @@ class Country(models.Model):
     fuel_surcharge = models.FloatField(default=0.0, null=True, blank=True)
     service_tax = models.FloatField(default=0.0, null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -21,7 +21,7 @@ class Zone(models.Model):
     zone_cat = models.CharField(
         choices=ZONE_CATEGORY, max_length=2, verbose_name=u'Zone Category')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name + " : " + self.zone_cat
 
 
@@ -32,7 +32,7 @@ class ShippingRate(models.Model):
     value2 = models.FloatField(verbose_name=u'Weight To (gm)')
     price = models.FloatField(default=0.0)
 
-    def __unicode__(self):
+    def __str__(self):
         return str(self.value1) + " : " + str(self.value2)
 
     def total_rate(self, zone, weight):

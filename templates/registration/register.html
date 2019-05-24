@@ -1,3 +1,59 @@
-{% extends 'base.html' %}
-{% block title %} Loign {% endblock title %}
+{% extends 'home_base.html' %}
+{% load static %}
+
+{% block title %} User Registration | {{website_name}} {% endblock title %}
+
+{% block category_home %}
+    {% include 'support_html/category_tag.html' %}
+{% endblock category_home %}
+
+{% block maincontent %}
+
+    <div class="login-registration-page-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 x-form">
+                    {% include "support_html/error_message.html" %}
+                    <div class="login-registration-field">
+                    
+                        <h2 class="cart-area-title">Registration</h2>
+                        <form method="post" action="{% url 'register' %}">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Full Name *</label>
+                                    <input type="text" placeholder="Name" name="name"/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label for="inputPassword4">Username *</label>
+                                    <input type="text" placeholder="Username" name="username"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail4">Email *</label>
+                                    <input type="email" placeholder="Email" name="email"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Password *</label>
+                                    <input type="password" placeholder="Password" name="password1"/>
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label for="inputPassword4">Confirm Password *</label>
+                                    <input type="password" placeholder="Confirm Password" name="password2"/>
+                                </div>
+                            </div>
+                            <button class="btn-send-message disabled" type="submit" value="Register">Register</button>
+                            <span><a href="{% url 'login' %}">Already have account?</a></span>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock maincontent %}
 

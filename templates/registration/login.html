@@ -18,13 +18,13 @@
                     <h2 class="cart-area-title">Login</h2>
                     <form method='post'>
                         {% csrf_token %}
-                        <label>Username or email address *</label>
-                        <input type="text" placeholder="User Name or E-mail" name="username"/>
+                        <label>Username</label>
+                        <input type="text" placeholder="User Name" name="username"/>
                         <label>Password *</label>
                         <input type="password" placeholder="Password" name="password"/>
                         <label class="check">Lost your password?</label>
                         <button class="btn-send-message disabled" type="submit" value="Login">Login</button>
-                        <span><input type="checkbox" name="remember"/>Remember Me</span>
+                        <span><a href="{% url 'register' %}">click here Create New</a></span>
                     </form>
                     </div>
                 </div>
