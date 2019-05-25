@@ -37,6 +37,8 @@ def register(request):
             subject, message, to=[to_email]
         )
         email.send()
+        messages.success(request, "Your Account is created successfully, \
+                Please check your email for verification link to activate your account")
         return redirect('account_activation_sent')
         # login(request, user)
         # messages.success(request, "Successfully Registerd")
@@ -60,6 +62,8 @@ def activate(request, uidb64, token):
         user.is_verifed = True
         user.save()
         login(request, user)
+        messages.success(request, "Thank you, User email Successfully verified")
         return redirect('home')
     else:
-        return render(request, 'mailtemp/account_activation.html')
+        messages.warning(request, "Token expired/User does't not exist's")
+        return redirect('account_activation_sent')

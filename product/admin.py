@@ -23,7 +23,7 @@ class ImageGalleryInline(admin.StackedInline):
 class ProductsAdmin(admin.ModelAdmin):
     model = Products
     list_display = ('name', 'short_image',)
-
+    prepopulated_fields = {'slug': ('name',), }
     inlines = (ImageGalleryInline,)
 
 
