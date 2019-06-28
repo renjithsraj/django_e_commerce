@@ -19,6 +19,7 @@ def home(request):
     latest_products = Products.objects.order_by('-date')[:8]
     hot_products = Products.objects.filter(is_hot=True).order_by('-date')[:8]
     featured_products = Products.objects.filter(is_featured=True).order_by('-date')[:8]
+    print ('--------------', featured_products)
     return render(
         request, 'home/home.html', 
         {
