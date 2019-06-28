@@ -6,6 +6,8 @@ from mptt.admin import MPTTModelAdmin
 
 class SectionAdmin(MPTTModelAdmin):
     model = Section
+    prepopulated_fields = {'slug': ('name',), }
+
 
 
 class ImageGalleryAdmin(admin.ModelAdmin):

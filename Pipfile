@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "<2.0.0"
 
 [packages]
 django = "*"
@@ -15,6 +16,8 @@ django-imagekit = "*"
 pillow = "*"
 ipython = "*"
 ipython3 = "*"
+sphinx = "*"
+rinohtype = "*"
 
 [requires]
 python_version = "3.6"

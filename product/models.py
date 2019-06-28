@@ -205,7 +205,7 @@ class ImageGallery(models.Model):
                                      options={'quality': 60})
 
     def __str__(self):
-        return self.product.name + " - " + self.name
+        return self.product.name
 
     def short_image(self):
         if self.image_thumbnail:

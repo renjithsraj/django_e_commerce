@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load base %}
 {% block title %} Home{% endblock title %}
 
 {% block category_home %}
    <div class="col-lg-3 col-md-3 col-sm-4">
       <h2 class="category-menu-title close-on-tab"><a href="index.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
       <div class="logo-area">
-        <a href="index.html"><img class="img-responsive" src="img/logo.png" alt="logo"></a>
+        <a href="index.html"><img class="img-responsive" src="{% static 'img/logo.png' %}" alt="logo"></a>
       </div>
    </div>
 
@@ -20,210 +21,45 @@
 <div class="slider-area">
    <div class="container">
       <div class="row">
-         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <div class="category-menu-area close-on-tab" id="category-menu-area">
-               <ul>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-dress-1"></i>Women<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop1.html">Women Sub Title 1</a></li>
-                        <li><a href="shop1.html">Women Sub Title 2</a></li>
-                        <li><a href="shop1.html">Women Sub Title 3</a></li>
-                        <li><a href="shop1.html">Women Sub Title 4</a></li>
-                        <li><a href="shop1.html">Women Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-polo"></i>Men<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop2.html">Men Sub Title 1</a></li>
-                        <li><a href="shop2.html">Men Sub Title 2</a></li>
-                        <li><a href="shop2.html">Men Sub Title 3</a></li>
-                        <li><a href="shop2.html">Men Sub Title 4</a></li>
-                        <li><a href="shop2.html">Men Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-plug"></i>Electornics<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop3.html">Electornics Sub Title 1</a></li>
-                        <li><a href="shop3.html">Electornics Sub Title 2</a></li>
-                        <li><a href="shop3.html">Electornics Sub Title 3</a></li>
-                        <li><a href="shop3.html">Electornics Sub Title 4</a></li>
-                        <li><a href="shop3.html">Electornics Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-necklace"></i>Jewellery<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop4.html">Jewellery Sub Title 1</a></li>
-                        <li><a href="shop4.html">Jewellery Sub Title 2</a></li>
-                        <li><a href="shop4.html">Jewellery Sub Title 3</a></li>
-                        <li><a href="shop4.html">Jewellery Sub Title 4</a></li>
-                        <li><a href="shop4.html">Jewellery Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-screen"></i>Computer<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop5.html">Computer Sub Title 1</a></li>
-                        <li><a href="shop5.html">Computer Sub Title 2</a></li>
-                        <li><a href="shop5.html">Computer Sub Title 3</a></li>
-                        <li><a href="shop5.html">Computer Sub Title 4</a></li>
-                        <li><a href="shop5.html">Computer Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-headphones"></i>Head Phone<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop6.html">Head Phone Sub Title 1</a></li>
-                        <li><a href="shop6.html">Head Phone Sub Title 2</a></li>
-                        <li><a href="shop6.html">Head Phone Sub Title 3</a></li>
-                        <li><a href="shop6.html">Head Phone Sub Title 4</a></li>
-                        <li><a href="shop6.html">Head Phone Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-transport"></i>Toys<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop1.html">Toys Sub Title 1</a></li>
-                        <li><a href="shop1.html">Toys Sub Title 2</a></li>
-                        <li><a href="shop1.html">Toys Sub Title 3</a></li>
-                        <li><a href="shop1.html">Toys Sub Title 4</a></li>
-                        <li><a href="shop1.html">Toys Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-fashion"></i>Shoes<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop1.html">Shoes Sub Title 1</a></li>
-                        <li><a href="shop1.html">Shoes Sub Title 2</a></li>
-                        <li><a href="shop1.html">Shoes Sub Title 3</a></li>
-                        <li><a href="shop1.html">Shoes Sub Title 4</a></li>
-                        <li><a href="shop1.html">Shoes Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-dress"></i>Kid’s Wear<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop1.html">Kid’s Wear Sub Title 1</a></li>
-                        <li><a href="shop1.html">Kid’s Wear Sub Title 2</a></li>
-                        <li><a href="shop1.html">Kid’s Wear Sub Title 3</a></li>
-                        <li><a href="shop1.html">Kid’s Wear Sub Title 4</a></li>
-                        <li><a href="shop1.html">Kid’s Wear Sub Title 5</a></li>
-                     </ul>
-                  </li>
-                  <li>
-                     <a href="index.html#"><i class="flaticon-technology"></i>Mobile<span><i class="flaticon-next"></i></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="shop1.html">Mobile Sub Title 1</a></li>
-                        <li><a href="shop1.html">Mobile Sub Title 2</a></li>
-                        <li><a href="shop1.html">Mobile Sub Title 3</a></li>
-                        <li><a href="shop1.html">Mobile Sub Title 4</a></li>
-                        <li><a href="shop1.html">Mobile Sub Title 5</a></li>
-                     </ul>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <div class="main-slider1">
-               <div class="bend niceties preview-2">
-                  <div id="ensign-nivoslider-2" class="slides">
-                     <img src="img/slider-1/slider-2.jpg" alt="" title="#slider-direction-1" />
-                     <img src="img/slider-1/slider-2.jpg" alt="" title="#slider-direction-2" />
-                  </div>
-                  <!-- direction 1 -->
-                  <div id="slider-direction-1" class="slider-direction">
-                     <div class="slider-content t-lfl s-tb slider-1">
-                        <div class="title-container s-tb-c">
-                           <h2>Collection</h2>
-                           <h2 class="title1">2016</h2>
-                           <h3 class="title3">Summer Dress</h3>
-                           <p>Simply dummy text of the printing and typesetting industrstandard dummy since.</p>
-                           <a href="index.html#" class="btn-shop-now-fill-slider">View Collections</a>
+         
+         <!-- Side Category -->
+            {% side_category_tag %}
+
+         <!-- End side nav category-->
+
+         {% if offers_enabled %}
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+               <div class="main-slider1">
+                  <div class="bend niceties preview-2">
+                     <div id="ensign-nivoslider-2" class="slides">
+                        <img src="{% static 'img/slider-1/slider-2.jpg'%}" alt="" title="#slider-direction-1" />
+                     </div>
+                     <!-- direction 1 -->
+                     <div id="slider-direction-1" class="slider-direction">
+                        <div class="slider-content t-lfl s-tb slider-1">
+                           <div class="title-container s-tb-c">
+                              <h2>Collection</h2>
+                              <h2 class="title1">2016</h2>
+                              <h3 class="title3">Summer Dress</h3>
+                              <p>Simply dummy text of the printing and typesetting industrstandard dummy since.</p>
+                              <a href="index.html#" class="btn-shop-now-fill-slider">View Collections</a>
+                           </div>
+                        </div>
+                        <!-- layer 1 -->
+                        <div class="layer-1-1">
+                           <img src="{% static 'img/slider-1/layer-1.png'%}" alt="" />
                         </div>
                      </div>
-                     <!-- layer 1 -->
-                     <div class="layer-1-1">
-                        <img src="img/slider-1/layer-1.png" alt="" />
-                     </div>
-                  </div>
-                  <!-- direction 2 -->
-                  <div id="slider-direction-2" class="t-cn slider-direction">
-                     <!-- layer 1 -->
-                     <div class="layer-1">
-                        <img src="img/slider-1/layer2-4.png" alt="" />
-                     </div>
-                     <!-- layer 2 -->
-                     <div class="layer-2">
-                        <img src="img/slider-1/layer2-5.png" alt="" />
-                     </div>
-                     <!-- layer 3 -->
-                     <div class="layer-3">
-                        <img src="img/slider-1/layer2-6.png" alt="" />
-                     </div>
+                     <!-- direction 2 -->
                   </div>
                </div>
             </div>
-         </div>
+         {% endif %}
+
       </div>
    </div>
 </div>
 <!-- Slider Area End Here -->
-<!-- Services1 Area Start Here -->
-<div class="services1-area">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="services-area-box">
-               <div class="media">
-                  <a class="pull-left" href="index.html#">
-                  <img src="img/services/home1-services1.png" alt="services" class="img-responsive">
-                  </a>
-                  <div class="media-body">
-                     <span>360 Gear</span>
-                     <h3><a href="index.html#">Brand Name</a></h3>
-                     <p>Camera</p>
-                     <a href="index.html#" class="btn-shop-now">Shop Now<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="services-area-box">
-               <div class="media">
-                  <a class="pull-left" href="index.html#">
-                  <img src="img/services/home1-services2.png" alt="services" class="img-responsive">
-                  </a>
-                  <div class="media-body">
-                     <span>Casual Shoes</span>
-                     <h3><a href="index.html#">Brand Name</a></h3>
-                     <p>Top-Brand</p>
-                     <a href="index.html#" class="btn-shop-now">Shop Now<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="services-area-box">
-               <div class="media">
-                  <a class="pull-left" href="index.html#">
-                  <img src="img/services/home1-services3.png" alt="services" class="img-responsive">
-                  </a>
-                  <div class="media-body">
-                     <span>100% Leather</span>
-                     <h3><a href="index.html#">Brand Name</a></h3>
-                     <p>Mountain</p>
-                     <a href="index.html#" class="btn-shop-now">Shop Now<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Services1 Area End Here -->
 <!-- Product Area Start Here -->
 <div class="product-area">
    <div class="container" id="home-isotope">
@@ -236,176 +72,53 @@
             </div>
          </div>
       </div>
-      <div class="row featuredContainer">
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <a href="index.html#"><img src="img/product/1.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span><span>$40.00</span>$25.00</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 featured on-sale">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <div class="hot-sale">
-                     <span>Sale</span>
+
+      {% for lpd in lp %}
+         <div class="row featuredContainer">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale">
+               <div class="product-box1">
+                  <ul class="product-social">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+                  <div class="product-img-holder">
+                     <a href="index.html#"><img src="{{lpd.image.url}}" alt="product"></a>
                   </div>
-                  <a href="index.html#"><img src="img/product/2.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span>$70.00</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale featured popular">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <a href="index.html#"><img src="img/product/3.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span><span>$75.00</span>$59.00</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 popular on-sale featured">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <div class="hot-sale">
-                     <span>Hot</span>
+                  <div class="product-content-holder">
+                     <h3><a href="index.html#">{{lpd.name}}</a></h3>
+                     <span><span>${{lpd.dummy_price}}</span>${{lpd.price}}</span>
                   </div>
-                  <a href="index.html#"><img src="img/product/4.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span><span>$79.00</span>$66.00</span>
                </div>
             </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 popular on-sale">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <div class="hot-sale">
-                     <span>Sale</span>
+         {% endfor %}
+
+         {% for fdd in fd %}
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 featured on-sale">
+               <div class="product-box1">
+                  <ul class="product-social">
+                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                  </ul>
+                  <div class="product-img-holder">
+                     <div class="hot-sale">
+                        <span>Sale</span>
+                     </div>
+                     <a href="index.html#"><img src="img/product/2.jpg" alt="product"></a>
                   </div>
-                  <a href="index.html#"><img src="img/product/5.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span><span>$90.00</span>$79.00</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale featured">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <div class="hot-sale">
-                     <span>Sale</span>
+                  <div class="product-content-holder">
+                     <h3><a href="index.html#">Product Title Here</a></h3>
+                     <span>$70.00</span>
                   </div>
-                  <a href="index.html#"><img src="img/product/6.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span>$46.00</span>
                </div>
             </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale popular">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <a href="index.html#"><img src="img/product/7.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span>$35.00</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale featured">
-            <div class="product-box1">
-               <ul class="product-social">
-                  <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                  <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-               </ul>
-               <div class="product-img-holder">
-                  <div class="hot-sale">
-                     <span>New</span>
-                  </div>
-                  <a href="index.html#"><img src="img/product/8.jpg" alt="product"></a>
-               </div>
-               <div class="product-content-holder">
-                  <h3><a href="index.html#">Product Title Here</a></h3>
-                  <span>$58.00</span>
-               </div>
-            </div>
-         </div>
+         {% endfor %}                                                                                                                                                                                             
       </div>
    </div>
 </div>
 <!-- Product Area End Here -->
-<!-- Offer Area 1 Start Here -->
-<div class="offer-area1 hidden-after-desk">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="brand-area-box-l">
-               <span>Winter Collections</span>
-               <h1>50% Off</h1>
-               <p>Sale Going On</p>
-               <a href="index.html#" class="btn-shop-now-fill">Shop Now</a>
-            </div>
-         </div>
-         <div class="countdown"></div>
-         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="brand-area-box-r">
-               <a href="index.html#"><img src="img/offer.png" alt="offer"></a>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Offer Area 1 End Here -->
+
 <!-- Best Seller Area Start Here -->
 <div class="best-seller-area padding-top-0-after-desk">
    <div class="container">
@@ -716,121 +429,6 @@
    </div>
 </div>
 <!-- Advantage Area End Here -->
-<!-- Blog Area Start Here -->
-<div class="blog1-area">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h2 class="title-carousel">Latest Blog</h2>
-         </div>
-      </div>
-      <div class="metro-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
-         <div class="blog-box">
-            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
-            <div class="blog-img-holder">
-               <div class="post-date">
-                  <span>25 June</span>
-               </div>
-               <a href="index.html#"><img src="img/blog/1.jpg" alt="blog"></a>
-            </div>
-            <div class="blog-content-holder">
-               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
-               <ul class="solid-underline">
-                  <li><span>by</span> Admin</li>
-                  <li>Comments (03)</li>
-               </ul>
-               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
-            </div>
-         </div>
-         <div class="blog-box">
-            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
-            <div class="blog-img-holder">
-               <div class="post-date">
-                  <span>25 June</span>
-               </div>
-               <a href="index.html#"><img src="img/blog/2.jpg" alt="blog"></a>
-            </div>
-            <div class="blog-content-holder">
-               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
-               <ul class="solid-underline">
-                  <li><span>by</span> Admin</li>
-                  <li>Comments (08)</li>
-               </ul>
-               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
-            </div>
-         </div>
-         <div class="blog-box">
-            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
-            <div class="blog-img-holder">
-               <div class="post-date">
-                  <span>25 June</span>
-               </div>
-               <a href="index.html#"><img src="img/blog/3.jpg" alt="blog"></a>
-            </div>
-            <div class="blog-content-holder">
-               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
-               <ul class="solid-underline">
-                  <li><span>by</span> Admin</li>
-                  <li>Comments (10)</li>
-               </ul>
-               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
-            </div>
-         </div>
-         <div class="blog-box">
-            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
-            <div class="blog-img-holder">
-               <div class="post-date">
-                  <span>25 June</span>
-               </div>
-               <a href="index.html#"><img src="img/blog/1.jpg" alt="blog"></a>
-            </div>
-            <div class="blog-content-holder">
-               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
-               <ul class="solid-underline">
-                  <li><span>by</span> Admin</li>
-                  <li>Comments (09)</li>
-               </ul>
-               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
-            </div>
-         </div>
-         <div class="blog-box">
-            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
-            <div class="blog-img-holder">
-               <div class="post-date">
-                  <span>25 June</span>
-               </div>
-               <a href="index.html#"><img src="img/blog/2.jpg" alt="blog"></a>
-            </div>
-            <div class="blog-content-holder">
-               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
-               <ul class="solid-underline">
-                  <li><span>by</span> Admin</li>
-                  <li>Comments (05)</li>
-               </ul>
-               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
-            </div>
-         </div>
-         <div class="blog-box">
-            <a href="index.html#"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
-            <div class="blog-img-holder">
-               <div class="post-date">
-                  <span>25 June</span>
-               </div>
-               <a href="index.html#"><img src="img/blog/3.jpg" alt="blog"></a>
-            </div>
-            <div class="blog-content-holder">
-               <h3><a href="index.html#">Blog Title Goes Here</a></h3>
-               <ul class="solid-underline">
-                  <li><span>by</span> Admin</li>
-                  <li>Comments (03)</li>
-               </ul>
-               <p>Simply dummy text of the printing and typety esetting industryr drem Ipsum has been thety standard dummy since.</p>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Blog Area End Here -->
 <!-- Solid Divider Area Start Here -->
 <div class="container">
    <div class="row">
@@ -840,50 +438,6 @@
    </div>
 </div>
 <!-- Solid Divider Area End Here -->
-<!-- Brand Area Start Here -->
-<div class="brand-area">
-   <div class="container">
-      <div class="metro-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/1.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/2.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/3.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/4.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/5.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/6.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/1.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/2.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/3.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/4.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/5.jpg" alt="brand"></a>
-         </div>
-         <div class="brand-area-box">
-            <a href="index.html#"><img src="img/brand/6.jpg" alt="brand"></a>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Brand Area End Here -->
 <!-- Footer Area Start Here -->
 
 {% endblock maincontent %}

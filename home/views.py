@@ -11,11 +11,20 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode
 from home.tokens import account_activation_token
 from django.core.mail import EmailMessage
+from product.models import Products
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home/home.html', {})
+    latest_products = Products.objects.order_by('-date')[:8]
+    hot_products = Products.objects.filter(is_hot=True).order_by('-date')[:8]
+    featured_products = Products.objects.filter(is_featured=True).order_by('-date')[:8]
+    return render(
+        request, 'home/home.html', 
+        {
+            'lp': latest_products, 
+            'hp': hot_products,
+            'fp': featured_products })
 
 def register(request):
     form = BuyerCreationForm(request.POST or None)
@@ -59,7 +68,7 @@ def activate(request, uidb64, token):
 
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
-        user.is_verifed = True
+        user.is_verified = True
         user.save()
         login(request, user)
         messages.success(request, "Thank you, User email Successfully verified")

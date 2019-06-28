@@ -1,0 +1,18 @@
+{% load base %}
+<ul class="dropdown-menu">
+    {% for sub in subs %}
+        <li>
+            <a href="index.html#">
+                  {{sub.name}}
+                  {% if category.children%}
+                     <span>
+                        <i class="flaticon-next"></i>
+                     </span>
+                  {% endif %}
+               </a>
+            {% if sub.children.count > 0 %}
+                {% tree_structure sub %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

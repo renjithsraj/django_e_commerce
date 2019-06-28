@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from datetime import datetime
 import random
@@ -19,41 +19,9 @@ class Pincode(models.Model):
         return self.pincode
 
 
-# Buyer Manager
-
-class BuyerManager(models.Manager):
-
-    # def verify_user(self, verification_code):
-    #     if re.match('[a-f0-9]{40}', verification_code):
-    #         try:
-    #             buyer = self.get(verification_code=verification_code)
-    #         except self.model.DoesNotExist:
-    #             return False
-    #         if not buyer.verification_code_expired():
-    #             # Account exists and has a non-expired key. Activate it.
-    #             buyer.is_verifed = True
-    #             buyer.save()
-    #             return True
-    #         return False
-
-    def create_user(self, email, username, 
-                    first_name, last_name, password):
-        now = timezone.now()
-        if not username:
-            raise ValueError('The given username must be set')
-        email = UserManager.normalize_email(email) 
-        # user = self.model(username=username, email=email,
-        #                   is_staff=False, is_active=True, is_superuser=False,
-        #                   last_login=now, date_joined=now)
-
-        # user.set_password(password)
-        # user.save(using=self._db)
-        # return user
-
 # Buyer Details
 
-
-class Buyer(User):
+class Buyer(AbstractUser):
     street_address = models.CharField(null=True, blank=True, max_length=100)
     country = models.CharField(
         verbose_name=u'Country', max_length=200, null=True, blank=True)
@@ -63,10 +31,8 @@ class Buyer(User):
     mobile = models.BigIntegerField(null=True, blank=True)
 
     verification_code = models.CharField(max_length=200, null=True, blank=True)
-    is_verifed = models.BooleanField(default=False)
+    is_verified = models.BooleanField(default=False)
     key_generated = models.DateTimeField(null=True, blank=True)
-
-    # objects = BuyerManager()
 
     def __str__(self):
         return self.first_name
