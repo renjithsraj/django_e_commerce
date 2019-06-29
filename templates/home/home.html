@@ -66,23 +66,27 @@
       <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="isotop-classes-tab myisotop1">
-               <a href="index.html#" data-filter=".on-sale" class="current">On Sale</a>
-               <a href="index.html#" data-filter=".featured">Featured</a>
-               <a href="index.html#" data-filter=".popular">Popular</a>
+               <a href="" data-filter=".on-sale" class="current">On Sale</a>
+               <a href="" data-filter=".featured">Featured</a>
+               <a href="" data-filter=".popular">Popular</a>
             </div>
          </div>
       </div>
 
-      {% for lpd in lp %}
+      
          <div class="row featuredContainer">
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale">
+         {% for lpd in lp %}
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale current">
                <div class="product-box1">
                   <ul class="product-social">
                      <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                      <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                     <li><a onclick="showProduct({{lpd.slug}});"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                   </ul>
                   <div class="product-img-holder">
+                     <div class="hot-sale">
+                        <span>SALE</span>
+                        </div>
                      <a href="index.html#"><img src="{{lpd.image.url}}" alt="product"></a>
                   </div>
                   <div class="product-content-holder">
@@ -92,29 +96,52 @@
                </div>
             </div>
          {% endfor %}
-
          {% for fdd in fp %}
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 featured on-sale">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 featured">
                <div class="product-box1">
-                  <ul class="product-social">
-                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                     <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                     <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                  </ul>
-                  <div class="product-img-holder">
-                     <div class="hot-sale">
-                        <span>Sale</span>
+                     <ul class="product-social">
+                        <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                     </ul>
+                     <div class="product-img-holder">
+                        <div class="hot-sale">
+                        <span>FEATURED</span>
+                        </div>
+                        <a href="index.html#"><img src="{{fdd.image.url}}" alt="product"></a>
                      </div>
-                     <a href="index.html#"><img src="img/product/2.jpg" alt="product"></a>
-                  </div>
-                  <div class="product-content-holder">
-                     <h3><a href="index.html#">Product Title Here</a></h3>
-                     <span>$70.00</span>
-                  </div>
+                     <div class="product-content-holder">
+                        <h3><a href="index.html#">Product Title Here</a></h3>
+                        <span>$70.00</span>
+                     </div>
                </div>
             </div>
-         {% endfor %}                                                                                                                                                                                             
+         {% endfor %}
+
+         {% for hdd in hp %}
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 popular">
+               <div class="product-box1">
+                     <ul class="product-social">
+                        <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                     </ul>
+                     <div class="product-img-holder">
+                        <div class="hot-sale">
+                        <span>HOT</span>
+                        </div>
+                        <a href="index.html#"><img src="{{fdd.image.url}}" alt="product"></a>
+                     </div>
+                     <div class="product-content-holder">
+                        <h3><a href="index.html#">Product Title Here</a></h3>
+                        <span>$70.00</span>
+                     </div>
+               </div>
+            </div>
+         {% endfor %}                                                                                                                                                                                                
       </div>
+
+
    </div>
 </div>
 <!-- Product Area End Here -->
@@ -444,5 +471,13 @@
 {% endblock maincontent %}
 
 {% block extrajs %}
+   <script type="text/javascript">
+      function showProduct(slug){
+
+         
+      }
+   
+   </script>
+
 
 {% endblock extrajs %}

@@ -52,47 +52,26 @@ class Section(MPTTModel):
         
 # Product
 class Products(models.Model):
-
-    slug = models.SlugField(
-        max_length=1000, unique=True, null=True, blank=True)
-
+    slug = models.SlugField(max_length=1000, unique=True, null=True, blank=True)
     name = models.CharField(max_length=500, verbose_name='Heading')
     date = models.DateField(verbose_name="Date")
-
-    category = TreeManyToManyField(
-        Section, related_name='products')
-
+    category = TreeManyToManyField(Section, related_name='products')
     specification = RichTextField(verbose_name='spacification for a product')
-
     product_no = models.IntegerField()
-
     Note = models.TextField(max_length=500, verbose_name='Any Notes')
-
-    Features = RichTextField(
-        verbose_name='features of products', null=True, blank=True)
-
-    url = models.CharField(
-        verbose_name='working of this Products video url ', max_length=1000, null=True, blank=True)
-
+    Features = RichTextField(verbose_name='features of products', null=True, blank=True)
+    url = models.CharField(verbose_name='working of this Products video url ', max_length=1000, null=True, blank=True)
     content = RichTextField(verbose_name='Content')
-
     dummy_price = models.FloatField(null=True, blank=True)
-
     price = models.FloatField(default=0.0)
-
     weight = models.FloatField(default=0.0, verbose_name="Weight in grams")
-
     meta_keywords = models.TextField(
         verbose_name="Meta Keywords", null=True, blank=True)
-
     meta_description = models.TextField(
         verbose_name="Meta Description", null=True, blank=True)
-
     count = models.IntegerField()
-
     is_slide = models.BooleanField(
         default=False, verbose_name="Show in slider ?")
-
     image_slider = ImageSpecField(source='image',
                                   processors=[ResizeToFill(262, 220)],
                                   format='JPEG',
@@ -100,9 +79,7 @@ class Products(models.Model):
     image = ProcessedImageField(upload_to='images/blog',
                                 format='JPEG',
                                           options={'quality': 60}, verbose_name="Image (828px X 363px)")
-
     tax_included = models.BooleanField(default=True)
-
     service_tax = models.FloatField(
         default=0.0, verbose_name="Service tax(mention in  percetage)")
     sales_tax = models.FloatField(
@@ -113,13 +90,9 @@ class Products(models.Model):
         default=0.0, verbose_name="Cess Tax(mention in percetage)")
     cst = models.FloatField(
         default=0.0, verbose_name="Central Sales Tax(mention in  percetage)")
-
     is_featured = models.BooleanField(default=False)
-
     is_hot = models.BooleanField(default=False)
-
     active = models.BooleanField(default=True, verbose_name="Active or Not")
-
     image_thumbnail = ImageSpecField(source='image',
                                      processors=[ResizeToFill(233, 233)],
                                      format='JPEG',
@@ -135,7 +108,7 @@ class Products(models.Model):
     def order_image(self):
         if self.image_thumbnail2:
             return u'<img src="%s" />' % self.image_thumbnail2.url
-
+            
     def short_image(self):
         if self.image_thumbnail:
             return u'<img src="%s" />' % self.image_thumbnail.url
