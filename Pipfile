@@ -18,6 +18,8 @@ ipython = "*"
 ipython3 = "*"
 sphinx = "*"
 rinohtype = "*"
+rest-framework = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"

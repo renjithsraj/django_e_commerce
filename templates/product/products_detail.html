@@ -1,0 +1,507 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load base %}
+{% block title %} Home{% endblock title %}
+
+{% block category_home %}
+   <div class="col-lg-3 col-md-3 col-sm-4">
+      <h2 class="category-menu-title close-on-tab"><a href="index.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
+      <div class="logo-area">
+        <a href="index.html"><img class="img-responsive" src="{% static 'img/logo.png' %}" alt="logo"></a>
+      </div>
+   </div>
+
+{% endblock category_home %}
+   
+{% block maincontent %}
+<div class="product-details1-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-md-push-3">
+                        <div class="inner-shop-details">
+                            <div class="product-details-info-area">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="inner-product-details-left">
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade active in" id="related1">
+                                                    <a href="product-details1.html#" class="zoom ex1"><img alt="single" src="img/product/product-details1.jpg" class="img-responsive"></a>
+                                                </div>
+                                                <div class="tab-pane fade" id="related2">
+                                                    <a href="product-details1.html#" class="zoom ex1"><img alt="single" src="img/product/product-details1.jpg" class="img-responsive"></a>
+                                                </div>
+                                                <div class="tab-pane fade" id="related3">
+                                                    <a href="product-details1.html#" class="zoom ex1"><img alt="single" src="img/product/product-details1.jpg" class="img-responsive"></a>
+                                                </div>
+                                            </div>
+                                            <ul>
+                                                <li class="active">
+                                                    <a href="product-details1.html#related1" data-toggle="tab" aria-expanded="false"><img alt="related1" src="img/product/product-details4.jpg" class="img-responsive"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details1.html#related2" data-toggle="tab" aria-expanded="false"><img alt="related2" src="img/product/product-details4.jpg" class="img-responsive"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details1.html#related3" data-toggle="tab" aria-expanded="false"><img alt="related3" src="img/product/product-details4.jpg" class="img-responsive"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="inner-product-details-right">
+                                            <h3>Product Title Here</h3>
+                                            <ul>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                            </ul>
+                                            <p class="price">$59.00</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tinc amet risus consectetur, non consectetur nisl finibus.</p>
+                                            <div class="product-details-content">
+                                                <p><span>SKU:</span> 0010</p>
+                                                <p><span>Availability:</span> In stock</p>
+                                                <p><span>Category:</span> Demo Products</p>
+                                            </div>
+                                            <form id="checkout-form">
+                                                <ul class="more-option">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <div class="custom-select">
+                                                                <select id="size" class="select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                                                    <option value="0">Select Your Size</option>
+                                                                    <option value="1">XL</option>
+                                                                    <option value="2">L</option>
+                                                                    <option value="3">M</option>
+                                                                    <option value="4">S</option>
+                                                                </select><span class="select2 select2-container select2-container--classic" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-size-container"><span class="select2-selection__rendered" id="select2-size-container" title="Select Your Size">Select Your Size</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <div class="custom-select">
+                                                                <select id="color" class="select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                                                    <option value="0">Select Your Color</option>
+                                                                    <option value="1">Black</option>
+                                                                    <option value="2">White</option>
+                                                                    <option value="3">Blue</option>
+                                                                    <option value="4">Green</option>
+                                                                    <option value="5">Pink</option>
+                                                                </select><span class="select2 select2-container select2-container--classic" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-color-container"><span class="select2-selection__rendered" id="select2-color-container" title="Select Your Color">Select Your Color</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="inner-product-details-cart">
+                                                    <li>
+                                                        <div class="input-group quantity-holder" id="quantity-holder">
+                                                            <input type="text" name="quantity" class="form-control quantity-input" value="1" placeholder="1">
+                                                            <div class="input-group-btn-vertical">
+                                                                <button class="btn btn-default quantity-plus" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                                                <button class="btn btn-default quantity-minus" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="product-details1.html#">Add To Cart</a></li>
+                                                    <li><a href="product-details1.html#"><i aria-hidden="true" class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </form>
+                                            <ul class="product-details-social">
+                                                <li>Share on:</li>
+                                                <li><a href="product-details1.html#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                <li><a href="product-details1.html#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                <li><a href="product-details1.html#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                                <li><a href="product-details1.html#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-details-tab-area">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li class="active"><a href="product-details1.html#description" data-toggle="tab" aria-expanded="false">Description</a></li>
+                                            <li><a href="product-details1.html#review" data-toggle="tab" aria-expanded="false">Review(0)</a></li>
+                                            <li><a href="product-details1.html#add-tags" data-toggle="tab" aria-expanded="false">ADD TAGS</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade active in" id="description">
+                                                <p>Porem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="review">
+                                                <p>Porem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="add-tags">
+                                                <p>Porem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="featured-products-area2">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <h2 class="title-carousel">Featured Products</h2>
+                                    </div>
+                                </div>
+                                <div class="metro-carousel owl-carousel owl-theme owl-responsive-1199 owl-loaded" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2341.34px, 0px, 0px); transition: all 2s ease 0s; width: 3512px;"><div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <div class="hot-sale">
+                                                <span>Hot</span>
+                                            </div>
+                                            <a href="product-details1.html#"><img src="img/product/4.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span>$88.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <a href="product-details1.html#"><img src="img/product/5.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span><span>$58.00</span>$40.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <div class="hot-sale">
+                                                <span>New</span>
+                                            </div>
+                                            <a href="product-details1.html#"><img src="img/product/6.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span>$58.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <a href="product-details1.html#"><img src="img/product/1.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span>$88.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <a href="product-details1.html#"><img src="img/product/2.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span><span>$58.00</span>$40.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <div class="hot-sale">
+                                                <span>Sale</span>
+                                            </div>
+                                            <a href="product-details1.html#"><img src="img/product/3.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span><span>$74.00</span>$50.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <div class="hot-sale">
+                                                <span>Hot</span>
+                                            </div>
+                                            <a href="product-details1.html#"><img src="img/product/4.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span>$88.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <a href="product-details1.html#"><img src="img/product/5.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span><span>$58.00</span>$40.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <div class="hot-sale">
+                                                <span>New</span>
+                                            </div>
+                                            <a href="product-details1.html#"><img src="img/product/6.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span>$58.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item cloned active" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <a href="product-details1.html#"><img src="img/product/1.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span>$88.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item cloned active" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <a href="product-details1.html#"><img src="img/product/2.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span><span>$58.00</span>$40.00</span>
+                                        </div>
+                                    </div></div><div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;"><div class="product-box1">
+                                        <ul class="product-social">
+                                            <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                        <div class="product-img-holder">
+                                            <div class="hot-sale">
+                                                <span>Sale</span>
+                                            </div>
+                                            <a href="product-details1.html#"><img src="img/product/3.jpg" alt="product"></a>
+                                        </div>
+                                        <div class="product-content-holder">
+                                            <h3><a href="product-details1.html#">Product Title Here</a></h3>
+                                            <span><span>$74.00</span>$50.00</span>
+                                        </div>
+                                    </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""><i class="fa fa-angle-left" aria-hidden="true"></i></div><div class="owl-next" style=""><i class="fa fa-angle-right" aria-hidden="true"></i></div></div><div class="owl-dots" style="display: none;"></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-md-pull-9">
+                        <div class="sidebar hidden-before-tab">
+                            <div class="category-menu-area sidebar-section-margin" id="category-menu-area">
+                                <h2 class="title-sidebar">SHOP CATEGORIES</h2>
+                                <ul>
+                                    <li><a href="product-details1.html#"><i class="flaticon-dress-1"></i>Women<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Women Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Women Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Women Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Women Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Women Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-polo"></i>Men<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Men Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Men Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Men Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Men Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Men Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-plug"></i>Electornics<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Electornics Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Electornics Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Electornics Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Electornics Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Electornics Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-necklace"></i>Jewellery<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Jewellery Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Jewellery Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Jewellery Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Jewellery Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Jewellery Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-screen"></i>Computer<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Computer Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Computer Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Computer Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Computer Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Computer Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-headphones"></i>Head Phone<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Head Phone Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Head Phone Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Head Phone Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Head Phone Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Head Phone Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-transport"></i>Toys<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Toys Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Toys Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Toys Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Toys Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Toys Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-fashion"></i>Shoes<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Shoes Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Shoes Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Shoes Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Shoes Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Shoes Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-dress"></i>Kid’s Wear<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Kid’s Wear Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Kid’s Wear Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Kid’s Wear Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Kid’s Wear Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Kid’s Wear Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product-details1.html#"><i class="flaticon-technology"></i>Mobile<span><i class="flaticon-next"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="shop1.html">Mobile Sub Title 1</a></li>
+                                            <li><a href="shop1.html">Mobile Sub Title 2</a></li>
+                                            <li><a href="shop1.html">Mobile Sub Title 3</a></li>
+                                            <li><a href="shop1.html">Mobile Sub Title 4</a></li>
+                                            <li><a href="shop1.html">Mobile Sub Title 5</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="filter-by-price sidebar-section-margin">
+                                <h2 class="title-sidebar">FILTER BY PRICE</h2>
+                                <div id="price-range-wrapper" class="price-range-wrapper">
+                                    <div id="price-range-filter" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 20%;"><div class="noUi-handle" data-handle="0" style="z-index: 5;"></div></div><div class="noUi-connect" style="left: 20%; right: 20%;"></div><div class="noUi-origin" style="left: 80%;"><div class="noUi-handle" data-handle="1" style="z-index: 4;"></div></div></div></div>
+                                    <div class="price-range-select">
+                                        <div class="price-range" id="price-range-min">$20</div>
+                                        <div class="price-range" id="price-range-max">$80</div>
+                                    </div>
+                                    <button class="btn-services-shop-now" type="submit" value="Login">Filter</button>
+                                </div>
+                            </div>
+                            <div class="best-products sidebar-section-margin">
+                                <h2 class="title-sidebar">BEST PRODUCTS</h2>
+                                <div class="media">
+                                    <a href="product-details1.html#" class="pull-left">
+                                        <img alt="Media Object" src="img/sidebar/1.jpg" class="img-responsive">
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><a href="product-details1.html#">Product Title Here</a></h3>
+                                        <p><span>$99</span>$85</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="product-details1.html#" class="pull-left">
+                                        <img alt="Media Object" src="img/sidebar/2.jpg" class="img-responsive">
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><a href="product-details1.html#">Product Title Here</a></h3>
+                                        <p><span>$99</span>$85</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="product-details1.html#" class="pull-left">
+                                        <img alt="Media Object" src="img/sidebar/3.jpg" class="img-responsive">
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><a href="product-details1.html#">Product Title Here</a></h3>
+                                        <p><span>$99</span>$85</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="product-details1.html#" class="pull-left">
+                                        <img alt="Media Object" src="img/sidebar/4.jpg" class="img-responsive">
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><a href="product-details1.html#">Product Title Here</a></h3>
+                                        <p><span>$99</span>$85</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-tags sidebar-section-margin">
+                                <h2 class="title-sidebar">Product Tags</h2>
+                                <ul>
+                                    <li><a href="product-details1.html#">Fashion</a></li>
+                                    <li><a href="product-details1.html#">Glamour</a></li>
+                                    <li><a href="product-details1.html#">Shoes</a></li>
+                                    <li><a href="product-details1.html#">Dress</a></li>
+                                    <li><a href="product-details1.html#">Kid’s</a></li>
+                                    <li><a href="product-details1.html#">Accessories</a></li>
+                                    <li><a href="product-details1.html#">Mobile</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock maincontent %}
+
+{% block extrajs %}
+
+{% endblock extrajs %}

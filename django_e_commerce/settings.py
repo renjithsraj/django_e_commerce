@@ -39,7 +39,9 @@ THIRD_PARTY_APPS = [
     'imagekit',
     'ckeditor',
     'mptt',
-    'uuid'
+    'uuid',
+    'rest_framework',
+    
 ]
 
 # #############  Admin CK Editer for video embeding ##########

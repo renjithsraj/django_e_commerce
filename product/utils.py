@@ -11,7 +11,8 @@ class JSONResponseMixin:
         """
         return JsonResponse(
             self.get_data(context),
-            **response_kwargs
+            **response_kwargs,
+            safe=False
         )
 
     def get_data(self, context):
