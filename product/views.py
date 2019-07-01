@@ -11,7 +11,9 @@ class ProductDetailView(JSONResponseMixin, DetailView):
 
     def render_to_response(self, context):
         if self.request.is_ajax():
-            product_json = ProductsSerializer(context['object']).data
+            product_json = ProductsSerializer(
+                context['object'], context={"request": self.request}).data
+            print ('ddddddddddddd', product_json)
             return self.render_to_json_response(product_json)
         else:
             return super().render_to_response(context)

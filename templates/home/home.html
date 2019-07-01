@@ -473,9 +473,10 @@
 {% block extrajs %}
    <script type="text/javascript">
       function showProduct(slug){
+
          var productViewUrl = '/product-detail/'+ slug
          $.get(productViewUrl, function(data){
-            
+            console.log(data)   
             $("#product-id").html(data['name']);
             $('#myModal').modal('show'); 
 

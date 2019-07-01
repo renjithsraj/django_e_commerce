@@ -4,7 +4,7 @@
         <li>
             <a href="index.html#">
                   {{sub.name}}
-                  {% if category.children%}
+                  {% if sub.children.count > 0 %}
                      <span>
                         <i class="flaticon-next"></i>
                      </span>
