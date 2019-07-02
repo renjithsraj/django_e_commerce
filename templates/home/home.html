@@ -478,7 +478,14 @@
          $.get(productViewUrl, function(data){
             console.log(data)   
             $("#product-id").html(data['name']);
+            $('#product-desc').html(data['specification'])
+            $('#product-image').html(data['image_url']['image_string'])
+            $('#support-image').html(data['image_url']['support_image'])
+            var category_de = "<span>Category:</span> "
+            category_de += data['categories']
+            $('#product_category').html(category_de)
             $('#myModal').modal('show'); 
+            
 
 
         });
