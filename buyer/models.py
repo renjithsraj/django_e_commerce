@@ -58,7 +58,13 @@ class Buyer(AbstractUser):
 
 
 class WishList(models.Model):
-    product = models.ForeignKey(Products, related_name='wishlist', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        Buyer, related_name="wishlist_products", on_delete=models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
     email = models.CharField(max_length=200)
     added_on = models.DateField(auto_now_add=True)
     is_delete = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "{0} - {1}".format(str(self.user.username), str(self.product.name))
+    
