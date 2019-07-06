@@ -78,14 +78,14 @@
                      </div>
                   </div>
 
-                  <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Success!</strong> Indicates a successful or positive action.
+                  <div id="id_success" class="alert alert-success alert-dismissible" style="display:none">
+                     <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     <strong>Success!</strong> <span id="id_success_msg"></span>
                   </div>
 
-                  <div class="alert alert-danger alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Warning!</strong> <span>Indicates a successful or positive action.</span>
+                  <div id="id_error" class="alert alert-danger alert-dismissible" style="display:none">
+                     <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     <strong>Warning!</strong> <span id="id_error_msg"></span>
                   </div>
 
                   <div class="header-top-inner-bottom">
@@ -458,6 +458,7 @@
          </header>
          <!-- Header Area End Here -->
          <!-- Slider Area Start Here -->
+         
 		{% block maincontent %}
 
 		{% endblock maincontent%}
@@ -673,6 +674,30 @@
       <script src="{% static "js/switch-style.js" %}" type="text/javascript"></script>
       <!-- Custom Js -->
       <script src="{% static "js/main.js" %}" type="text/javascript"></script>
+      <script>
+         function successNotification(msg){
+            $('#id_success_msg').empty();
+            $('#id_success_msg').html(msg);
+            $('#id_success').show();
+            setTimeout(function(){ 
+               $('#id_success').hide(); 
+            }, 3000);
+
+         }
+
+         function errorNotification(msg){
+            $('#id_error_msg').empty();
+            $('#id_error_msg').html(msg);
+            $('#id_error').show();
+            setTimeout(function(){ 
+               $('#id_error').hide(); 
+            }, 3000);
+
+         }
+
+      </script>
+
+
       {% block extrajs %}
       {% endblock extrajs %}
    </body>

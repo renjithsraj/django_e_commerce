@@ -79,7 +79,7 @@
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale current">
                <div class="product-box1">
                   <ul class="product-social">
-                     <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                     <li><a onclick="AddProductCart('{{lpd.slug}}');"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                      <li><a onclick="WishlistProduct('{{lpd.slug}}');"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                      <li><a onclick="showProduct('{{lpd.slug}}');"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                   </ul>
@@ -495,8 +495,29 @@
          var wishlistViewUrl = '/wish-list/'
          $.post( wishlistViewUrl, { 'product_slug': slug, 'csrfmiddlewaretoken': '{{ csrf_token }}' })
          .done(function( data ) {
-            alert( "Data Loaded: " + data.status );
-            alert( "Data Loaded: " + data.msg );
+            if (data['status'] == 'success'){
+               successNotification(data['msg'])
+            }
+            else {
+               errorNotification(data['msg'])
+            }
+         });
+      }
+
+      function AddProductCart(slug){
+         
+         $.post("{% url 'add-product-cart' %}", 
+               { 'product_slug': slug, 
+                  'csrfmiddlewaretoken': '{{ csrf_token }}', 
+                  'qty': 0, 'quick': true 
+                })
+         .done(function( data ) {
+            if (data['status'] == 'success'){
+               successNotification(data['msg'])
+            }
+            else {
+               errorNotification(data['msg'])
+            }
          });
       }
 

@@ -72,5 +72,12 @@ class WishlistView(JSONResponseMixin, generic.ListView):
                 )
 
 
-    
+class AddProductCartView(JSONResponseMixin, generic.ListView):
+    # template_name = 'form_template.html'
+    model = Products
+    def post(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            print("logined")
+        else:
+            print("here")
 
