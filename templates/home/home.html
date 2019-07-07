@@ -509,7 +509,7 @@
          $.post("{% url 'add-product-cart' %}", 
                { 'product_slug': slug, 
                   'csrfmiddlewaretoken': '{{ csrf_token }}', 
-                  'qty': 0, 'quick': true 
+                  'qty': 1, 'quick': true 
                 })
          .done(function( data ) {
             if (data['status'] == 'success'){
