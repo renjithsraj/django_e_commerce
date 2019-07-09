@@ -1,0 +1,24 @@
+{% load base %}
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-md-pull-9">
+   <div class="category-menu-area close-on-tab" id="category-menu-area">
+      <ul >
+         {% for category in nodes %}
+            <li>
+               <a href="index.html#">
+                  {{category.name}}
+                  {% if category.children%}
+                     <span>
+                        <i class="flaticon-next"></i>
+                     </span>
+                  {% endif %}
+               </a>
+                  {% if category.children.count > 0 %}
+                     {% tree_structure category %}
+                  {% endif %}
+            </li>
+         {% endfor %}
+      </ul>
+   </div>
+</div>
+   
+        

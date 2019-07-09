@@ -129,84 +129,22 @@
                                  </div>
                               </div>
                            </div>
+
+
+
                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                               <ul class="header-cart-area">
-                                 <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i><span>2</span></a></li>
-                                 <li>
-                                    <div class="cart-area">
-                                       <a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>2</span></a>
-                                       <ul>
-                                          <li>
-                                             <div class="cart-single-product">
-                                                <div class="media">
-                                                   <div class="pull-left cart-product-img">
-                                                      <a href="index.html#">
-                                                      <img class="img-responsive" alt="product" src="img/best-seller/4.jpg">
-                                                      </a>
-                                                   </div>
-                                                   <div class="media-body cart-content">
-                                                      <ul>
-                                                         <li>
-                                                            <h2><a href="index.html#">Product Title Here</a></h2>
-                                                            <h3><span>Code:</span> STPT600</h3>
-                                                         </li>
-                                                         <li>
-                                                            <p>X 1</p>
-                                                         </li>
-                                                         <li>
-                                                            <p>$49</p>
-                                                         </li>
-                                                         <li>
-                                                            <a class="trash" href="index.html#"><i class="fa fa-trash-o"></i></a>
-                                                         </li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </li>
-                                          <li>
-                                             <div class="cart-single-product">
-                                                <div class="media">
-                                                   <div class="pull-left cart-product-img">
-                                                      <a href="index.html#">
-                                                      <img class="img-responsive" alt="product" src="img/best-seller/5.jpg">
-                                                      </a>
-                                                   </div>
-                                                   <div class="media-body cart-content">
-                                                      <ul>
-                                                         <li>
-                                                            <h2><a href="index.html#">Product Title Here</a></h2>
-                                                            <h3><span>Code:</span> STPT460</h3>
-                                                         </li>
-                                                         <li>
-                                                            <p>X 1</p>
-                                                         </li>
-                                                         <li>
-                                                            <p>$75</p>
-                                                         </li>
-                                                         <li>
-                                                            <a class="trash" href="index.html#"><i class="fa fa-trash-o"></i></a>
-                                                         </li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </li>
-                                          <li>
-                                             <span><span>Sub Total</span></span><span>$124</span>
-                                             <span><span>Discount</span></span><span>$30</span>
-                                             <span><span>Vat(20%)</span></span><span>$18.8</span>
-                                             <span><span>Sub Total</span></span><span>$112.8</span>
-                                          </li>
-                                          <li>
-                                             <ul class="checkout">
-                                                <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                                <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
-                                             </ul>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </li>
+                                 {% if not user.is_staff %}
+                                    <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i><span id="cc"></span></a></li>
+                                    <li id="cart_items">
+                                          <div class="cart-area">
+                                          <a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="cart_count"></span></a>
+                                          <ul id="cart_products">     
+                                          </ul>
+                                       </div>
+                                    </li>
+                                 {% endif %}
+ 
                                  <li>
                                     <div class="additional-menu-area" id="additional-menu-area">
                                        <div id="mySidenav" class="sidenav">
@@ -273,6 +211,10 @@
                                  </li>
                               </ul>
                            </div>
+
+
+
+
                         </div>
                      </div>
                   </div>
@@ -469,74 +411,6 @@
                <div class="footer-area-top">
                   <div class="container">
                      <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                           <div class="footer-box">
-                              <h3>Information</h3>
-                              <ul class="info-list">
-                                 <li><a href="about.html">About us</a></li>
-                                 <li><a href="index.html#">Customer Service</a></li>
-                                 <li><a href="index.html#">Manufacturers</a></li>
-                                 <li><a href="index.html#">Privacy policy</a></li>
-                                 <li><a href="index.html#">Terms & condition</a></li>
-                                 <li><a href="blog.html">Blog</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                           <div class="footer-box">
-                              <h3>My Account</h3>
-                              <ul class="info-list">
-                                 <li><a href="login-registration.html">My Account</a></li>
-                                 <li><a href="login-registration.html">Login</a></li>
-                                 <li><a href="wishlist.html">Order History</a></li>
-                                 <li><a href="wishlist.html">Wish List</a></li>
-                                 <li><a href="cart.html">View Cart</a></li>
-                                 <li><a href="blog.html">Latest Post</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                           <div class="footer-box">
-                              <h3>Product Tag</h3>
-                              <ul class="tag-list">
-                                 <li><a href="index.html#">Winter</a></li>
-                                 <li><a href="index.html#">Fashion</a></li>
-                                 <li><a href="index.html#">Bag</a></li>
-                                 <li><a href="index.html#">Denime</a></li>
-                                 <li><a href="index.html#">Summer Style</a></li>
-                                 <li><a href="index.html#">Leather</a></li>
-                                 <li><a href="index.html#">Dress</a></li>
-                                 <li><a href="index.html#">Dress</a></li>
-                                 <li><a href="index.html#">Summer Style</a></li>
-                                 <li><a href="index.html#">Leather</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                           <div class="footer-box">
-                              <h3>Stay With Us</h3>
-                              <p>Tmply dummy text of the printing and typesetting industry nummy ever.</p>
-                              <ul class="footer-social">
-                                 <li><a href="index.html#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                 <li><a href="index.html#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                 <li><a href="index.html#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                 <li><a href="index.html#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                 <li><a href="index.html#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                 <li><a href="index.html#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                              </ul>
-                              <div class="newsletter-area">
-                                 <h3>NewsLetter Sign Up!</h3>
-                                 <div class="input-group stylish-input-group">
-                                    <input type="text" class="form-control" placeholder="E-mail . . .">
-                                    <span class="input-group-addon">
-                                    <button type="submit">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    </button>  
-                                    </span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
                      </div>
                   </div>
                </div>
@@ -549,16 +423,16 @@
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                            <ul class="payment-method">
                               <li>
-                                 <a href="index.html#"><img src="img/payment-method1.jpg" alt="payment-method"></a>
+                                 <a href="#"><img src="{% static '/img/payment-method1.jpg' %}" alt="payment-method"></a>
                               </li>
                               <li>
-                                 <a href="index.html#"><img src="img/payment-method2.jpg" alt="payment-method"></a>
+                                 <a href="#"><img src="{% static '/img/payment-method2.jpg' %}" alt="payment-method"></a>
                               </li>
                               <li>
-                                 <a href="index.html#"><img src="img/payment-method3.jpg" alt="payment-method"></a>
+                                 <a href="index.html#"><img src="{% static '/img/payment-method3.jpg' %}" alt="payment-method"></a>
                               </li>
                               <li>
-                                 <a href="index.html#"><img src="img/payment-method4.jpg" alt="payment-method"></a>
+                                 <a href="index.html#"><img src="{% static '/img/payment-method4.jpg' %}" alt="payment-method"></a>
                               </li>
                            </ul>
                         </div>
@@ -646,9 +520,7 @@
       <!-- Style Switch Start Here -->
       <link id="switch_style" href="index.html#" rel="stylesheet" type="text/css">
       <!-- Style Switch End Here -->
-      <!-- Preloader Start Here -->
-      <div id="preloader"></div>
-      <!-- Preloader End Here -->
+    
       <!-- jquery-->
       <script src="{% static "js/vendor/jquery-2.2.4.min.js" %}" type="text/javascript"></script>
       <!-- Bootstrap js -->
@@ -694,6 +566,27 @@
             }, 3000);
 
          }
+
+         function loadAddCartModal(){
+            var cart_url = "{% url 'add-product-cart' %}"
+            $.get(cart_url , function(data){
+               if (data['status'] == 'success'){
+                  if (data['data']){
+                     $('#cart_count').html(data['count']);
+                     $('#cart_products').html(data['data']);
+                  }
+               }
+               else{
+                  console.log("error");
+               }
+            });
+
+         }
+
+         $( document ).ready(function() {
+            loadAddCartModal();
+         });
+ 
 
       </script>
 

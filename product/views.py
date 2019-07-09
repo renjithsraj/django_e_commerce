@@ -84,8 +84,69 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
     resp = {"status": "", "msg": ""}
 
     def get(self, request, *args, **kwargs):
-        # request.session['cart'] = []
-        print(request.session.get('cart', []))
+        # request.session.clear()
+        price, count = 0, 0
+        product_carts= []
+        if request.user.is_authenticated:
+            pass
+        else:
+            if 'cart' in request.session:
+                cart_list = request.session.get('cart')
+                product_carts = []
+                for cart_item in cart_list:
+                    price += cart_item['total']
+                    cart_data = """ 
+                            <li>
+                                <div class="cart-single-product">
+                                    <div class="media">
+                                        <div class="pull-left cart-product-img">
+                                            <a href="index.html#">
+                                                <img class="img-responsive" alt="{0}" src="{1}">
+                                            </a>
+                                        </div>
+                                        <div class="media-body cart-content">
+                                            <ul>
+                                                <li>
+                                                    <h2><a href="index.html#">{0}</a></h2>
+                                                    <h3><span>Code:</span> {5}</h3>
+                                                </li>
+                                                <li>
+                                                    <p>X {2}</p>
+                                                </li>
+                                                <li>
+                                                    <p>${3}</p>
+                                                </li>
+                                                <li>
+                                                    <p>${4}</p>
+                                                </li>
+                                                <li> <a class="trash" onclick=""><i class="fa fa-trash-o"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                    """.format(cart_item['name'], cart_item['image'],cart_item['qty'], cart_item['price'], cart_item['total'], cart_item['code'])
+                    product_carts.append(cart_data)
+                total_html = """
+                                <li>
+                                    <span><span>Sub Total</span></span><span>${0}</span>
+                                </li>
+                                <li>
+                                    <ul class="checkout">
+                                        <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
+                                        <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                    </ul>
+                                </li>""".format(price)
+                html_string = "".join(product_carts) + total_html   
+            self.resp.update({
+                'status': "success", 'data': html_string, 
+                'msg': "successfuly loaded", "count": len(product_carts), "total": price})
+        return self.render_to_json_response(self.resp)
+
+
+        
+
 
     def post(self, request, *args, **kwargs):
         rq = request.POST.get
@@ -157,7 +218,8 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
                     total = float(product.gross_pay()[0]) * int(qty)
                     cart_list.append({'id': product.id, 'name': product.name, 'slug': product.slug, 
                             'image':product.image.url, 'qty': qty, 
-                            'price': product.gross_pay()[0], 'total': total, }
+                            'price': product.gross_pay()[0], 'total': total, 
+                            'code': product.product_no}
                             )
                 else:
                     self.resp.update({
@@ -170,7 +232,7 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
                     cart_list.append({'id': product.id, 'name': product.name, 
                     'slug': product.slug, 'image': product.image.url, 
                     'qty': rq('qty'), 'price': product.gross_pay()[0], 
-                    'total': total 
+                    'total': total, 'code': product.product_no
                     })
                 else:
                     self.resp.update({
