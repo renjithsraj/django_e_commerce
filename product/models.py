@@ -143,8 +143,8 @@ class Products(models.Model):
     def sections(self):
         section = []
         for category in self.category.all():
-            section.append(category)
-        return section
+            section.append(category.name)
+        return ", ".join(section)
 
     def get_related_products(self):
         related_products = Products.objects.filter(category__in =

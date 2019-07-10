@@ -208,56 +208,7 @@
 {% endblock maincontent %}
 
 {% block extrajs %}
-   <script type="text/javascript">
-      function showProduct(slug){
-
-         var productViewUrl = '/product-detail/'+ slug
-         $.get(productViewUrl, function(data){ 
-            $("#product-id").html(data['name']);
-            $('#product-desc').html(data['specification'])
-            $('#product-image').html(data['image_url']['image_string'])
-            $('#support-image').html(data['image_url']['support_image'])
-            var category_de = "<span>Category:</span> "
-            category_de += data['categories']
-            $('#product_category').html(category_de)
-            $('#myModal').modal('show');
-        });
-      }
-
-      function WishlistProduct(slug){
-
-         var wishlistViewUrl = '/wish-list/'
-         $.post( wishlistViewUrl, { 'product_slug': slug, 'csrfmiddlewaretoken': '{{ csrf_token }}' })
-         .done(function( data ) {
-            if (data['status'] == 'success'){
-               successNotification(data['msg'])
-            }
-            else {
-               errorNotification(data['msg'])
-            }
-         });
-      }
-
-      function AddProductCart(slug){
-         
-         $.post("{% url 'add-product-cart' %}", 
-               { 'product_slug': slug, 
-                  'csrfmiddlewaretoken': '{{ csrf_token }}', 
-                  'qty': 1, 'quick': true 
-                })
-         .done(function( data ) {
-            if (data['status'] == 'success'){
-               successNotification(data['msg'])
-               loadAddCartModal();
-            }
-            else {
-               errorNotification(data['msg'])
-            }
-         });
-      }
-
    
-   </script>
 
 
 {% endblock extrajs %}

@@ -36,13 +36,9 @@
     <div class="product-tags sidebar-section-margin">
         <h2 class="title-sidebar">Product Tags</h2>
         <ul>
-            <li><a href="product-details1.html#">Fashion</a></li>
-            <li><a href="product-details1.html#">Glamour</a></li>
-            <li><a href="product-details1.html#">Shoes</a></li>
-            <li><a href="product-details1.html#">Dress</a></li>
-            <li><a href="product-details1.html#">Kid’s</a></li>
-            <li><a href="product-details1.html#">Accessories</a></li>
-            <li><a href="product-details1.html#">Mobile</a></li>
+            {% for category in product.category.all %}
+               <li><a href="product-details1.html#">{{category.name}}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>

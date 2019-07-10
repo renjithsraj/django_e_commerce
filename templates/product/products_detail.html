@@ -58,42 +58,11 @@
                            <p class="price">${{object.price}}</p>
                            <p style="text-align: justify">{{object.specification | striptags}}</p>
                            <div class="product-details-content">
-                              <p><span>SKU:</span> 0010</p>
+                              <p><span>CODE:</span> {{object.project_no}}</p>
                               <p><span>Availability:</span> In stock</p>
-                              <p><span>Category:</span> Demo Products</p>
+                              <p><span>Category:</span> {{object.sections}} </p>
                            </div>
                            <form id="checkout-form">
-                              <ul class="more-option">
-                                 <li>
-                                    <div class="form-group">
-                                       <div class="custom-select">
-                                          <select id="size" class="select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                             <option value="0">Select Your Size</option>
-                                             <option value="1">XL</option>
-                                             <option value="2">L</option>
-                                             <option value="3">M</option>
-                                             <option value="4">S</option>
-                                          </select>
-                                          <span class="select2 select2-container select2-container--classic" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-size-container"><span class="select2-selection__rendered" id="select2-size-container" title="Select Your Size">Select Your Size</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li>
-                                    <div class="form-group">
-                                       <div class="custom-select">
-                                          <select id="color" class="select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                             <option value="0">Select Your Color</option>
-                                             <option value="1">Black</option>
-                                             <option value="2">White</option>
-                                             <option value="3">Blue</option>
-                                             <option value="4">Green</option>
-                                             <option value="5">Pink</option>
-                                          </select>
-                                          <span class="select2 select2-container select2-container--classic" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-color-container"><span class="select2-selection__rendered" id="select2-color-container" title="Select Your Color">Select Your Color</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                       </div>
-                                    </div>
-                                 </li>
-                              </ul>
                               <ul class="inner-product-details-cart">
                                  <li>
                                     <div class="input-group quantity-holder" id="quantity-holder">
@@ -104,7 +73,7 @@
                                        </div>
                                     </div>
                                  </li>
-                                 <li><a href="product-details1.html#">Add To Cart</a></li>
+                                 <li><a onclick="WishlistProduct('{{object.slug}}')">Add To Cart</a></li>
                                  <li><a href="product-details1.html#"><i aria-hidden="true" class="fa fa-heart-o"></i></a></li>
                                  <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                               </ul>
@@ -125,20 +94,20 @@
                      <div class="col-lg-12 col-md-12 col-sm-12">
                         <ul>
                            <li class="active"><a href="product-details1.html#description" data-toggle="tab" aria-expanded="false">Description</a></li>
-                           <li><a href="product-details1.html#review" data-toggle="tab" aria-expanded="false">Review(0)</a></li>
-                           <li><a href="product-details1.html#add-tags" data-toggle="tab" aria-expanded="false">ADD TAGS</a></li>
+                           <li><a href="product-details1.html#review" data-toggle="tab" aria-expanded="false">Features</a></li>
+                           <li><a href="product-details1.html#add-tags" data-toggle="tab" aria-expanded="false">Any Notes</a></li>
                         </ul>
                      </div>
                      <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="tab-content">
                            <div class="tab-pane fade active in" id="description">
-                              <p>Porem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+                              <p style="text-align: justify;">{{object.content | striptags}}</p>
                            </div>
                            <div class="tab-pane fade" id="review">
-                              <p>Porem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+                              <p style="text-align: justify;">{{object.Features | striptags }}</p>
                            </div>
                            <div class="tab-pane fade" id="add-tags">
-                              <p>Porem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+                              <p style="text-align: justify;">{{object.Note}}</p>
                            </div>
                         </div>
                      </div>

@@ -15,10 +15,8 @@ def side_category_tag_1(context, product_id=None,  user=None):
     category_ids = [ i.id for i in product.category.all()]
     related_products = Products.objects.filter(category__in = category_ids
     ).exclude(id=product_id)
-    print ("related products", related_products)
-
     categories = Section.objects.filter(parent__isnull=True)
-    return {'nodes': categories, 'related_products': related_products}
+    return {'nodes': categories, 'related_products': related_products, 'product': product}
 
 
 @register.inclusion_tag('tags/tree_structure.html', takes_context=True)
