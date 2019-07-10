@@ -104,6 +104,10 @@ class Products(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('product-detail', args=[str(self.slug)])
 
     def order_image(self):
         if self.image_thumbnail2:
@@ -142,6 +146,12 @@ class Products(models.Model):
             section.append(category)
         return section
 
+    def get_related_products(self):
+        related_products = Products.objects.filter(category__in =
+            [i.id for i in self.category.all()]).exclude(slug= self.slug)
+        return related_products
+
+
     def image_dispaly(self):
         if self.image:
             return self.image.url
@@ -154,7 +164,6 @@ class Products(models.Model):
             unique_slugify(self, name1)
         else:
             pass
-
         super(Products, self).save()
 
     class Meta:

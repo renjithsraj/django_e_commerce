@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load base %}
-{% block title %} Home{% endblock title %}
+{% block title %} {{object.name}} | Product Detail{% endblock title %}
 {% block category_home %}
 <div class="col-lg-3 col-md-3 col-sm-4">
    <h2 class="category-menu-title close-on-tab"><a href="index.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
    <div class="logo-area">
-      <a href="index.html"><img class="img-responsive" src="{% static 'img/logo.png' %}" alt="logo"></a>
+      <a href="index.html"><img class="img-responsive" src="{%static 'img/logo.png' %}" alt="logo"></a>
    </div>
 </div>
 {% endblock category_home %}
@@ -21,26 +21,27 @@
                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="inner-product-details-left">
                            <div class="tab-content">
-                              <div class="tab-pane fade active in" id="related1">
-                                 <a href="product-details1.html#" class="zoom ex1"><img alt="single" src="img/product/product-details1.jpg" class="img-responsive"></a>
+                              <div class="tab-pane fade active in" id="related13">
+                                 <a href="product-details1.html#" class="zoom ex1"><img alt="{{object.name}}" src="{{object.image.url}}" class="img-responsive"></a>
                               </div>
-                              <div class="tab-pane fade" id="related2">
-                                 <a href="product-details1.html#" class="zoom ex1"><img alt="single" src="img/product/product-details1.jpg" class="img-responsive"></a>
-                              </div>
-                              <div class="tab-pane fade" id="related3">
-                                 <a href="product-details1.html#" class="zoom ex1"><img alt="single" src="img/product/product-details1.jpg" class="img-responsive"></a>
-                              </div>
+                              {% if object.gallery %}
+                                    {% for image in object.gallery.all %}
+                                        <div class="tab-pane fade" id="related{{forloop.counter}}">
+                                            <a href="product-details1.html#" class="zoom ex1"><img alt="{{image.name}}" src="{{image.image.url}}" class="img-responsive"></a>
+                                        </div>
+                                    {% endfor %}
+                              {% endif%}
+
                            </div>
                            <ul>
-                              <li class="active">
-                                 <a href="product-details1.html#related1" data-toggle="tab" aria-expanded="false"><img alt="related1" src="img/product/product-details4.jpg" class="img-responsive"></a>
-                              </li>
-                              <li>
-                                 <a href="product-details1.html#related2" data-toggle="tab" aria-expanded="false"><img alt="related2" src="img/product/product-details4.jpg" class="img-responsive"></a>
-                              </li>
-                              <li>
-                                 <a href="product-details1.html#related3" data-toggle="tab" aria-expanded="false"><img alt="related3" src="img/product/product-details4.jpg" class="img-responsive"></a>
-                              </li>
+ 
+                                {% if object.gallery %}
+                                    {% for s_image in object.gallery.all %}
+                                        <li>
+                                            <a href="product-details1.html#related{{forloop.counter}}" data-toggle="tab" aria-expanded="false"><img alt="{{s_image.name}}" src="{{s_image.image.url}}" class="img-responsive"></a>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
                            </ul>
                         </div>
                      </div>
@@ -375,7 +376,7 @@
                </div>
             </div>
          </div>
-         {% side_category_tag_1 %}
+         {% side_category_tag_1 product_id=object.id %}
       </div>
    </div>
 </div>

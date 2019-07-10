@@ -18,6 +18,13 @@ class ProductDetailView(JSONResponseMixin, DetailView):
     model = Products
     template_name = 'product/products_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["related_products"] = self.model.objects.filter(category__in=
+            [i.id for i in self.object.category.all()]).exclude(slug= self.object.slug)
+        return context
+    
+
     def render_to_response(self, context):
         if self.request.is_ajax():
             product_json = ProductsSerializer(
@@ -86,7 +93,8 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
     def get(self, request, *args, **kwargs):
         # request.session.clear()
         price, count = 0, 0
-        product_carts= []
+        product_carts= [] = ""
+        html_string = ""
         if request.user.is_authenticated:
             pass
         else:

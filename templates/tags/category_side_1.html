@@ -1,6 +1,6 @@
 {% load base %}
 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-md-pull-9">
-   <div class="category-menu-area close-on-tab" id="category-menu-area">
+   <div class="category-menu-area close-on-tab sidebar-section-margin" id="category-menu-area">
       <ul >
          {% for category in nodes %}
             <li>
@@ -19,6 +19,32 @@
          {% endfor %}
       </ul>
    </div>
+   <div class="best-products sidebar-section-margin">
+        <h2 class="title-sidebar">BEST PRODUCTS</h2>
+        {% for product in related_products %}
+            <div class="media">
+                <a href="{{product.get_absolute_url}}" class="pull-left">
+                    <img alt="{{product.name}}" src="{{product.image_thumbnail.url}}" class="img-responsive">
+                </a>
+                <div class="media-body">
+                    <h3 class="media-heading"><a href="{{product.get_absolute_url}}">{{product.name}}</a></h3>
+                    <p>${{product.price}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="product-tags sidebar-section-margin">
+        <h2 class="title-sidebar">Product Tags</h2>
+        <ul>
+            <li><a href="product-details1.html#">Fashion</a></li>
+            <li><a href="product-details1.html#">Glamour</a></li>
+            <li><a href="product-details1.html#">Shoes</a></li>
+            <li><a href="product-details1.html#">Dress</a></li>
+            <li><a href="product-details1.html#">Kid’s</a></li>
+            <li><a href="product-details1.html#">Accessories</a></li>
+            <li><a href="product-details1.html#">Mobile</a></li>
+        </ul>
+    </div>
 </div>
    
         
