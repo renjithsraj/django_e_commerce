@@ -18,23 +18,21 @@ from ckeditor.fields import RichTextField
 class Section(MPTTModel):
 
     name = models.CharField(max_length=50, unique=True)
-
     feauterd_image = ProcessedImageField(upload_to='images/category',
                                          format='JPEG',
                                          options={'quality': 60}, null=True, blank=True, verbose_name="image(height:346px,width:895px)")
     parent = TreeForeignKey(
         'self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
-
     image_thumbnail = ImageSpecField(source='feauterd_image',
                                      processors=[ResizeToFill(233, 233)],
                                      format='JPEG',
                                      options={'quality': 60})
 
     slug = models.SlugField(max_length=100, unique=True, null=True, blank=True)
-
     url = models.CharField(max_length=255, null=True, blank=True)
-
     is_menu = models.BooleanField(default=False, verbose_name="Is Menu")
+    icon_class = models.CharField(max_length=50, null=True, blank=True,
+        verbose_name="Icon class name(eg: flaticon-dress-1)")
 
     def short_image(self):
         if self.image_thumbnail:

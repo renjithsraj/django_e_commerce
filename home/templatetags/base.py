@@ -9,6 +9,12 @@ def side_category_tag(context, user=None):
     categories = Section.objects.filter(parent__isnull=True)
     return {'nodes': categories}
 
+# Category listing tags for side nav bs
+@register.inclusion_tag('tags/menu_ul_tag.html', takes_context=True)
+def menu_category_tag(context, user=None):
+    categories = Section.objects.filter(parent__isnull=True)
+    return {'nodes': categories}
+
 @register.inclusion_tag('tags/category_side_1.html', takes_context=True)
 def side_category_tag_1(context, product_id=None,  user=None):
     product = get_object_or_404(Products, id=product_id)

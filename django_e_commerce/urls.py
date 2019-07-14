@@ -9,6 +9,7 @@ urlpatterns = [
     path('dashboard/', admin.site.urls),
     path('', include('home.urls')),
     path('', include('product.urls')),
+    path('', include('buyer.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+\
     static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

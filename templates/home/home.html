@@ -80,7 +80,10 @@
                <div class="product-box1">
                   <ul class="product-social">
                      <li><a onclick="AddProductCart('{{lpd.slug}}');"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                     <li><a onclick="WishlistProduct('{{lpd.slug}}');"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     {% if user.is_authenticated %}
+                        <li><a onclick="WishlistProduct('{{lpd.slug}}');"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                     {% endif %}
+                     
                      <li><a onclick="showProduct('{{lpd.slug}}');"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                   </ul>
                   <div class="product-img-holder">
@@ -101,7 +104,11 @@
                <div class="product-box1">
                      <ul class="product-social">
                         <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                        <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                        
+                        {% if user.is_authenticated %}
+                           <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                        {% endif %}
+
                         <li><a  onclick="showProduct('{{fdd.slug}}');"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                      </ul>
                      <div class="product-img-holder">
@@ -123,7 +130,9 @@
                <div class="product-box1">
                      <ul class="product-social">
                         <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                        <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                        {% if user.is_authenticated %}
+                           <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                        {% endif %}
                         <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                      </ul>
                      <div class="product-img-holder">

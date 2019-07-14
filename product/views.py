@@ -1,10 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
 from django.views import View, generic
 from product.utils import JSONResponseMixin
 from product.serializers import ProductsSerializer
 from django.shortcuts import get_object_or_404
 import  json
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.http import HttpResponseRedirect
+
+
+
 
 # Apps Models 
 from product.models import Products
@@ -38,13 +44,32 @@ class ProductDetailView(JSONResponseMixin, DetailView):
 
 
 class WishlistView(JSONResponseMixin, generic.ListView):
-    # template_name = 'form_template.html'
+    template_name = 'product/wishlist.html'
     model = WishList
+    login_url = '/accounts/login/'
+    redirect_field_name = 'wish-list'
+    context_object_name = 'wishlists'
+
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        if request.method == 'POST' and not request.user.is_authenticated:
+            return self.render_to_json_response({
+                "status": "login_error",
+                "msg": "Please login to access Wish list"
+            })
+        return super(WishlistView, self).dispatch(request, *args, **kwargs)
+
+    def redirect_url(self):
+        return redirect("/accounts/login /?next=/wish-list/")
 
     def get(self, request, *args, **kwargs):
-        # return render(request, self.template_name, {'form': form})
-        pass
-    
+        user_wishlist_data = self.model.objects.filter(user__id= request.user.id).order_by('-added_on')
+        if request.is_ajax():
+            pass
+            # self.render_to_json_response({'wish_count': })
+        return render(request, self.template_name, {'wishlist': ''})
+
     def get_queryset(self, slug=None):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user, 
@@ -88,7 +113,7 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
     model = Products
     cart_required_params = [
         'product_slug', 'csrfmiddlewaretoken', 'qty', 'quick']
-    resp = {"status": "", "msg": ""}
+    resp = {"status": "", "msg": "", "count": 0}
 
     def get(self, request, *args, **kwargs):
         # request.session.clear()

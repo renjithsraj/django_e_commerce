@@ -1,0 +1,15 @@
+{% load base %}
+<ul class="category-menu-area-inner">
+    {% for category in nodes %}
+        <li>
+            <a href="product-details2.html#"><i class="{{category.icon_class}}"></i>{{category.name}}
+            {% if category.children%}
+                <span><i class="flaticon-next"></i></span>
+            {% endif %}    
+            </a>
+            {% if category.children.count > 0 %}
+                {% tree_structure category %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

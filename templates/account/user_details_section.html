@@ -1,0 +1,39 @@
+<div class="tab-pane fade" id="details">                                    
+    <div class="woocommerce-MyAccount-content"> 
+        <header class="row woocommerce-Address-title title">
+            <h3 class="col-xs-12 metro-title">ACCESS YOUR ACCOUNT</h3>
+        </header>   
+        <form class="row woocommerce-EditAccountForm edit-account" action="my-account.html" method="post">
+            <p class="col-md-6 col-sm-12 woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="" placeholder="First Name">
+            </p>
+            <p class="col-md-6 col-sm-12 woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" value="" placeholder="First Name">
+            </p>
+            <div class="clear"></div>
+            <p class="col-xs-12 woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="" placeholder="Email address">
+            </p>
+            <fieldset class="col-xs-12">
+                <legend>Password change</legend>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <label for="password_current">Current password (leave blank to leave unchanged)</label>
+                    <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current">
+                </p>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <label for="password_1">New password (leave blank to leave unchanged)</label>
+                    <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1">
+                </p>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <label for="password_2">Confirm new password</label>
+                    <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2">
+                </p>
+            </fieldset>
+            <div class="clear"></div>                                            
+            <p class="col-xs-12">
+                <input type="hidden" id="_wpnonce" name="_wpnonce" value="96df2c51c6"><input type="hidden" name="_wp_http_referer" value="/my-account/edit-account/">       <input type="submit" class="woocommerce-Button button btn-shop-now-fill" name="save_account_details" value="Save changes">
+                <input type="hidden" name="action" value="save_account_details">
+            </p>
+        </form>
+    </div>
+</div>

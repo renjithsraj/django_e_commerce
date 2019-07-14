@@ -14007,6 +14007,7 @@ ul {
 .login-registration-page-area .login-registration-field {
   border: 1px solid #B6B6B6;
   padding: 40px;
+  width: 528px;
 }
 @media only screen and (max-width: 767px) {
   .login-registration-page-area .login-registration-field {

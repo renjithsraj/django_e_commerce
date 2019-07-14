@@ -1,3 +1,57 @@
+from django.shortcuts import render, redirect
+from django.views.generic.detail import DetailView
+from django.views import View, generic
+from product.utils import JSONResponseMixin
+from django.shortcuts import get_object_or_404
+import json
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.http import HttpResponseRedirect
+
+# Apps Models
+from product.models import Products
+from billing.models import Cart, CartItem
+from buyer.models import Buyer, WishList
+
+
+class AccountView(View):
+    template_name = 'account/user_account.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'data': ''})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # import json
 # import datetime
 # import random

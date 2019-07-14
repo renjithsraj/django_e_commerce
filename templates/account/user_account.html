@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load base %}
+{% block title %} {{user.username}} | User Dashboard {% endblock title %}
+{% block maincontent %}      
+
+<div class="my-account-page-area">
+            <div class="container">               
+                <div class="woocommerce">               
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <nav class="woocommerce-MyAccount-navigation">
+                                <ul>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard active"><a href="#dashboard" data-toggle="tab" aria-expanded="false">Dashboard</a></li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard"><a href="#orders" data-toggle="tab" aria-expanded="false">Orders</a></li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard"><a href="#addresses" data-toggle="tab" aria-expanded="false">Addresses</a></li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard"><a href="#details" data-toggle="tab" aria-expanded="false">Account Details</a></li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard"><a href="#logout" data-toggle="tab" aria-expanded="false">Logout</a></li>
+                                </ul>
+                            </nav>                        
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"> 
+                            <div class="tab-content">
+                                
+                                {% include 'account/dashboard_section.html' %}
+                                {% include 'account/user_orders_section.html' %}
+                                {% include 'account/user_addresses_section.html' %}
+                                {% include 'account/user_details_section.html' %}
+                                {% include 'account/user_logout_section.html' %}
+                                    
+                            </div>
+                        </div>  
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+{% endblock maincontent %}
+
+{% block extrajs %}
+{% endblock extrajs %}

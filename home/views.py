@@ -19,7 +19,6 @@ def home(request):
     latest_products = Products.objects.order_by('-date')[:8]
     hot_products = Products.objects.filter(is_hot=True).order_by('-date')[:8]
     featured_products = Products.objects.filter(is_featured=True).order_by('-date')[:8]
-    print ('--------------', featured_products)
     return render(
         request, 'home/home.html', 
         {
@@ -31,9 +30,6 @@ def register(request):
     form = BuyerCreationForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
         user = form.save()
-        # username = form.cleaned_data['username']
-        # raw_password = form.cleaned_data['password1']
-        # user = authenticate(username=username, password=raw_password)
         current_site = get_current_site(request)
         subject = 'Activate Your MySite Account'
         message = render_to_string('mailtemp/account_activation_email.html', {
@@ -50,9 +46,6 @@ def register(request):
         messages.success(request, "Your Account is created successfully, \
                 Please check your email for verification link to activate your account")
         return redirect('account_activation_sent')
-        # login(request, user)
-        # messages.success(request, "Successfully Registerd")
-        # return redirect('home')
     return render(request, 'registration/register.html', {'form': form})
 
 
