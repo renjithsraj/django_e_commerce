@@ -1,0 +1,20 @@
+<div class="col-lg-9 col-md-9 col-sm-8">
+    <div class="main-menu-area">
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                {% for menu in nodes %}
+                    <li>
+                        <a href="about.html">{{menu.name}}</a>
+                    </li>
+                {% endfor %}
+                <li>
+                    <a href="wishlist.html#">About</a>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

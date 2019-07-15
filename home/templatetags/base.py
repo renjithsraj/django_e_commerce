@@ -29,3 +29,13 @@ def side_category_tag_1(context, product_id=None,  user=None):
 def tree_structure(context, category):
     subs = category.children.all()
     return {"subs": subs}
+
+def get_categories():
+    categories = Section.objects.filter(
+        parent__isnull=True, is_menu=True).order_by('-id')
+    return categories
+
+@register.inclusion_tag('tags/main_header.html', takes_context=True)
+def main_header(context, user=None):
+    categories = get_categories()
+    return {'nodes': categories}
