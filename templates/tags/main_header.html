@@ -7,7 +7,7 @@
                 </li>
                 {% for menu in nodes %}
                     <li>
-                        <a href="about.html">{{menu.name}}</a>
+                        <a href="{% url 'products-category' slug=menu.slug %}">{{menu.name}}</a>
                     </li>
                 {% endfor %}
                 <li>

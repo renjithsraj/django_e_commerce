@@ -8,12 +8,15 @@ import  json
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
+from django.core.paginator import EmptyPage
+from django.core.paginator import PageNotAnInteger
 
 
 
 
 # Apps Models 
-from product.models import Products
+from product.models import Products, Section
 from billing.models import Cart, CartItem
 from buyer.models import Buyer, WishList
 
@@ -278,4 +281,26 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
                 'msg': "Successfully added {0} into cart".format(str(product.name))})
             return self.render_to_json_response(self.resp)
 
+
+class ProductCategoryListView(JSONResponseMixin ,View):
+    model = Section
+    template_name = "product/product_category.html"
+
+    def get(self, request, *args, **kwargs):
+        section = get_object_or_404(self.model, slug=kwargs.get('slug'))
+        child_categories = [ cat.id for cat in section.get_descendants()]
+        child_categories.append(section.id)
+        products = Products.objects.filter(
+            category__id__in=child_categories).order_by('-date')
+        paginator = Paginator(products, 10) 
+        page = self.request.GET.get('page')
+        try:
+            products_list = paginator.page(page)
+        except PageNotAnInteger:
+            products_list = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range deliver last page of results
+            products_list = paginator.page(paginator.num_pages)
+        return render(request, self.template_name, {'page': page, "products_list": products_list})
+    
 
