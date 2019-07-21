@@ -9,7 +9,7 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Favicon -->
-      <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="{{site_favicon}}">
       <!-- Normalize CSS -->
       <link rel="stylesheet" href="{% static "css/normalize.css" %}">
       <!-- Main CSS -->
@@ -24,6 +24,7 @@
       <!-- Font-awesome CSS-->
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %}" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
       <!-- Flaticon CSS-->
+      
       <link rel="stylesheet" type="text/css" href="{% static "css/font/flaticon.css" %}">
       <!-- Owl Caousel CSS -->
       <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
@@ -58,8 +59,8 @@
                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                     <div class="header-contact">
                                         <ul>
-                                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="https://www.radiustheme.com/demo/html/metro/metro/+1234567890"> + 123 456 7890</a></li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="wishlist.html#"> info@metro.com</a></li>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i><a> {{phone_number}}</a></li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href=""> {{email}}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -86,7 +87,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="logo-area">
-                                        <a href="index.html"><img class="img-responsive" src="img/logo.png" alt="logo"></a>
+                                        <a href="{% url 'home' %}"><img class="img-responsive" src="{{site_logo}}" alt="{{website_name}}"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
@@ -95,23 +96,6 @@
                                             <input type="text" class="form-control" placeholder="Search Product">
                                             <div class="input-group-btn">
                                                 <div class="btn-group" role="group">
-                                                    <div class="dropdown dropdown-lg">
-                                                        <button type="button" class="btn btn-metro dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span>All Categories</span><i class="fa fa-caret-up" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                                        <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                                            <ul class="sidenav-nav">
-                                                                <li><a href="wishlist.html#"><i class="flaticon-dress-1"></i>Women</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-polo"></i>Men</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-plug"></i>Electornics</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-necklace"></i>Jewellery</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-screen"></i>Computer</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-headphones"></i>Head Phone</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-transport"></i>Toys</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-fashion"></i>Shoes</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-dress"></i>Kid’s Wear</a></li>
-                                                                <li><a href="wishlist.html#"><i class="flaticon-technology"></i>Mobile</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
                                                     <button type="button" class="btn btn-metro-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                                                 </div>
                                             </div>
@@ -205,7 +189,7 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-4">
                                 <div class="logo-area">
-                                    <a href="index.html"><img class="img-responsive" src="img/logo.png" alt="logo"></a>
+                                    <a href="{% url 'home' %}"><img class="img-responsive" src="{{site_logo}}" alt="{{website_name}}"></a>
                                 </div>
                                 <div class="category-menu-area" id="category-menu-area">
                                     <h2 class="category-menu-title"><a href="wishlist.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
@@ -458,20 +442,15 @@
          function loadAddCartModal(){
             var cart_url = "{% url 'add-product-cart' %}"
             $.get(cart_url , function(data){
-                console.log(data)
                if (data['status'] == 'success'){
                    if (data['count'] > 0){
                         $('#cart_count').html(data['count']);
                         $('#cart_products').html(data['data']);
                         $('#cart_products').show();
-                   }{
-                       $('#cart_count').html(0);
-                       $('#cart_products').hide();
                    }
                }
                else{
-                $('#cart_count').html(0);
-                $('#cart_products').hide();
+                $('#cart_products').hide();  
                }
             });
 

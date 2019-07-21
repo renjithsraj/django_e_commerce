@@ -49,14 +49,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
-                                <div class="inner-shop-top-right">
-                                    <ul>
-                                        <li class="active"><a href="shop1.html#gried-view" data-toggle="tab" aria-expanded="true"><i class="fa fa-th-large"></i></a></li>
-                                        <li class=""><a href="shop1.html#list-view" data-toggle="tab" aria-expanded="false"><i class="fa fa-list"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                         <div class="row inner-section-space-top">
                             <!-- Tab panes -->
@@ -67,9 +59,9 @@
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                                             <div class="product-box1" style="height: 382px;">
                                                 <ul class="product-social">
-                                                     <li><a onclick="AddProductCart('{{lpd.slug}}');"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                                     <li><a onclick="AddProductCart('{{product.slug}}');"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                                                     {% if user.is_authenticated %}
-                                                        <li><a onclick="WishlistProduct('{{lpd.slug}}');"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                                        <li><a onclick="WishlistProduct('{{product.slug}}');"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                                                     {% endif %}
                                                     <li><a onclick="showProduct('{{product.slug}}');"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                                 </ul>
@@ -89,11 +81,27 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <ul class="mypagination">
-                                    <li class="active"><a href="shop1.html#">1</a></li>
-                                    <li><a href="shop1.html#">2</a></li>
-                                    <li><a href="shop1.html#">3</a></li>
-                                </ul>
+                                {% if products_list.has_other_pages %}
+                                    <ul class="mypagination">
+                                        {% if products_list.has_previous %}
+                                        <li><a href="?page={{ products_list.previous_page_number }}">&laquo;</a></li>
+                                        {% else %}
+                                        <li class="disabled"><span>&laquo;</span></li>
+                                        {% endif %}
+                                        {% for i in products_list.paginator.page_range %}
+                                        {% if products_list.number == i %}
+                                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                        {% else %}
+                                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% if products_list.has_next %}
+                                        <li><a href="?page={{ products_list.next_page_number }}">&raquo;</a></li>
+                                        {% else %}
+                                        <li class="disabled"><span>&raquo;</span></li>
+                                        {% endif %}
+                                    </ul>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

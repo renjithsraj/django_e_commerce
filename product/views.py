@@ -178,6 +178,8 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
             self.resp.update({
                 'status': "success", 'data': html_string, 
                 'msg': "successfuly loaded", "count": len(product_carts), "total": price})
+            print("============================")
+            print (self.resp)
         return self.render_to_json_response(self.resp)
 
 
@@ -291,7 +293,7 @@ class ProductCategoryListView(JSONResponseMixin ,View):
         child_categories = [ cat.id for cat in section.get_descendants()]
         child_categories.append(section.id)
         products = Products.objects.filter(
-            category__id__in=child_categories).order_by('-date')
+            category__id__in=child_categories).order_by('-date').distinct()
         paginator = Paginator(products, 10) 
         page = self.request.GET.get('page')
         try:
@@ -301,6 +303,7 @@ class ProductCategoryListView(JSONResponseMixin ,View):
         except EmptyPage:
             # If page is out of range deliver last page of results
             products_list = paginator.page(paginator.num_pages)
+        print(products)
         return render(request, self.template_name, {'page': page, "products_list": products_list})
     
 

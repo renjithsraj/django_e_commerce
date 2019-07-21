@@ -50,12 +50,13 @@ class Section(MPTTModel):
         
 # Product
 class Products(models.Model):
-    slug = models.SlugField(max_length=1000, unique=True, null=True, blank=True)
     name = models.CharField(max_length=500, verbose_name='Heading')
+    slug = models.SlugField(
+        max_length=1000, unique=True, null=True, blank=True)
     date = models.DateField(verbose_name="Date")
     category = TreeManyToManyField(Section, related_name='products')
     specification = RichTextField(verbose_name='spacification for a product')
-    product_no = models.IntegerField()
+    product_no = models.CharField(verbose_name='prodcut no', max_length=50)
     Note = models.TextField(max_length=500, verbose_name='Any Notes')
     Features = RichTextField(verbose_name='features of products', null=True, blank=True)
     url = models.CharField(verbose_name='working of this Products video url ', max_length=1000, null=True, blank=True)
@@ -74,9 +75,9 @@ class Products(models.Model):
                                   processors=[ResizeToFill(262, 220)],
                                   format='JPEG',
                                   options={'quality': 60})
-    image = ProcessedImageField(upload_to='images/blog',
+    image = ProcessedImageField(upload_to='images/products',
                                 format='JPEG',
-                                          options={'quality': 60}, verbose_name="Image (828px X 363px)")
+                                          options={'quality': 60}, verbose_name="Image (220px X 270px)")
     tax_included = models.BooleanField(default=True)
     service_tax = models.FloatField(
         default=0.0, verbose_name="Service tax(mention in  percetage)")
