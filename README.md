@@ -8,6 +8,35 @@ We can call Django E-Commerce  as Framework/Project for Django Framework, Main o
 
 ### Features
 
+   #### Main features
+       - Site Config
+         - The Site owner can add the site config like follows
+               - Add basic site details : Logo, Favicon, meta tags, meta descriprions, Address, social media links
+               - Future I need to add the HTML customization dynamicaly
+       - Add / Update Category [ Model Name : Sections ]
+       - Add Prodicts with Image gallery, Tree based Category
+       - Transaction Details
+       - User Management
+       - 
+      
+   
+   #### Super Admin Features
+      - Complete Super Admin Access for all the models
+      - Permission Manager for users
+   #### User Features
+      - User Registration
+      - User Login
+      - User Dashboard
+          - Profile 
+          - Password manager
+          - Order Details
+          - Transaction Details
+          - Wish List details
+          - Order Checkout details
+          - Logout functionality
+   
+          
+
 - Well defind Super admin Dashboard
 - User Authentication and Authorization
 - User Permission 
