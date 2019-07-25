@@ -8,6 +8,8 @@ django-ckeditor==5.7.0
 django-imagekit==4.0.2
 django-js-asset==1.2.2
 django-mptt==0.10.0
+djangorestframework==3.9.4
+gunicorn==19.9.0
 ipython==7.5.0
 ipython-genutils==0.2.0
 isort==4.3.18

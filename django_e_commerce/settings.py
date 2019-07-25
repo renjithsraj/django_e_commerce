@@ -163,5 +163,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
+LOGIN_URL = '/account-login'
 AUTH_USER_MODEL = 'buyer.Buyer'

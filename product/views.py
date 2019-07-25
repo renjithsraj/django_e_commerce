@@ -49,10 +49,9 @@ class ProductDetailView(JSONResponseMixin, DetailView):
 class WishlistView(JSONResponseMixin, generic.ListView):
     template_name = 'product/wishlist.html'
     model = WishList
-    login_url = '/accounts/login/'
-    redirect_field_name = 'wish-list'
+    # login_url = '/account-login/'
+    redirect_field_name = '/wish-list'
     context_object_name = 'wishlists'
-
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):

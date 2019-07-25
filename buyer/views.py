@@ -7,11 +7,13 @@ import json
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import HttpResponseRedirect
-
 # Apps Models
 from product.models import Products
 from billing.models import Cart, CartItem
 from buyer.models import Buyer, WishList
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+
 
 
 class AccountView(View):
@@ -21,11 +23,27 @@ class AccountView(View):
         return render(request, self.template_name, {'data': ''})
 
 
+class AccountLoginView(View):
+    template_name = 'registration/login.html'
 
+    def get(self, request, *args, **kwargs):
+        redirect_url = '/'
+        if request.META.get('QUERY_STRING'):
+            redirect_url = request.META.get('QUERY_STRING').split('next=')[1]
+        return render(request, self.template_name, {'redirect_url': redirect_url})
 
+    def post(self, request, *args, **kwargs):
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect(request.POST.get('redirect_url'))
+        else:
+            return render(request, self.template_name, {'form': form})
+        
 
-
-
+        
+    
 
 
 

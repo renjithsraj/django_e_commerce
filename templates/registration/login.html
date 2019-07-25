@@ -16,13 +16,14 @@
                     {% include "support_html/error_message.html" %}
                     <div class="login-registration-field">
                     <h2 class="cart-area-title">Login</h2>
-                    <form method='post'>
+                    <form method='post' action="{% url 'account-login' %}">
                         {% csrf_token %}
                         <label>Username</label>
                         <input type="text" placeholder="User Name" name="username"/>
                         <label>Password *</label>
                         <input type="password" placeholder="Password" name="password"/>
                         <label><a href="{% url 'password_reset' %}">Lost your password?</a></label>
+                        <input type="hidden"  name="redirect_url" value="{{redirect_url}}"/>
                         <button class="btn-send-message disabled" type="submit" value="Login">Login</button>
                         <span><a href="{% url 'register' %}">click here Create New</a></span>
                     </form>
