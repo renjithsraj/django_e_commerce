@@ -120,10 +120,63 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
     def get(self, request, *args, **kwargs):
         # request.session.clear()
         price, count = 0, 0
-        product_carts= [] = ""
+        product_carts= []
         html_string = ""
         if request.user.is_authenticated:
-            pass
+            print(request.user.id)
+            cart_list = CartItem.objects.filter(buyer__id = request.user.id)
+            for cart_item in cart_list:
+                price += cart_item.total
+                cart_data = """ 
+                            <li>
+                                <div class="cart-single-product">
+                                    <div class="media">
+                                        <div class="pull-left cart-product-img">
+                                            <a href="index.html#">
+                                                <img class="img-responsive" alt="{0}" src="{1}">
+                                            </a>
+                                        </div>
+                                        <div class="media-body cart-content">
+                                            <ul>
+                                                <li>
+                                                    <h2><a href="index.html#">{0}</a></h2>
+                                                    <h3><span>Code:</span> {5}</h3>
+                                                </li>
+                                                <li>
+                                                    <p>X {2}</p>
+                                                </li>
+                                                <li>
+                                                    <p>${3}</p>
+                                                </li>
+                                                <li>
+                                                    <p>${4}</p>
+                                                </li>
+                                                <li> <a class="trash" onclick=""><i class="fa fa-trash-o"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                    """.format(cart_item.product.name, cart_item.product.image_thumbnail.url, 
+                    cart_item.quantity, format(cart_item.product.gross_pay()[0], '.2f'), 
+                    format(cart_item.total, '.2f'), cart_item.product.product_no)
+                product_carts.append(cart_data)
+                total_html = """
+                                <li>
+                                    <span><span>Sub Total</span></span><span>${0}</span>
+                                </li>
+                                <li>
+                                    <ul class="checkout">
+                                        <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
+                                        <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                    </ul>
+                                </li>""".format(price)
+                html_string = "".join(product_carts) + total_html
+            self.resp.update({
+                'status': "success", 'data': html_string,
+                'msg': "successfuly loaded", "count": len(product_carts), "total": price})
+
         else:
             if 'cart' in request.session:
                 cart_list = request.session.get('cart')
@@ -177,8 +230,6 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
             self.resp.update({
                 'status': "success", 'data': html_string, 
                 'msg': "successfuly loaded", "count": len(product_carts), "total": price})
-            print("============================")
-            print (self.resp)
         return self.render_to_json_response(self.resp)
 
 

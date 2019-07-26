@@ -80,7 +80,7 @@ class CartItem(models.Model):
         super(CartItem, self).save()
 
     def __str__(self):
-        return self.product
+        return self.product.name
 
 
 class Cart(models.Model):

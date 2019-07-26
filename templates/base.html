@@ -214,6 +214,20 @@
          </header>
          <!-- Header Area End Here -->
          <!-- Slider Area Start Here -->
+         <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+      <div id="id_success" class="alert alert-success" role="alert">
+  <h4 class="alert-heading id_success_heading"></h4>
+  <p id="id_success_msg"></p>
+</div>
+    </div>
+    <div class="col-md-auto">
+      Variable width content
+    </div>
+    <div class="col col-lg-2">
+      3 of 3
+    </div>
+  </div>
          
 		{% block maincontent %}
 
@@ -421,6 +435,7 @@
       <script>
          function successNotification(msg){
             $('#id_success_msg').empty();
+            $('#id_success_heading').html();
             $('#id_success_msg').html(msg);
             $('#id_success').show();
             setTimeout(function(){ 
@@ -448,9 +463,6 @@
                         $('#cart_products').html(data['data']);
                         $('#cart_products').show();
                    }
-               }
-               else{
-                $('#cart_products').hide();  
                }
             });
 

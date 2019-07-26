@@ -14,9 +14,6 @@ from django.core.mail import EmailMessage
 from product.models import Products
 from django.contrib.auth.decorators import login_required
 
-
-# Create your views here.
-@login_required
 def home(request):
     latest_products = Products.objects.order_by('-date')[:8]
     hot_products = Products.objects.filter(is_hot=True).order_by('-date')[:8]
