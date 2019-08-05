@@ -23,7 +23,7 @@
                         <label>Password *</label>
                         <input type="password" placeholder="Password" name="password"/>
                         <label><a href="{% url 'password_reset' %}">Lost your password?</a></label>
-                        <input type="text"  name="redirect_url" value="{{redirect_url}}"/>
+                        <input type="hidden"  name="redirect_url" value="{{redirect_url}}"/>
                         <button class="btn-send-message disabled" type="submit" value="Login">Login</button>
                         <span><a href="{% url 'register' %}">click here Create New</a></span>
                     </form>

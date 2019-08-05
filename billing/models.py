@@ -47,26 +47,11 @@ class ShippingAddress(models.Model):
     state = models.CharField(null=True, blank=True, max_length=50)
     pincode = models.IntegerField(null=True, blank=True)
     country = models.ForeignKey(
-        Country, null=True, blank=True, related_name='cart', on_delete=models.CASCADE)
+        Country, null=True, blank=True, related_name='shipping_addd', on_delete=models.CASCADE)
     mobile = models.BigIntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.buyer.first_name
-
-
-class ShippAddress(models.Model):
-    buyer = models.ForeignKey(Buyer, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=50)
-    street_address = models.TextField(null=True, blank=True)
-    city = models.CharField(null=True, blank=True, max_length=50)
-    state = models.CharField(null=True, blank=True, max_length=50)
-    pincode = models.IntegerField(null=True, blank=True)
-    country = models.CharField(max_length=100, null=True, blank=True, )
-    mobile = models.BigIntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return self.buyer.first_name
-
 
 class CartItem(models.Model):
     buyer = models.ForeignKey(Buyer, on_delete=models.CASCADE)

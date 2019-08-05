@@ -13,6 +13,7 @@ from billing.models import Cart, CartItem
 from buyer.models import Buyer, WishList
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from product.views import move_to_cart
 
 
 
@@ -34,12 +35,16 @@ class AccountLoginView(View):
 
     def post(self, request, *args, **kwargs):
         form = AuthenticationForm(data=request.POST)
+        _url = request.POST.get('redirect_url')
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect(request.POST.get('redirect_url'))
+            move_to_cart(request)
+            return redirect(_url)
         else:
-            return render(request, self.template_name, {'form': form})
+            return render(request, self.template_name, 
+                {'form': form, 'redirect_url': _url}
+            )
         
 
         

@@ -1,7 +1,7 @@
 from django.urls import  path
 from product.views import (
     ProductDetailView, WishlistView, AddProductCartView,
-    ProductCategoryListView)
+    ProductCategoryListView, checkout)
 from django.contrib.auth.decorators import login_required
 
 
@@ -11,6 +11,7 @@ urlpatterns = [
     path('product-items-category/<slug:slug>',
          ProductCategoryListView.as_view(), name="products-category"),
     path('add-product-cart/',
-         AddProductCartView.as_view(), name='add-product-cart')
+         AddProductCartView.as_view(), name='add-product-cart'),
+    path('checkout/', checkout, name='checkout')
 ]
 

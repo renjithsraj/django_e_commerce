@@ -12,13 +12,38 @@ from django.core.paginator import Paginator
 from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
 
-
-
-
 # Apps Models 
 from product.models import Products, Section
 from billing.models import Cart, CartItem
 from buyer.models import Buyer, WishList
+from billing.views import tax_fu, grand_total_fu
+
+def move_to_cart(request):
+    buyer = Buyer.objects.get(id=request.user.id)
+    if 'cart' in request.session:
+        cart_list = request.session['cart']
+        try:
+            cart_obj = get_object_or_404(Cart, buyer=buyer)
+        except :
+            cart_obj = Cart(buyer=buyer).save()
+        for item in cart_list:
+            product = get_object_or_404(Products, id=int(item['id']))
+            if CartItem.objects.filter(buyer=buyer, product=product).exists():
+                cart_item = CartItem.objects.get(buyer=buyer, product=product)
+                q = cart_item.quantity + int(item['qty'])
+                cart_item.delete()
+                cart_item = CartItem(buyer=buyer, 
+                        product=product, quantity=q)
+                cart_item.save()
+            else:
+                cart_item = CartItem(buyer=buyer, 
+                        product=product, quantity=int(item['qty'])
+                    )
+                cart_item.save()
+            cart_obj.items.add(cart_item)
+        cart_obj.save()
+    else:
+        pass
 
 
 
@@ -55,7 +80,7 @@ class WishlistView(JSONResponseMixin, generic.ListView):
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
-        if request.method == 'POST' and not request.user.is_authenticated:
+        if request.method in ['POST', 'GET'] and not request.user.is_authenticated:
             return self.render_to_json_response({
                 "status": "login_error",
                 "msg": "Please login to access Wish list"
@@ -66,10 +91,12 @@ class WishlistView(JSONResponseMixin, generic.ListView):
         return redirect("/accounts/login /?next=/wish-list/")
 
     def get(self, request, *args, **kwargs):
-        user_wishlist_data = self.model.objects.filter(user__id= request.user.id).order_by('-added_on')
+        user_wishlist_data = self.model.objects.filter(user__id= request.user.id
+                ).order_by('-added_on')
         if request.is_ajax():
-            pass
-            # self.render_to_json_response({'wish_count': })
+            return self.render_to_json_response({
+                'status': 'success',
+                'wish_list_count': user_wishlist_data.count()})
         return render(request, self.template_name, {'wishlist': ''})
 
     def get_queryset(self, slug=None):
@@ -123,7 +150,6 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
         product_carts= []
         html_string = ""
         if request.user.is_authenticated:
-            print(request.user.id)
             cart_list = CartItem.objects.filter(buyer__id = request.user.id)
             for cart_item in cart_list:
                 price += cart_item.total
@@ -168,14 +194,16 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
                                 </li>
                                 <li>
                                     <ul class="checkout">
-                                        <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                        <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                        <li><a href="/checkout" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
+                                        <li><a href="/checkout" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
                                     </ul>
                                 </li>""".format(price)
                 html_string = "".join(product_carts) + total_html
             self.resp.update({
                 'status': "success", 'data': html_string,
-                'msg': "successfuly loaded", "count": len(product_carts), "total": price})
+                'msg': "successfuly loaded", 
+                "count": len(product_carts) if len(product_carts) > 0 else 0, 
+                "total": price})
 
         else:
             if 'cart' in request.session:
@@ -222,14 +250,16 @@ class AddProductCartView(JSONResponseMixin, generic.ListView):
                                 </li>
                                 <li>
                                     <ul class="checkout">
-                                        <li><a href="cart.html" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
-                                        <li><a href="check-out.html" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
+                                        <li><a href="checkout" class="btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i>View Cart</a></li>
+                                        <li><a href="/checkout" class="btn-checkout"><i class="fa fa-share" aria-hidden="true"></i>Checkout</a></li>
                                     </ul>
                                 </li>""".format(price)
                 html_string = "".join(product_carts) + total_html   
             self.resp.update({
                 'status': "success", 'data': html_string, 
-                'msg': "successfuly loaded", "count": len(product_carts), "total": price})
+                'msg': "successfuly loaded", 
+                "count": len(product_carts) if len(product_carts) > 0 else 0, 
+                "total": price})
         return self.render_to_json_response(self.resp)
 
 
@@ -356,4 +386,28 @@ class ProductCategoryListView(JSONResponseMixin ,View):
         print(products)
         return render(request, self.template_name, {'page': page, "products_list": products_list})
     
-
+@login_required
+def checkout(request):
+    items, srate, tax, grand_total  = None, 0.0, 0.0, 0.0
+    cart_items = CartItem.objects.filter(buyer__id=request.user.id)
+    if not cart_items:
+        extra = "Cart empty"
+        return render(request, 
+            'product/checkout.html', 
+            {'extra': extra}
+        )
+    try:
+        cart = Cart.objects.get(buyer=request.user)
+    except ObjectDoesNotExist:
+        extra = "You dont have any item in your cart"
+        return render(request, 
+            'product/checkout.html', 
+            {'extra': extra}
+        )
+    tax = tax_fu(cart)
+    srate, grand_total, items = grand_total_fu(cart_items)
+    data = { 'items': items, 'srate': srate, 
+            'tax': tax, 'grand_total': grand_total}
+    return render(
+        request, 'product/checkout.html', data
+    )

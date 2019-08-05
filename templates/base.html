@@ -31,9 +31,6 @@
       <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
       <!-- Main Menu CSS -->
       <link rel="stylesheet" href="{% static "css/meanmenu.min.css" %}">
-      <!-- Nivo Slider CSS -->
-      <link rel="stylesheet" href="{% static "lib/custom-slider/css/nivo-slider.css" %}" type="text/css" />
-      <link rel="stylesheet" href="{% static "lib/custom-slider/css/preview.css" %}" type="text/css" media="screen" />
       <!-- Select2 CSS -->
       <link rel="stylesheet" href="{% static "css/select2.min.css" %}">
       <!-- Custom CSS -->
@@ -56,7 +53,7 @@
                     <div class="header-top-inner-top">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                     <div class="header-contact">
                                         <ul>
                                             <li><i class="fa fa-phone" aria-hidden="true"></i><a> {{phone_number}}</a></li>
@@ -64,14 +61,23 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
                                     <div class="account-wishlist">
                                         <ul>
                                             {% if user.is_authenticated %}
-                                                <li><a href="{% url 'user-profile' %}"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
-                                                <li><a href="{% url 'wish-list' %}"><i class="fa fa-heart-o" aria-hidden="true"></i> Wishlist</a></li>
+                                             <li>
+                                                <a  title="User Profile" href="{% url 'user-profile' %}"><i class="fa fa-user" aria-hidden="true"></i> Welcome Back <b style="color: green;font-style: oblique;">{{user.get_full_name}}</b></a>
+                                             </li>
+                                             <li>
+                                                <a href="{% url 'logout' %}" title="Logout"><i class="fa fa-lock" aria-hidden="true"></i> Logout</a>
+                                             </li>
                                             {% else %}
-                                                <li><a href="{% url 'account-login' %}"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                                                <li>
+                                                   <a title="Login" href="{% url 'account-login' %}"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                                                </li>
+                                                <li>
+                                                   <a title="Registration" href="{% url 'register' %}"><i class="fa fa-user" aria-hidden="true"></i> Registration</a>
+                                                </li>
                                             {% endif %}
                                             
                                             <li><a href="#"><i class="fa fa-usd" aria-hidden="true"></i> USD</a></li>
@@ -91,6 +97,16 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="alert alert-success" id="id_success" style="display: none;">
+                                       <strong id="id_success_heading"></strong>
+                                       <span id="id_success_msg"></span>
+                                       <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div>
+                                    <div class="alert alert-danger" id="id_error" style="display: none;">
+                                       <strong id="id_error_heading"></strong>
+                                       <p id="id_error_msg"></p>
+                                       <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div>
                                     <div class="search-area">
                                         <div class="input-group" id="adv-search">
                                             <input type="text" class="form-control" placeholder="Search Product">
@@ -104,14 +120,18 @@
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                     <ul class="header-cart-area">
-                                        <li>
+                                          {% if user.is_authenticated %}
+                                             <li>
+                                                <div class="cart-area">
+                                                   <a href="{% url 'wish-list' %}"><i class="fa fa fa-heart-o" aria-hidden="true"></i><span id="wish_list_count"></span></a>
+                                                </div>
+                                             </li>
+                                          {% endif%}
+                                          <li>
                                             <div class="cart-area">
                                                 <a href="wishlist.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="cart_count"></span></a>
-                                                
                                                 <ul id="cart_products">
-                                                    
                                                 </ul>
-
                                             </div>
                                         </li>
                                         <li>
@@ -211,23 +231,10 @@
                     <!-- Mobile Menu Area End Here -->
                 </div>
             </div>
-         </header>
-         <!-- Header Area End Here -->
-         <!-- Slider Area Start Here -->
-         <div class="row justify-content-md-center">
-    <div class="col col-lg-2">
-      <div id="id_success" class="alert alert-success" role="alert">
-  <h4 class="alert-heading id_success_heading"></h4>
-  <p id="id_success_msg"></p>
-</div>
-    </div>
-    <div class="col-md-auto">
-      Variable width content
-    </div>
-    <div class="col col-lg-2">
-      3 of 3
-    </div>
-  </div>
+      </header>
+      <!-- Header Area End Here -->
+      <!-- Slider Area Start Here -->
+         
          
 		{% block maincontent %}
 
@@ -257,10 +264,10 @@
                                  <a href="#"><img src="{% static '/img/payment-method2.jpg' %}" alt="payment-method"></a>
                               </li>
                               <li>
-                                 <a href="index.html#"><img src="{% static '/img/payment-method3.jpg' %}" alt="payment-method"></a>
+                                 <a href="#"><img src="{% static '/img/payment-method3.jpg' %}" alt="payment-method"></a>
                               </li>
                               <li>
-                                 <a href="index.html#"><img src="{% static '/img/payment-method4.jpg' %}" alt="payment-method"></a>
+                                 <a href="#"><img src="{% static '/img/payment-method4.jpg' %}" alt="payment-method"></a>
                               </li>
                            </ul>
                         </div>
@@ -311,13 +318,13 @@
                               </div>
                               <ul class="product-details-social">
                                  <li>Share:</li>
-                                 <li><a href="index.html#"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
-                                 <li><a href="index.html#"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
-                                 <li><a href="index.html#"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
-                                 <li><a href="index.html#"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
+                                 <li><a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+                                 <li><a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+                                 <li><a href="#"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
+                                 <li><a href="#"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
                               </ul>
                               <ul class="inner-product-details-cart">
-                                 <li><a href="index.html#">Add To Cart</a></li>
+                                 <li><a href="#">Add To Cart</a></li>
                                  <li>
                                     <div class="input-group quantity-holder" id="quantity-holder">
                                        <input type="text" placeholder="1" value="1" class="form-control quantity-input" name="quantity">
@@ -327,7 +334,7 @@
                                        </div>
                                     </div>
                                  </li>
-                                 <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                               </ul>
                            </div>
                         </div>
@@ -336,7 +343,7 @@
                </div>
             </div>
             <div class="modal-footer">
-               <a href="index.html#" class="btn-services-shop-now" data-dismiss="modal">Close</a>
+               <a href="#" class="btn-services-shop-now" data-dismiss="modal">Close</a>
             </div>
          </div>
       </div>
@@ -346,7 +353,7 @@
 
 
       <!-- Style Switch Start Here -->
-      <link id="switch_style" href="index.html#" rel="stylesheet" type="text/css">
+      <link id="switch_style" href="#" rel="stylesheet" type="text/css">
       <!-- Style Switch End Here -->
     
       <!-- jquery-->
@@ -357,8 +364,6 @@
       <!-- Owl Cauosel JS -->
       <script src="{% static "js/owl.carousel.min.js" %}" type="text/javascript"></script>
       <!-- Nivo slider js -->
-      <script src="{% static "lib/custom-slider/js/jquery.nivo.slider.js" %}" type="text/javascript"></script>
-      <script src="{% static "lib/custom-slider/home.js" %}" type="text/javascript"></script>
       <!-- Meanmenu Js -->
       <script src="{% static "js/jquery.meanmenu.min.js" %}" type="text/javascript"></script>
       <!-- WOW JS -->
@@ -390,6 +395,16 @@
             $('#product_category').html(category_de)
             $('#myModal').modal('show');
         });
+      }
+
+      function getWishlistCount(){
+         var wishlist_url = '/wish-list/';
+         $.get(wishlist_url , function(data){
+               if (data['status'] == 'success'){
+                  $('#wish_list_count').html(data['wish_list_count']);
+               }
+         });
+
       }
 
       function WishlistProduct(slug){
@@ -435,8 +450,8 @@
       <script>
          function successNotification(msg){
             $('#id_success_msg').empty();
-            $('#id_success_heading').html();
             $('#id_success_msg').html(msg);
+            $('#id_success_heading').html("Success");
             $('#id_success').show();
             setTimeout(function(){ 
                $('#id_success').hide(); 
@@ -447,6 +462,7 @@
          function errorNotification(msg){
             $('#id_error_msg').empty();
             $('#id_error_msg').html(msg);
+            $('#id_error_heading').html("Warning")
             $('#id_error').show();
             setTimeout(function(){ 
                $('#id_error').hide(); 
@@ -458,11 +474,9 @@
             var cart_url = "{% url 'add-product-cart' %}"
             $.get(cart_url , function(data){
                if (data['status'] == 'success'){
-                   if (data['count'] > 0){
-                        $('#cart_count').html(data['count']);
-                        $('#cart_products').html(data['data']);
-                        $('#cart_products').show();
-                   }
+                  $('#cart_count').html(data['count']);
+                  $('#cart_products').html(data['data']);
+                  $('#cart_products').show(); 
                }
             });
 
@@ -470,6 +484,7 @@
 
          $( document ).ready(function() {
             loadAddCartModal();
+            getWishlistCount();
          });
  
 
