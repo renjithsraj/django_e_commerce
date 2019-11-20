@@ -1,5 +1,5 @@
 
-# I have plan to develop this app with minimal template(boostrap) if any one clone this app please make sure that the templates are bit complex, but it's run you can customized
+# I have plan to develop this app with minimal template(boostrap), but it's run well and you can customized as your wish.
 
 
 
