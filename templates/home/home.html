@@ -2,222 +2,167 @@
 {% load static %}
 {% load base %}
 {% block title %} Home{% endblock title %}
-
 {% block category_home %}
-   <div class="col-lg-3 col-md-3 col-sm-4">
-      <h2 class="category-menu-title close-on-tab"><a href="index.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
-      <div class="logo-area">
-        <a href="index.html"><img class="img-responsive" src="{% static 'img/logo.png' %}" alt="logo"></a>
-      </div>
-   </div>
-
 {% endblock category_home %}
-   
 {% block maincontent %}
-
-
-
-<!-- Slider Area Start Here -->
-<div class="slider-area">
+<!-- ========================= SECTION INTRO ========================= -->
+<section class="section-intro">
+   <div class="intro-banner-wrap">
+      <img src="images/banners/1.jpg" class="w-100 img-fluid">
+   </div>
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+<!-- ========================= SECTION SPECIAL ========================= -->
+<section class="section-specials padding-y border-bottom">
    <div class="container">
       <div class="row">
-         
-         <!-- Side Category -->
-            {% side_category_tag %}
-
-         <!-- End side nav category-->
-
-         {% if offers_enabled %}
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-               <div class="main-slider1">
-                  <div class="bend niceties preview-2">
-                     <div id="ensign-nivoslider-2" class="slides">
-                        <img src="{% static 'img/slider-1/slider-2.jpg'%}" alt="" title="#slider-direction-1" />
-                     </div>
-                     <!-- direction 1 -->
-                     <div id="slider-direction-1" class="slider-direction">
-                        <div class="slider-content t-lfl s-tb slider-1">
-                           <div class="title-container s-tb-c">
-                              <h2>Collection</h2>
-                              <h2 class="title1">2016</h2>
-                              <h3 class="title3">Summer Dress</h3>
-                              <p>Simply dummy text of the printing and typesetting industrstandard dummy since.</p>
-                              <a href="index.html#" class="btn-shop-now-fill-slider">View Collections</a>
-                           </div>
-                        </div>
-                        <!-- layer 1 -->
-                        <div class="layer-1-1">
-                           <img src="{% static 'img/slider-1/layer-1.png'%}" alt="" />
-                        </div>
-                     </div>
-                     <!-- direction 2 -->
-                  </div>
+         <div class="col-md-4">
+            <figure class="itemside">
+               <div class="aside">
+                  <span class="icon-sm rounded-circle bg-primary">
+                  <i class="fa fa-money-bill-alt white"></i>
+                  </span>
                </div>
-            </div>
-         {% endif %}
-
-      </div>
-   </div>
-</div>
-<!-- Slider Area End Here -->
-<!-- Product Area Start Here -->
-<div class="product-area">
-   <div class="container" id="home-isotope">
-      <div class="row">
-         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="isotop-classes-tab myisotop1">
-               <a href="" data-filter=".on-sale" class="current">On Sale</a>
-               <a href="" data-filter=".featured">Featured</a>
-               <a href="" data-filter=".popular">Popular</a>
-            </div>
+               <figcaption class="info">
+                  <h6 class="title">Reasonable prices</h6>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labor 
+                  </p>
+               </figcaption>
+            </figure>
+            <!-- iconbox // -->
          </div>
+         <!-- col // -->
+         <div class="col-md-4">
+            <figure class="itemside">
+               <div class="aside">
+                  <span class="icon-sm rounded-circle bg-danger">
+                  <i class="fa fa-comment-dots white"></i>
+                  </span>
+               </div>
+               <figcaption class="info">
+                  <h6 class="title">Customer support 24/7 </h6>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labor 
+                  </p>
+               </figcaption>
+            </figure>
+            <!-- iconbox // -->
+         </div>
+         <!-- col // -->
+         <div class="col-md-4">
+            <figure class="itemside">
+               <div class="aside">
+                  <span class="icon-sm rounded-circle bg-success">
+                  <i class="fa fa-truck white"></i>
+                  </span>
+               </div>
+               <figcaption class="info">
+                  <h6 class="title">Quick delivery</h6>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     tempor incididunt ut labor 
+                  </p>
+               </figcaption>
+            </figure>
+            <!-- iconbox // -->
+         </div>
+         <!-- col // -->
       </div>
-
-      
-         <div class="row featuredContainer">
-         {% for lpd in lp %}
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 on-sale current">
-               <div class="product-box1">
-                  <ul class="product-social">
-                     <li><a onclick="AddProductCart('{{lpd.slug}}');"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                     {% if user.is_authenticated %}
-                        <li><a onclick="WishlistProduct('{{lpd.slug}}');"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                     {% endif %}
-                     
-                     <li><a onclick="showProduct('{{lpd.slug}}');"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                  </ul>
-                  <div class="product-img-holder">
-                     <div class="hot-sale">
-                        <span>SALE</span>
-                        </div>
-                     <a href="{% url 'product-detail' lpd.slug %}"><img src="{{lpd.image.url}}" alt="product"></a>
-                  </div>
-                  <div class="product-content-holder">
-                     <h3><a href="{% url 'product-detail' lpd.slug %}">{{lpd.name}}</a></h3>
-                     <span><span>${{lpd.dummy_price}}</span>${{lpd.price}}</span>
-                  </div>
-               </div>
-            </div>
-         {% endfor %}
-         {% for fdd in fp %}
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 featured">
-               <div class="product-box1">
-                     <ul class="product-social">
-                        <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                        
-                        {% if user.is_authenticated %}
-                           <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                        {% endif %}
-
-                        <li><a  onclick="showProduct('{{fdd.slug}}');"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                     </ul>
-                     <div class="product-img-holder">
-                        <div class="hot-sale">
-                        <span>FEATURED</span>
-                        </div>
-                        <a href="{% url 'product-detail' fdd.slug %}"><img src="{{fdd.image.url}}" alt="product"></a>
-                     </div>
-                     <div class="product-content-holder">
-                        <h3><a href="index.html#">Product Title Here</a></h3>
-                        <span>$70.00</span>
-                     </div>
-               </div>
-            </div>
-         {% endfor %}
-
-         {% for hdd in hp %}
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 popular">
-               <div class="product-box1">
-                     <ul class="product-social">
-                        <li><a href="index.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                        {% if user.is_authenticated %}
-                           <li><a href="index.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                        {% endif %}
-                        <li><a href="index.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                     </ul>
-                     <div class="product-img-holder">
-                        <div class="hot-sale">
-                        <span>HOT</span>
-                        </div>
-                        <a href="{% url 'product-detail' hdd.slug %}"><img src="{{hdd.image.url}}" alt="product"></a>
-                     </div>
-                     <div class="product-content-holder">
-                        <h3><a href="{% url 'product-detail' hdd.slug %}">{{hdd.name}}</a></h3>
-                        <span>$70.00</span>
-                     </div>
-               </div>
-            </div>
-         {% endfor %}                                                                                                                                                                                                
-      </div>
-
-
+      <!-- row.// -->
    </div>
-</div>
-<!-- Product Area End Here -->
-
-<!-- Advantage Area Start Here -->
-<div class="advantage1-area">
+   <!-- container.// -->
+</section>
+<!-- ========================= SECTION SPECIAL END// ========================= -->
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name  padding-y-sm">
    <div class="container">
+      <header class="section-heading">
+         <a href="page-index-3.html#" class="btn btn-outline-primary float-right">See all</a>
+         <h3 class="section-title">Popular products</h3>
+      </header>
+      <!-- sect-heading -->
       <div class="row">
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="advantage-area-box">
-               <div class="media">
-                  <a class="pull-left" href="index.html#">
-                  <i class="flaticon-truck"></i>
-                  </a>
-                  <div class="media-body">
-                     <h3>FREE SHIPPING</h3>
-                     <p>On All Orders</p>
-                  </div>
+         {% for latest_p in lp %}
+            <!-- col.// -->
+            <div class="col-md-3">
+               <div href="#" class="card card-product-grid">
+                  <a href="page-index-3.html#" class="img-wrap"> <img src="{{latest_p.image.url }}"> </a>
+                  <figcaption class="info-wrap">
+                     <a href="page-index-3.html#" class="title">{{latest_p.name}}</a>
+                     <div class="price mt-1">${{latest_p.price}}</div>
+                     <!-- price-wrap.// -->
+                  </figcaption>
                </div>
             </div>
-         </div>
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="advantage-area-box">
-               <div class="media">
-                  <a class="pull-left" href="index.html#">
-                  <i class="flaticon-headphones"></i>
-                  </a>
-                  <div class="media-body">
-                     <h3>24/7 SERVICE</h3>
-                     <p>Get Help When You Need</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="advantage-area-box">
-               <div class="media">
-                  <a class="pull-left" href="index.html#">
-                  <i class="flaticon-reload"></i>
-                  </a>
-                  <div class="media-body">
-                     <h3>100% MONEY BACK</h3>
-                     <p>Within 30 Day Guarantee</p>
-                  </div>
-               </div>
-            </div>
-         </div>
+            <!-- col.// -->
+         {% endfor %}
       </div>
+      <!-- row.// -->
    </div>
-</div>
-<!-- Advantage Area End Here -->
+   <!-- container // -->
+</section>
 
-<!-- Solid Divider Area Start Here -->
-<div class="container">
-   <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-         <div class="solid-divider"></div>
+<section class="section-name  padding-y-sm">
+   <div class="container">
+      <header class="section-heading">
+         <a href="page-index-3.html#" class="btn btn-outline-primary float-right">See all</a>
+         <h3 class="section-title">Hot products</h3>
+      </header>
+      <!-- sect-heading -->
+      <div class="row">
+         {% for latest_p in lp %}
+            <!-- col.// -->
+            <div class="col-md-3">
+               <div href="#" class="card card-product-grid">
+                  <a href="page-index-3.html#" class="img-wrap"> <img src="{{latest_p.image.url }}"> </a>
+                  <figcaption class="info-wrap">
+                     <a href="page-index-3.html#" class="title">{{latest_p.name}}</a>
+                     <div class="price mt-1">${{latest_p.price}}</div>
+                     <!-- price-wrap.// -->
+                  </figcaption>
+               </div>
+            </div>
+            <!-- col.// -->
+         {% endfor %}
       </div>
+      <!-- row.// -->
    </div>
-</div>
-<!-- Solid Divider Area End Here -->
-<!-- Footer Area Start Here -->
+   <!-- container // -->
+</section>
 
+
+
+
+<section class="section-name  padding-y-sm">
+   <div class="container">
+      <header class="section-heading">
+         <a href="page-index-3.html#" class="btn btn-outline-primary float-right">See all</a>
+         <h3 class="section-title">Featured products</h3>
+      </header>
+      <!-- sect-heading -->
+      <div class="row">
+         {% for latest_p in lp %}
+            <!-- col.// -->
+            <div class="col-md-3">
+               <div href="#" class="card card-product-grid">
+                  <a href="page-index-3.html#" class="img-wrap"> <img src="{{latest_p.image.url }}"> </a>
+                  <figcaption class="info-wrap">
+                     <a href="page-index-3.html#" class="title">{{latest_p.name}}</a>
+                     <div class="price mt-1">${{latest_p.price}}</div>
+                     <!-- price-wrap.// -->
+                  </figcaption>
+               </div>
+            </div>
+            <!-- col.// -->
+         {% endfor %}
+      </div>
+      <!-- row.// -->
+   </div>
+   <!-- container // -->
+</section>
+
+
+<!-- ========================= SECTION  END// ========================= -->
 {% endblock maincontent %}
-
 {% block extrajs %}
-   
-
-
 {% endblock extrajs %}

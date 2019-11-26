@@ -1,499 +1,222 @@
 {% load static %}
 {% load base %}
-<!doctype html>
-<html class="no-js" lang="">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title> {% block title %}  {% endblock title %} </title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Favicon -->
-      <link rel="shortcut icon" type="image/x-icon" href="{{site_favicon}}">
-      <!-- Normalize CSS -->
-      <link rel="stylesheet" href="{% static "css/normalize.css" %}">
-      <!-- Main CSS -->
-      <link rel="stylesheet" href="{% static "css/main.css" %}">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-      <!-- Animate CSS -->
-      <link rel="stylesheet" href="{% static "css/animate.min.css" %}">
-      <link rel="stylesheet" href="{% static "css/select2.min.css" %}">
-      <!-- Bootstrap Notify cdn-->
-      
-      <!-- Font-awesome CSS-->
-      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %}" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-      <!-- Flaticon CSS-->
-      
-      <link rel="stylesheet" type="text/css" href="{% static "css/font/flaticon.css" %}">
-      <!-- Owl Caousel CSS -->
-      <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
-      <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
-      <!-- Main Menu CSS -->
-      <link rel="stylesheet" href="{% static "css/meanmenu.min.css" %}">
-      <!-- Select2 CSS -->
-      <link rel="stylesheet" href="{% static "css/select2.min.css" %}">
-      <!-- Custom CSS -->
-      <link rel="stylesheet" href="{% static "style.css" %}">
-      <!-- Switch Style CSS -->
-      <link rel="stylesheet" href="{% static "css/switch-style.css" %}">
-      <!-- Modernizr Js -->
-      <script src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
-   </head>
-   <body>
-      <div class="wrapper-area">
-         <!--[if lt IE 8]>
-         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-         <![endif]-->
-         <!-- Add your site or application content here -->
-         <!-- Header Area Start Here -->
-         <header>
-            <div class="header-area-style3" id="sticker">
-                <div class="header-top">
-                    <div class="header-top-inner-top">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                                    <div class="header-contact">
-                                        <ul>
-                                            <li><i class="fa fa-phone" aria-hidden="true"></i><a> {{phone_number}}</a></li>
-                                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href=""> {{email}}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
-                                    <div class="account-wishlist">
-                                        <ul>
-                                            {% if user.is_authenticated %}
-                                             <li>
-                                                <a  title="User Profile" href="{% url 'user-profile' %}"><i class="fa fa-user" aria-hidden="true"></i> Welcome Back <b style="color: green;font-style: oblique;">{{user.get_full_name}}</b></a>
-                                             </li>
-                                             <li>
-                                                <a href="{% url 'logout' %}" title="Logout"><i class="fa fa-lock" aria-hidden="true"></i> Logout</a>
-                                             </li>
-                                            {% else %}
-                                                <li>
-                                                   <a title="Login" href="{% url 'account-login' %}"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
-                                                </li>
-                                                <li>
-                                                   <a title="Registration" href="{% url 'register' %}"><i class="fa fa-user" aria-hidden="true"></i> Registration</a>
-                                                </li>
-                                            {% endif %}
-                                            
-                                            <li><a href="#"><i class="fa fa-usd" aria-hidden="true"></i> USD</a></li>
-                                        
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header-top-inner-bottom">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <div class="logo-area">
-                                        <a href="{% url 'home' %}"><img class="img-responsive" src="{{site_logo}}" alt="{{website_name}}"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                                    <div class="alert alert-success" id="id_success" style="display: none;">
-                                       <strong id="id_success_heading"></strong>
-                                       <span id="id_success_msg"></span>
-                                       <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    </div>
-                                    <div class="alert alert-danger" id="id_error" style="display: none;">
-                                       <strong id="id_error_heading"></strong>
-                                       <p id="id_error_msg"></p>
-                                       <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    </div>
-                                    <div class="search-area">
-                                        <div class="input-group" id="adv-search">
-                                            <input type="text" class="form-control" placeholder="Search Product">
-                                            <div class="input-group-btn">
-                                                <div class="btn-group" role="group">
-                                                    <button type="button" class="btn btn-metro-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                    <ul class="header-cart-area">
-                                          {% if user.is_authenticated %}
-                                             <li>
-                                                <div class="cart-area">
-                                                   <a href="{% url 'wish-list' %}"><i class="fa fa fa-heart-o" aria-hidden="true"></i><span id="wish_list_count"></span></a>
-                                                </div>
-                                             </li>
-                                          {% endif%}
-                                          <li>
-                                            <div class="cart-area">
-                                                <a href="wishlist.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="cart_count"></span></a>
-                                                <ul id="cart_products">
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="additional-menu-area" id="additional-menu-area">
-                                                <div id="mySidenav" class="sidenav">
-                                                    <a href="wishlist.html#" class="closebtn">×</a>
-                                                    <div class="sidenav-search">
-                                                        <div class="input-group stylish-input-group">
-                                                            <input type="text" placeholder="Search Here . . ." class="form-control">
-                                                            <span class="input-group-addon">
-											                        <button type="submit">
-											                            <span class="glyphicon glyphicon-search"></span>
-                                                            </button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="sidenav-login-registration">
-                                                        <li data-toggle="collapse" data-target="#login" class="collapsed">
-                                                            <a href="wishlist.html#">Login<span class="arrow"></span></a>
-                                                            <div class="collapse" id="login">
-                                                                <div class="login-registration-field">
-                                                                    <form method="post">
-                                                                        <label>Username or email address *</label>
-                                                                        <input type="text">
-                                                                        <label>Password *</label>
-                                                                        <input type="password">
-                                                                        <button value="Login" type="submit" class="btn-side-nav disabled">Login</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li data-toggle="collapse" data-target="#registration" class="collapsed">
-                                                            <a href="wishlist.html#">Registration<span class="arrow"></span></a>
-                                                            <div class="collapse" id="registration">
-                                                                <div class="login-registration-field">
-                                                                    <form method="post">
-                                                                        <label>User Name*</label>
-                                                                        <input type="text">
-                                                                        <label>E-mail address *</label>
-                                                                        <input type="email">
-                                                                        <label>Password *</label>
-                                                                        <input type="password">
-                                                                        <button value="Login" type="submit" class="btn-side-nav disabled">Register</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <h3 class="ctg-name-title">Category Name List</h3>
-                                                    <ul class="sidenav-nav">
-                                                        <li><a href="shop1.html"><i class="flaticon-dress-1"></i>Women</a></li>
-                                                        <li><a href="shop2.html"><i class="flaticon-polo"></i>Men</a></li>
-                                                        <li><a href="shop3.html"><i class="flaticon-plug"></i>Electornics</a></li>
-                                                        <li><a href="shop4.html"><i class="flaticon-necklace"></i>Jewellery</a></li>
-                                                        <li><a href="shop5.html"><i class="flaticon-screen"></i>Computer</a></li>
-                                                        <li><a href="shop6.html"><i class="flaticon-headphones"></i>Head Phone</a></li>
-                                                        <li><a href="shop7.html"><i class="flaticon-transport"></i>Toys</a></li>
-                                                        <li><a href="shop1.html"><i class="flaticon-fashion"></i>Shoes</a></li>
-                                                        <li><a href="shop2.html"><i class="flaticon-dress"></i>Kid’s Wear</a></li>
-                                                        <li><a href="shop3.html"><i class="flaticon-technology"></i>Mobile</a></li>
-                                                    </ul>
-                                                    <!-- times-->
-                                                </div>
-                                                <span class="side-menu-open side-menu-trigger"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="logo-area">
-                                    <a href="{% url 'home' %}"><img class="img-responsive" src="{{site_logo}}" alt="{{website_name}}"></a>
-                                </div>
-                                <div class="category-menu-area" id="category-menu-area">
-                                    <h2 class="category-menu-title"><a href="wishlist.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
-                                    <!-- start --->
-                                    {% menu_category_tag %}
-                                    <!-- end --->
-                                </div>
-                            </div>
-                            <!----- start main header here -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="max-age=604800" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                                 {% main_header %}
-                            <!----- end main header here -->
-                        </div>
-                    </div>
-                    <!-- Mobile Menu Area Start Here -->
-                    
-                        
+<title>{% block title %} {% endblock title %}</title>
 
-                    <!-- Mobile Menu Area End Here -->
-                </div>
-            </div>
-      </header>
-      <!-- Header Area End Here -->
-      <!-- Slider Area Start Here -->
-         
-         
-		{% block maincontent %}
+<link href="{% static "images/favicon.ico" %}" rel="shortcut icon" type="image/x-icon">
 
-		{% endblock maincontent%}
+<!-- jQuery -->
+<script src="{% static "js/jquery-2.0.0.min.js" %}" type="text/javascript"></script>
+
+<!-- Bootstrap4 files-->
+<script src= "{% static "js/bootstrap.bundle.min.js" %}" type="text/javascript"></script>
+<link href= "{% static "css/bootstrap.css" %}"   rel="stylesheet" type="text/css"/>
+
+<!-- Font awesome 5 -->
+<link href= "{% static "fonts/fontawesome/css/all.min.css" %}" type="text/css" rel="stylesheet">
+
+<!-- custom style -->
+<link href="{% static "css/ui.css" %}" rel="stylesheet" type="text/css"/>
+<link href= "{% static "css/responsive.css" %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+<!-- custom javascript -->
+<script src= "{% static "js/script.js" %}" type="text/javascript"></script>
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+});
+// jquery end
+</script>
+
+</head>
+<body>
+
+<header class="section-header">
+
+<section class="header-main border-bottom">
+	<div class="container">
+<div class="row align-items-center">
+	<div class="col-lg-2 col-4">
+		<a href="images/banners/bg-cpu.jpg.html" class="brand-wrap">
+			<img class="logo" src="images/logo.png">
+		</a> <!-- brand-wrap.// -->
+	</div>
+	<div class="col-lg-6 col-sm-12">
+		<form action="page-index-3.html#" class="search">
+			<div class="input-group w-100">
+			    <input type="text" class="form-control" placeholder="Search">
+			    <div class="input-group-append">
+			      <button class="btn btn-primary" type="submit">
+			        <i class="fa fa-search"></i>
+			      </button>
+			    </div>
+		    </div>
+		</form> <!-- search-wrap .end// -->
+	</div> <!-- col.// -->
+	<div class="col-lg-4 col-sm-6 col-12">
+		<div class="widgets-wrap float-md-right">
+			<div class="widget-header  mr-3">
+				<a href="page-index-3.html#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+				<span class="badge badge-pill badge-danger notify">0</span>
+			</div>
+			<div class="widget-header icontext">
+				<a href="page-index-3.html#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+				<div class="text">
+					<span class="text-muted">Welcome!</span>
+					<div>
+						<a href="page-index-3.html#">Sign in</a> |
+						<a href="page-index-3.html#"> Register</a>
+					</div>
+				</div>
+			</div>
+
+		</div> <!-- widgets-wrap.// -->
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+	</div> <!-- container.// -->
+</section> <!-- header-main .// -->
+</header> <!-- section-header.// -->
 
 
-         <footer>
-            <div class="footer-area">
-               <div class="footer-area-top">
-                  <div class="container">
-                     <div class="row">
-                     </div>
-                  </div>
-               </div>
-               <div class="footer-area-bottom">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                           <p>© 2016 Metro All Rights Reserved. Designed by<a href="http://radiustheme.com" target="_blank"> RadiusTheme</a></p>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                           <ul class="payment-method">
-                              <li>
-                                 <a href="#"><img src="{% static '/img/payment-method1.jpg' %}" alt="payment-method"></a>
-                              </li>
-                              <li>
-                                 <a href="#"><img src="{% static '/img/payment-method2.jpg' %}" alt="payment-method"></a>
-                              </li>
-                              <li>
-                                 <a href="#"><img src="{% static '/img/payment-method3.jpg' %}" alt="payment-method"></a>
-                              </li>
-                              <li>
-                                 <a href="#"><img src="{% static '/img/payment-method4.jpg' %}" alt="payment-method"></a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </footer>
-         <!-- Footer Area End Here -->
-      </div>
-      
-      
-      
-      
-      <!-- Modal Dialog Box Start Here-->
-      <div id="myModal" class="modal fade" role="dialog">
-         <div class="modal-dialog">
-            <div class="modal-body">
-               <button type="button" class="close myclose" data-dismiss="modal">&times;</button>
-               <div class="product-details1-area">
-                  <div class="product-details-info-area">
-                     <div class="row">
-                        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                           <div class="inner-product-details-left">
-                              <div class="tab-content" id="product-image">
-                              </div>
-                              <ul id="support-image">
-                              
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                           <div class="inner-product-details-right">
-                              <h3 id="product-id"></h3>
-                              <ul>
-                                 <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                 <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                 <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                 <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                                 <li><i aria-hidden="true" class="fa fa-star"></i></li>
-                              </ul>
-                              <p class="price" id="actual-price"><span><span>$231.0 </span> $200.0 </span></p>
-                              <p id="product-desc"></p>
-                              <div class="product-details-content">
-                                 <p><span>SKU:</span> 0010</p>
-                                 <p><span id="stock_availability">Availability:</span> In stock</p>
-                                 <p id="product_category"></p>
-                              </div>
-                              <ul class="product-details-social">
-                                 <li>Share:</li>
-                                 <li><a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
-                                 <li><a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
-                                 <li><a href="#"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
-                                 <li><a href="#"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
-                              </ul>
-                              <ul class="inner-product-details-cart">
-                                 <li><a href="#">Add To Cart</a></li>
-                                 <li>
-                                    <div class="input-group quantity-holder" id="quantity-holder">
-                                       <input type="text" placeholder="1" value="1" class="form-control quantity-input" name="quantity">
-                                       <div class="input-group-btn-vertical">
-                                          <button type="button" class="btn btn-default quantity-plus"><i aria-hidden="true" class="fa fa-plus"></i></button>
-                                          <button type="button" class="btn btn-default quantity-minus"><i aria-hidden="true" class="fa fa-minus"></i></button>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="modal-footer">
-               <a href="#" class="btn-services-shop-now" data-dismiss="modal">Close</a>
-            </div>
-         </div>
-      </div>
-      <!-- Modal Dialog Box End Here-->
-      
+<nav class="navbar navbar-main navbar-expand-lg navbar-light">
+  <div class="container">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main_nav">
+      <ul class="navbar-nav">
+      	<li class="nav-item dropdown">
+          <a class="nav-link pl-0" data-toggle="dropdown" href="page-index-3.html#"><strong> <i class="fa fa-bars"></i> &nbsp  All category</strong></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="page-index-3.html#">Foods and Drink</a>
+            <a class="dropdown-item" href="page-index-3.html#">Home interior</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="page-index-3.html#">Category 1</a>
+            <a class="dropdown-item" href="page-index-3.html#">Category 2</a>
+            <a class="dropdown-item" href="page-index-3.html#">Category 3</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Fashion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Supermarket</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Electronics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Baby &amp Toys</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Fitness sport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Clothing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page-index-3.html#">Furnitures</a>
+        </li>
+      </ul>
+    </div> <!-- collapse .// -->
+  </div> <!-- container .// -->
+</nav>
+
+</header> <!-- section-header.// -->
+
+{% block maincontent %}
 
 
 
-      <!-- Style Switch Start Here -->
-      <link id="switch_style" href="#" rel="stylesheet" type="text/css">
-      <!-- Style Switch End Here -->
-    
-      <!-- jquery-->
-      <script src="{% static "js/vendor/jquery-2.2.4.min.js" %}" type="text/javascript"></script>
-      <!-- Bootstrap js -->
-      <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script>
-      <script src="{% static "js/select2.min.js" %}" type="text/javascript"></script>
-      <!-- Owl Cauosel JS -->
-      <script src="{% static "js/owl.carousel.min.js" %}" type="text/javascript"></script>
-      <!-- Nivo slider js -->
-      <!-- Meanmenu Js -->
-      <script src="{% static "js/jquery.meanmenu.min.js" %}" type="text/javascript"></script>
-      <!-- WOW JS -->
-      <script src="{% static "js/wow.min.js" %}" type="text/javascript"></script>
-      <!-- Plugins js -->
-      <script src="{% static "js/plugins.js" %}" type="text/javascript"></script>
-      <!-- Countdown js -->
-      <script src="{% static "js/jquery.countdown.min.js" %}" type="text/javascript"></script>
-      <!-- Srollup js -->
-      <script src="{% static "js/jquery.scrollUp.min.js" %}" type="text/javascript"></script>
-      <!-- Isotope js -->
-      <script src="{% static "js/isotope.pkgd.min.js" %}" type="text/javascript"></script>
-      <!-- Switch js -->
-      <script src="{% static "js/switch-style.js" %}" type="text/javascript"></script>
-      <!-- Custom Js -->
-      <script src="{% static "js/main.js" %}" type="text/javascript"></script>
+{% endblock maincontent %}
 
-      <script type="text/javascript">
-      function showProduct(slug){
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top">
+	<div class="container">
+		<section class="footer-top padding-y">
+			<div class="row">
+				<aside class="col-md col-6">
+					<h6 class="title">Brands</h6>
+					<ul class="list-unstyled">
+						<li> <a href="page-index-3.html#">Adidas</a></li>
+						<li> <a href="page-index-3.html#">Puma</a></li>
+						<li> <a href="page-index-3.html#">Reebok</a></li>
+						<li> <a href="page-index-3.html#">Nike</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Company</h6>
+					<ul class="list-unstyled">
+						<li> <a href="page-index-3.html#">About us</a></li>
+						<li> <a href="page-index-3.html#">Career</a></li>
+						<li> <a href="page-index-3.html#">Find a store</a></li>
+						<li> <a href="page-index-3.html#">Rules and terms</a></li>
+						<li> <a href="page-index-3.html#">Sitemap</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Help</h6>
+					<ul class="list-unstyled">
+						<li> <a href="page-index-3.html#">Contact us</a></li>
+						<li> <a href="page-index-3.html#">Money refund</a></li>
+						<li> <a href="page-index-3.html#">Order status</a></li>
+						<li> <a href="page-index-3.html#">Shipping info</a></li>
+						<li> <a href="page-index-3.html#">Open dispute</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Account</h6>
+					<ul class="list-unstyled">
+						<li> <a href="page-index-3.html#"> User Login </a></li>
+						<li> <a href="page-index-3.html#"> User register </a></li>
+						<li> <a href="page-index-3.html#"> Account Setting </a></li>
+						<li> <a href="page-index-3.html#"> My Orders </a></li>
+					</ul>
+				</aside>
+				<aside class="col-md">
+					<h6 class="title">Social</h6>
+					<ul class="list-unstyled">
+						<li><a href="page-index-3.html#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+						<li><a href="page-index-3.html#"> <i class="fab fa-twitter"></i> Twitter </a></li>
+						<li><a href="page-index-3.html#"> <i class="fab fa-instagram"></i> Instagram </a></li>
+						<li><a href="page-index-3.html#"> <i class="fab fa-youtube"></i> Youtube </a></li>
+					</ul>
+				</aside>
+			</div> <!-- row.// -->
+		</section>	<!-- footer-top.// -->
 
-         var productViewUrl = '/product-detail/'+ slug
-         $.get(productViewUrl, function(data){ 
-            $("#product-id").html(data['name']);
-            $('#product-desc').html(data['specification'])
-            $('#product-image').html(data['image_url']['image_string'])
-            $('#support-image').html(data['image_url']['support_image'])
-            var category_de = "<span>Category:</span> "
-            category_de += data['categories']
-            $('#product_category').html(category_de)
-            $('#myModal').modal('show');
-        });
-      }
+		<section class="footer-bottom border-top row">
+			<div class="col-md-2">
+				<p class="text-muted"> &copy 2019 Company name </p>
+			</div>
+			<div class="col-md-8 text-md-center">
+				<span  class="px-2">info@pixsellz.io</span>
+				<span  class="px-2">+879-332-9375</span>
+				<span  class="px-2">Street name 123, Avanue abc</span>
+			</div>
+			<div class="col-md-2 text-md-right text-muted">
+				<i class="fab fa-lg fa-cc-visa"></i>
+				<i class="fab fa-lg fa-cc-paypal"></i>
+				<i class="fab fa-lg fa-cc-mastercard"></i>
+			</div>
+		</section>
+	</div><!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
 
-      function getWishlistCount(){
-         var wishlist_url = '/wish-list/';
-         $.get(wishlist_url , function(data){
-               if (data['status'] == 'success'){
-                  $('#wish_list_count').html(data['wish_list_count']);
-               }
-         });
-
-      }
-
-      function WishlistProduct(slug){
-
-         var wishlistViewUrl = '/wish-list/'
-         $.post( wishlistViewUrl, { 'product_slug': slug, 'csrfmiddlewaretoken': '{{ csrf_token }}' })
-         .done(function( data ) {
-            if (data['status'] == 'success'){
-               successNotification(data['msg'])
-            }
-            else if (data['status'] == 'login_error'){
-               errorNotification(data['msg'])
-            }
-            else {
-               errorNotification(data['msg'])
-            }
-         });
-      }
-
-      function AddProductCart(slug){
-         
-         $.post("{% url 'add-product-cart' %}", 
-               { 'product_slug': slug, 
-                  'csrfmiddlewaretoken': '{{ csrf_token }}', 
-                  'qty': 1, 'quick': true 
-                })
-         .done(function( data ) {
-            if (data['status'] == 'success'){
-               successNotification(data['msg'])
-               loadAddCartModal();
-            }
-            else {
-               errorNotification(data['msg'])
-            }
-         });
-      }
-
-   
-   </script>
-
-
-
-      <script>
-         function successNotification(msg){
-            $('#id_success_msg').empty();
-            $('#id_success_msg').html(msg);
-            $('#id_success_heading').html("Success");
-            $('#id_success').show();
-            setTimeout(function(){ 
-               $('#id_success').hide(); 
-            }, 3000);
-
-         }
-
-         function errorNotification(msg){
-            $('#id_error_msg').empty();
-            $('#id_error_msg').html(msg);
-            $('#id_error_heading').html("Warning")
-            $('#id_error').show();
-            setTimeout(function(){ 
-               $('#id_error').hide(); 
-            }, 3000);
-
-         }
-
-         function loadAddCartModal(){
-            var cart_url = "{% url 'add-product-cart' %}"
-            $.get(cart_url , function(data){
-               if (data['status'] == 'success'){
-                  $('#cart_count').html(data['count']);
-                  $('#cart_products').html(data['data']);
-                  $('#cart_products').show(); 
-               }
-            });
-
-         }
-
-         $( document ).ready(function() {
-            loadAddCartModal();
-            getWishlistCount();
-         });
- 
-
-      </script>
-
-      
-
-
-      {% block extrajs %}
-      {% endblock extrajs %}
-   </body>
+</body>
 </html>

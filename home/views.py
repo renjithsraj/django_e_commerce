@@ -25,6 +25,9 @@ def home(request):
             'hp': hot_products,
             'fp': featured_products })
 
+
+
+
 def register(request):
     form = BuyerCreationForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
