@@ -12,6 +12,7 @@ from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from buyer.models import Manufacturer, Supplier
 
 
 # Section
@@ -64,10 +65,14 @@ class Products(models.Model):
     dummy_price = models.FloatField(null=True, blank=True)
     price = models.FloatField(default=0.0)
     weight = models.FloatField(default=0.0, verbose_name="Weight in grams")
+    
     meta_keywords = models.TextField(
         verbose_name="Meta Keywords", null=True, blank=True)
     meta_description = models.TextField(
         verbose_name="Meta Description", null=True, blank=True)
+    
+    
+    
     count = models.IntegerField()
     is_slide = models.BooleanField(
         default=False, verbose_name="Show in slider ?")
@@ -78,6 +83,11 @@ class Products(models.Model):
     image = ProcessedImageField(upload_to='images/products',
                                 format='JPEG',
                                           options={'quality': 60}, verbose_name="Image (220px X 270px)")
+    
+    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name="manfa_products")
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, related_name="supplier_products")
+
+
     tax_included = models.BooleanField(default=True)
     service_tax = models.FloatField(
         default=0.0, verbose_name="Service tax(mention in  percetage)")
@@ -89,6 +99,8 @@ class Products(models.Model):
         default=0.0, verbose_name="Cess Tax(mention in percetage)")
     cst = models.FloatField(
         default=0.0, verbose_name="Central Sales Tax(mention in  percetage)")
+
+
     is_featured = models.BooleanField(default=False)
     is_hot = models.BooleanField(default=False)
     active = models.BooleanField(default=True, verbose_name="Active or Not")

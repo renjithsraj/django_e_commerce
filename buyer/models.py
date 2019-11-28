@@ -68,3 +68,28 @@ class WishList(models.Model):
     def __str__(self):
         return "{0} - {1}".format(str(self.user.username), str(self.product.name))
     
+
+class Manufacturer(AbstractUser):
+    manf_name  = models.CharField(max_length=200, null=True, blank=True)
+    
+    def __str__(self):
+        return self.manf_name
+
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'Manufacturer'
+        verbose_name_plural = 'Manufacturers'
+
+
+class Supplier(AbstractUser):
+    supp_name  = models.CharField(max_length=200, null=True, blank=True)
+    
+    def __str__(self):
+        return self.supp_name
+
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'Supplier'
+        verbose_name_plural = 'Suppliers'
