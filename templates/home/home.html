@@ -86,7 +86,7 @@
             <!-- col.// -->
             <div class="col-md-3">
                <div href="#" class="card card-product-grid">
-                  <a href="page-index-3.html#" class="img-wrap"> <img src="{{latest_p.image.url }}"> </a>
+                  <a href="{{latest_p.get_absolute_url}}" class="img-wrap"> <img src="{{latest_p.image.url }}"> </a>
                   <figcaption class="info-wrap">
                      <a href="page-index-3.html#" class="title">{{latest_p.name}}</a>
                      <div class="price mt-1">${{latest_p.price}}</div>

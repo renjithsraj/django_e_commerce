@@ -2,353 +2,118 @@
 {% load static %}
 {% load base %}
 {% block title %} {{object.name}} | Product Detail{% endblock title %}
-{% block category_home %}
-<div class="col-lg-3 col-md-3 col-sm-4">
-   <h2 class="category-menu-title close-on-tab"><a href="index.html#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
-   <div class="logo-area">
-      <a href="index.html"><img class="img-responsive" src="{%static 'img/logo.png' %}" alt="logo"></a>
-   </div>
-</div>
-{% endblock category_home %}
 {% block maincontent %}
-<div class="product-details1-area">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-md-push-3">
-            <div class="inner-shop-details">
-               <div class="product-details-info-area">
-                  <div class="row">
-                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-product-details-left">
-                           <div class="tab-content">
-                              <div class="tab-pane fade active in" id="related13">
-                                 <a href="product-details1.html#" class="zoom ex1"><img alt="{{object.name}}" src="{{object.image.url}}" class="img-responsive"></a>
-                              </div>
-                              {% if object.gallery %}
-                                    {% for image in object.gallery.all %}
-                                        <div class="tab-pane fade" id="related{{forloop.counter}}">
-                                            <a href="product-details1.html#" class="zoom ex1"><img alt="{{image.name}}" src="{{image.image.url}}" class="img-responsive"></a>
-                                        </div>
-                                    {% endfor %}
-                              {% endif%}
+<section class="section-name  padding-y-sm">
 
-                           </div>
-                           <ul>
- 
-                                {% if object.gallery %}
-                                    {% for s_image in object.gallery.all %}
-                                        <li>
-                                            <a href="product-details1.html#related{{forloop.counter}}" data-toggle="tab" aria-expanded="false"><img alt="{{s_image.name}}" src="{{s_image.image.url}}" class="img-responsive"></a>
-                                        </li>
-                                    {% endfor %}
-                                {% endif %}
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-product-details-right">
-                           <h3>{{object.name}}</h3>
-                           <ul>
-                              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                           </ul>
-                           <p class="price">${{object.price}}</p>
-                           <p style="text-align: justify">{{object.specification | striptags}}</p>
-                           <div class="product-details-content">
-                              <p><span>CODE:</span> {{object.project_no}}</p>
-                              <p><span>Availability:</span> In stock</p>
-                              <p><span>Category:</span> {{object.sections}} </p>
-                           </div>
-                           <form id="checkout-form">
-                              <ul class="inner-product-details-cart">
-                                 <li>
-                                    <div class="input-group quantity-holder" id="quantity-holder">
-                                       <input type="text" name="quantity" class="form-control quantity-input" value="1" placeholder="1">
-                                       <div class="input-group-btn-vertical">
-                                          <button class="btn btn-default quantity-plus" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                                          <button class="btn btn-default quantity-minus" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li><a onclick="WishlistProduct('{{object.slug}}')">Add To Cart</a></li>
-                                 <li><a href="product-details1.html#"><i aria-hidden="true" class="fa fa-heart-o"></i></a></li>
-                                 <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </form>
-                           <ul class="product-details-social">
-                              <li>Share on:</li>
-                              <li><a href="product-details1.html#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                              <li><a href="product-details1.html#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                              <li><a href="product-details1.html#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                              <li><a href="product-details1.html#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="product-details-tab-area">
-                  <div class="row">
-                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <ul>
-                           <li class="active"><a href="product-details1.html#description" data-toggle="tab" aria-expanded="false">Description</a></li>
-                           <li><a href="product-details1.html#review" data-toggle="tab" aria-expanded="false">Features</a></li>
-                           <li><a href="product-details1.html#add-tags" data-toggle="tab" aria-expanded="false">Any Notes</a></li>
-                        </ul>
-                     </div>
-                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="tab-content">
-                           <div class="tab-pane fade active in" id="description">
-                              <p style="text-align: justify;">{{object.content | striptags}}</p>
-                           </div>
-                           <div class="tab-pane fade" id="review">
-                              <p style="text-align: justify;">{{object.Features | striptags }}</p>
-                           </div>
-                           <div class="tab-pane fade" id="add-tags">
-                              <p style="text-align: justify;">{{object.Note}}</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="featured-products-area2">
-                  <div class="row">
-                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h2 class="title-carousel">Featured Products</h2>
-                     </div>
-                  </div>
-                  <div class="metro-carousel owl-carousel owl-theme owl-loaded owl-responsive-1199" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
-                     <div class="owl-stage-outer">
-                        <div class="owl-stage" style="transform: translate3d(-878.001px, 0px, 0px); transition: all 2s ease 0s; width: 3512px;">
-                           <div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <div class="hot-sale">
-                                       <span>Hot</span>
-                                    </div>
-                                    <a href="product-details1.html#"><img src="img/product/4.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span>$88.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <a href="product-details1.html#"><img src="img/product/5.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span><span>$58.00</span>$40.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <div class="hot-sale">
-                                       <span>New</span>
-                                    </div>
-                                    <a href="product-details1.html#"><img src="img/product/6.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span>$58.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item active" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <a href="product-details1.html#"><img src="img/product/1.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span>$88.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item active" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <a href="product-details1.html#"><img src="img/product/2.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span><span>$58.00</span>$40.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item active" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <div class="hot-sale">
-                                       <span>Sale</span>
-                                    </div>
-                                    <a href="product-details1.html#"><img src="img/product/3.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span><span>$74.00</span>$50.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <div class="hot-sale">
-                                       <span>Hot</span>
-                                    </div>
-                                    <a href="product-details1.html#"><img src="img/product/4.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span>$88.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <a href="product-details1.html#"><img src="img/product/5.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span><span>$58.00</span>$40.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <div class="hot-sale">
-                                       <span>New</span>
-                                    </div>
-                                    <a href="product-details1.html#"><img src="img/product/6.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span>$58.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <a href="product-details1.html#"><img src="img/product/1.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span>$88.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <a href="product-details1.html#"><img src="img/product/2.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span><span>$58.00</span>$40.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="owl-item cloned" style="width: 262.667px; margin-right: 30px;">
-                              <div class="product-box1">
-                                 <ul class="product-social">
-                                    <li><a href="product-details1.html#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="product-details1.html#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                 </ul>
-                                 <div class="product-img-holder">
-                                    <div class="hot-sale">
-                                       <span>Sale</span>
-                                    </div>
-                                    <a href="product-details1.html#"><img src="img/product/3.jpg" alt="product"></a>
-                                 </div>
-                                 <div class="product-content-holder">
-                                    <h3><a href="product-details1.html#">Product Title Here</a></h3>
-                                    <span><span>$74.00</span>$50.00</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="owl-controls">
-                        <div class="owl-nav">
-                           <div class="owl-prev" style=""><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                           <div class="owl-next" style=""><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                        </div>
-                        <div class="owl-dots" style="display: none;"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+<div class="card">
+      <div class="row no-gutters">
+         <aside class="col-md-6">
+   <article class="gallery-wrap">
+   <div class="img-big-wrap">
+     <div> <a href="#"><img src="{{object.image.url}}"></a></div>
+   </div> <!-- slider-product.// -->
+
+   {% if object.gallery %}
+         {% for image in object.gallery.all %}
+         <div class="thumbs-wrap">
+            <a href="product-details1.html#" class="item-thumb">
+               <img alt="{{image.name}}" src="{{image.image.url}}" class="img-responsive">
+            </a>
          </div>
-         {% side_category_tag_1 product_id=object.id %}
-      </div>
-   </div>
-</div>
+                                        
+         {% endfor %}
+   {% endif%}
+   </article> <!-- gallery-wrap .end// -->
+         </aside>
+         <main class="col-md-6 border-left">
+   <article class="content-body">
+   
+   <h2 class="title">{{object.name}}</h2>
+   
+   <div class="rating-wrap my-3">
+      <ul class="rating-stars">
+         <li style="width:80%" class="stars-active">
+            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </li>
+         <li>
+            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+         </li>
+      </ul>
+      <small class="label-rating text-muted">132 reviews</small>
+      <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 orders </small>
+   </div> <!-- rating-wrap.// -->
+   
+   <div class="mb-3">
+      <var class="price h4">$815.00</var>
+      <span class="text-muted">/per kg</span>
+   </div> <!-- price-detail-wrap .// -->
+   
+   <p>Virgil Abloh’s Off-White is a streetwear-inspired collection that continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown Odsy-1000 low-top sneakers.</p>
+   
+   
+   <dl class="row">
+     <dt class="col-sm-3">Model#</dt>
+     <dd class="col-sm-9">Odsy-1000</dd>
+   
+     <dt class="col-sm-3">Color</dt>
+     <dd class="col-sm-9">Brown</dd>
+   
+     <dt class="col-sm-3">Delivery</dt>
+     <dd class="col-sm-9">Russia, USA, and Europe </dd>
+   </dl>
+   
+   <hr>
+      <div class="form-row">
+         <div class="form-group col-md flex-grow-0">
+            <label>Quantity</label>
+            <div class="input-group mb-3 input-spinner">
+              <div class="input-group-prepend">
+                <button class="btn btn-light" type="button" id="button-plus"> + </button>
+              </div>
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-append">
+                <button class="btn btn-light" type="button" id="button-minus"> − </button>
+              </div>
+            </div>
+         </div> <!-- col.// -->
+         <div class="form-group col-md">
+               <label>Select size</label>
+               <div class="mt-1">
+                  <label class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" name="select_size" checked="" class="custom-control-input">
+                    <div class="custom-control-label">Small</div>
+                  </label>
+   
+                  <label class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" name="select_size" class="custom-control-input">
+                    <div class="custom-control-label">Medium</div>
+                  </label>
+   
+                  <label class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" name="select_size" class="custom-control-input">
+                    <div class="custom-control-label">Large</div>
+                  </label>
+   
+               </div>
+         </div> <!-- col.// -->
+      </div> <!-- row.// -->
+   
+      <a href="#" class="btn  btn-primary"> Buy now </a>
+      <a href="#" class="btn  btn-outline-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
+   </article> <!-- product-info-aside .// -->
+         </main> <!-- col.// -->
+      </div> <!-- row.// -->
+   </div> <!-- card.// -->
+
+
+
+
+
+</section>
 {% endblock maincontent %}
 {% block extrajs %}
 {% endblock extrajs %}
