@@ -2,7 +2,7 @@ astroid==2.2.5
 autopep8==1.4.4
 backcall==0.1.0
 decorator==4.4.0
-Django==2.2.1
+Django==2.2.13
 django-appconf==1.0.3
 django-ckeditor==5.7.0
 django-imagekit==4.0.2
